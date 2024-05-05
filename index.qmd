@@ -1,0 +1,61 @@
+# Preface {.unnumbered}
+
+What are we doing here? What is the plan? What are my goals?
+
+## Objectives
+
+My primary objectives are as follows:
+
+-   to introduce R to you as a language and as a set of related tools
+
+-   to familiarize you with the basic structure and functionality of R
+
+-   to introduce important concepts within statistical computing, such as the Monte Carlo Simulation framework
+
+-   to introduce important concepts within probability and statistics, including the central limit theorem, the law of large numbers, and the null-hypothesis significance test
+
+-   to teach you how to use R, and the various associated tools to:
+
+    -   develop visual intuition about probability and statistics
+
+    -   perform common statistical tests using R
+
+    -   answer questions about statistical tests (and their assumptions) using brute-force computation (i.e., simulation via random number generation)
+
+### Learning Objectives
+
+-   discuss R as a language with a history, describe the purpose of R, and to use knowledge of the history and purpose of R to make sense of the structure of R expressions
+
+    -   Read R expressions
+
+    -   Write R expressions that are readable and align with the best practices of the open source R community
+
+-   describe R's relationship to RStudio, RMarkdown, Shiny, Quarto, and Tidyverse; and describe the purpose of these various tools
+
+    -   run R code in several different ways: via a terminal, a console, a script, and RMarkdown documents
+
+-   use R to read, write, and pre-process[^index-1] rectangular data in a consistent, efficient, and minimally complex manner
+
+    -   import data from a variety of sources including: comma-separated values (`.csv`) files, excel spreadshees (`.xlsx` files), google sheets spreadsheets
+
+    -   'tidy' data into the following format: one observation per row, one variable per column, one value per cell
+
+    -   generate synthetic data
+
+    -   use available tools that enable you to store data in a very consistent format with very little effort
+
+-   use R to process data
+
+    -   describe R's data types and the use of each: strings, numerics (floating point "doubles", integers, and complex numbers), logicals, datetimes, and factors
+
+    -   describe R's data structures and the use of each: including, vectors (1-dimensional arrays), matrices (2-dimensional arrays), arrays (more than 2-dimensional arrays), lists (key-value pairs), data frames, and tibbles
+
+    -   use R to process string data by converting it to all lower case, adding a prefix or suffix, etc.
+
+    -   use R to process numeric data by centering and scaling (normalizing) and performing other mathematical operations on data
+
+-   use R and the grammar of graphics (represented by `ggplot2` and related packages) to visualize data and to share data visualizations with others
+
+-   
+
+[^index-1]: pre-processing here refers to very basic, non-mathematical data processing tasks. Pre-processing involves developing a principled framework for storing data and then converting data from the wild into that format.

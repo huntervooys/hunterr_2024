@@ -4,7 +4,27 @@
     "href": "index.html",
     "title": "hunterr_2024",
     "section": "",
-    "text": "Preface\nWhat are we doing here? What is the plan? What are my goals?",
+    "text": "Preface",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#objectives",
+    "href": "index.html#objectives",
+    "title": "hunterr_2024",
+    "section": "Objectives",
+    "text": "Objectives\nMy primary objectives are as follows:\n\nto introduce R to you as a language and as a set of related tools\nto familiarize you with the basic structure and functionality of R\nto introduce important concepts within statistical computing, such as the Monte Carlo Simulation framework\nto introduce important concepts within probability and statistics, including the central limit theorem, the law of large numbers, and the null-hypothesis significance test\nto teach you how to use R, and the various associated tools to:\n\ndevelop visual intuition about probability and statistics\nperform common statistical tests using R\nanswer questions about statistical tests (and their assumptions) using brute-force computation (i.e., simulation via random number generation)\n\n\n\nLearning Objectives\n\ndiscuss R as a language with a history, describe the purpose of R, and to use knowledge of the history and purpose of R to make sense of the structure of R expressions\n\nRead R expressions\nWrite R expressions that are readable and align with the best practices of the open source R community\n\ndescribe R’s relationship to RStudio, RMarkdown, Shiny, Quarto, and Tidyverse; and describe the purpose of these various tools\n\nrun R code in several different ways: via a terminal, a console, a script, and RMarkdown documents\n\nuse R to read, write, and pre-process1 rectangular data in a consistent, efficient, and minimally complex manner\n\nimport data from a variety of sources including: comma-separated values (.csv) files, excel spreadshees (.xlsx files), google sheets spreadsheets\n‘tidy’ data into the following format: one observation per row, one variable per column, one value per cell\ngenerate synthetic data\nuse available tools that enable you to store data in a very consistent format with very little effort\n\nuse R to process data\n\ndescribe R’s data types and the use of each: strings, numerics (floating point “doubles”, integers, and complex numbers), logicals, datetimes, and factors\ndescribe R’s data structures and the use of each: including, vectors (1-dimensional arrays), matrices (2-dimensional arrays), arrays (more than 2-dimensional arrays), lists (key-value pairs), data frames, and tibbles\nuse R to process string data by converting it to all lower case, adding a prefix or suffix, etc.\nuse R to process numeric data by centering and scaling (normalizing) and performing other mathematical operations on data\n\nuse R and the grammar of graphics (represented by ggplot2 and related packages) to visualize data and to share data visualizations with others\nuse simulation of simple events (like the rolling of dice or flipping of a coin) to gain visual intuition for the central limit theorem and the law of large numbers\n\nvery normal video about one sample t-tests",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "hunterr_2024",
+    "section": "",
+    "text": "pre-processing here refers to very basic, non-mathematical data processing tasks. Pre-processing involves developing a principled framework for storing data and then converting data from the wild into that format.↩︎",
     "crumbs": [
       "Preface"
     ]
@@ -16,6 +36,7 @@
     "section": "",
     "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
     "crumbs": [
+      "R and Friends",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   },
@@ -26,6 +47,7 @@
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
+      "Statistics",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
     ]
   },
@@ -40,23 +62,14 @@
     ]
   },
   {
-    "objectID": "index.html#objectives",
-    "href": "index.html#objectives",
-    "title": "hunterr_2024",
-    "section": "Objectives",
-    "text": "Objectives\nMy primary objectives are as follows:\n\nto introduce R to you as a language and as a set of related tools\nto familiarize you with the basic structure and functionality of R\nto introduce important concepts within statistical computing, such as the Monte Carlo Simulation framework\nto introduce important concepts within probability and statistics, including the central limit theorem, the law of large numbers, and the null-hypothesis significance test\nto teach you how to use R, and the various associated tools to:\n\ndevelop visual intuition about probability and statistics\nperform common statistical tests using R\nanswer questions about statistical tests (and their assumptions) using brute-force computation (i.e., simulation via random number generation)\n\n\n\nLearning Objectives\n\ndiscuss R as a language with a history, describe the purpose of R, and to use knowledge of the history and purpose of R to make sense of the structure of R expressions\n\nRead R expressions\nWrite R expressions that are readable and align with the best practices of the open source R community\n\ndescribe R’s relationship to RStudio, RMarkdown, Shiny, Quarto, and Tidyverse; and describe the purpose of these various tools\n\nrun R code in several different ways: via a terminal, a console, a script, and RMarkdown documents\n\nuse R to read, write, and pre-process1 rectangular data in a consistent, efficient, and minimally complex manner\n\nimport data from a variety of sources including: comma-separated values (.csv) files, excel spreadshees (.xlsx files), google sheets spreadsheets\n‘tidy’ data into the following format: one observation per row, one variable per column, one value per cell\ngenerate synthetic data\nuse available tools that enable you to store data in a very consistent format with very little effort\n\nuse R to process data\n\ndescribe R’s data types and the use of each: strings, numerics (floating point “doubles”, integers, and complex numbers), logicals, datetimes, and factors\ndescribe R’s data structures and the use of each: including, vectors (1-dimensional arrays), matrices (2-dimensional arrays), arrays (more than 2-dimensional arrays), lists (key-value pairs), data frames, and tibbles\nuse R to process string data by converting it to all lower case, adding a prefix or suffix, etc.\nuse R to process numeric data by centering and scaling (normalizing) and performing other mathematical operations on data\n\nuse R and the grammar of graphics (represented by ggplot2 and related packages) to visualize data and to share data visualizations with others",
-    "crumbs": [
-      "Preface"
-    ]
-  },
-  {
-    "objectID": "index.html#footnotes",
-    "href": "index.html#footnotes",
-    "title": "hunterr_2024",
+    "objectID": "appendix.html",
+    "href": "appendix.html",
+    "title": "Appendix A — A fun appendix",
     "section": "",
-    "text": "pre-processing here refers to very basic, non-mathematical data processing tasks. Pre-processing involves developing a principled framework for storing data and then converting data from the wild into that format.↩︎",
+    "text": "The contents of this appendix are not here!",
     "crumbs": [
-      "Preface"
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>A fun appendix</span>"
     ]
   }
 ]

@@ -36,8 +36,24 @@
 
 -   use simulation of simple events (like the rolling of dice or flipping of a coin) to gain visual intuition for the central limit theorem and the law of large numbers
 
+-   use R to perform null-hypothesis significance tests, such as the one-sample, two-sample, and repeated measures t-test
+
+    -   use the Monte Carlo framework to test the effect of violating the assumptions of statistical tests
+
+-   use the Monte Carlo framework to do sample size calculations
+
+-   use RMarkdown to conduct a linear or logistic regression, and to report and interpret the results of those tests
+
+-   use R to perform a more complicated machine learning task, likely by constructing a decision tree and a random forest classification model
+
+-   explain why dimension-reduction methods are used, and use R to perform one of these methods (likely a principal component analysis)
+
+-   use R to pre-process, analyze and visualize text data
+
+    -   apply the principles of natural language processing to pre-process text data (by tokenizing and stemming text and describing both of those processes and why they are used)
+
+    -   use R to construct a vector space semantic model (likely a latent semantic analysis) and to report the results of such a model
+
+-   access R documentation, and read it effectively enough to solve a problem
+
 [^index-1]: pre-processing here refers to very basic, non-mathematical data processing tasks. Pre-processing involves developing a principled framework for storing data and then converting data from the wild into that format.
-
-very normal video about one sample t-tests
-
--   

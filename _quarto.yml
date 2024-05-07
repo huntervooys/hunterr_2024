@@ -5,6 +5,20 @@ book:
   title: "hunterr_2024"
   author: "Hunter Vooys"
   date: "5/5/2024"
+  search:
+    location: sidebar
+    type: overlay
+    keyboard-shortcut: "/"
+  repo-url: https://github.com/huntervooys/hunterr_2024
+  repo-actions: [edit, issue]
+  cover-image: assets/cover.png
+  bread-crumbs: false
+  sidebar:
+    style: "docked"
+    background: "light"
+    type: "dark"
+    border: true
+    alignment: "center"
   chapters:
     - index.qmd
     - part: "R and Friends"
@@ -21,7 +35,20 @@ bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: zephyr
+    toc: true
+    toc-location: right
+    toc-title: "on this page"
+    citations-hover: true
+    footnotes-hover: true
+    crossrefs-hover: true
+    code-fold: show
+    code-summary: "show code for this result"
+    code-tools: true
+    code-line-numbers: true
+    code-copy: hover
+    df-print: paged
+    fig-align: center
   pdf:
     documentclass: scrreprt
 

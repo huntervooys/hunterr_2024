@@ -16,7 +16,7 @@ Once the repository is on you machine, you can double click on the `hunterr_2024
 
 ## to open the book
 
-The book has already been buils, so you can open it by clicking on any of the `.html` files in the `_book` folder. 
+The book has already been built, so you can open it by clicking on any of the `.html` files in the `_book` folder. 
 
 To see the source code for each chapter, you can use the code tools within the book that are described in the preface or else open the `.qmd` files from which the book was rendered.
 

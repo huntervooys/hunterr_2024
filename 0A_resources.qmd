@@ -1,0 +1,31 @@
+# Getting Help
+
+The contents of this appendix are not here!
+
+-   getting help in R (? and ??)
+
+-   the two types of help pages, and the structure of each
+
+    -   dataset pages
+
+    -   function pages
+
+-   [Cheatsheets](https://posit.co/resources/cheatsheets/)
+
+-   documentation online
+
+    -   [rmarkdown](https://bookdown.org/yihui/rmarkdown/)
+
+    -   quarto:
+
+        -   [quarto guides](https://quarto.org/docs/guide/)
+
+        -   [quarto reference](https://quarto.org/docs/reference/)
+
+    -   [rstudio user guide](https://docs.posit.co/ide/user/)
+
+    -   [tidymodels (for machine learning, mostly)](https://www.tmwr.org/models)
+
+    -   google and stack exchange
+
+-   There is a general [guide to getting R help](https://www.r-project.org/help.html#r-help-on-the-internet), and it includes a suggestion I will forward: use Google and include the term "R" in the search

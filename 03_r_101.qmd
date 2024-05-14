@@ -1,0 +1,18 @@
+# R 101
+
+-   check the r_101.rmd file in the `r_with_eli` directory for an outline
+
+```{r setup}
+
+
+```
+
+-   [legal names - page 13](https://www.stat.auckland.ac.nz/~ihaka/courses/120/Lectures/lecture04.pdf)
+
+-   [subsetting and logical vectors - page 2-7](https://www.stat.auckland.ac.nz/~ihaka/courses/120/Lectures/lecture05.pdf)
+
+-   [control flow and functions - page 20-end](https://www.stat.auckland.ac.nz/~ihaka/courses/120/Lectures/lecture05.pdf)
+
+```{r}
+
+```

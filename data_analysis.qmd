@@ -1,0 +1,117 @@
+# Introductory Data Analysis
+
+```{r setup, echo=TRUE, include=FALSE}
+# renv::install("tidyverse")
+library(tidyverse)
+
+data_path <- path.expand("data/starbucks_customer_data")
+
+# Load the data
+portfolio <- read_csv(file.path(data_path, "portfolio.csv")) |> select(-...1)
+profile <- read_csv(file.path(data_path, "profile.csv")) |> select(-...1)
+transcript <- read_csv(file.path(data_path, "transcript.csv")) |> select(-...1)
+
+```
+
+## The Data
+
+We are going to start our data analysis adventure with [Starbucks customer data](https://www.kaggle.com/datasets/ihormuliar/starbucks-customer-data?resource=download) that is available from Kaggle. This data was collected by Starbucks to analyze the spending behavior of Starbucks customers in response to various promotions. This data has also been used for [market segmentation](https://www.kaggle.com/code/chrisbohanon/starbucks-customer-segmentation) analysis (albeit in python). There are three tables included in this dataset.
+
+In R there are a few ways to preview a dataset. If you just type out its name, as I've done for portfolio, then the entire dataframe will display. This is acceptable for portfolio, which has 10 observations (one observation for each promotional deal), but much less so for transcript, which has over 300,000 observations.
+
+```{r portfolio, echo=TRUE}
+portfolio
+```
+
+Each column in this table is a variable. If we want to get a closer look at the variables in the data we can use the `glimpse` function, like so:
+
+```{r}
+glimpse(portfolio)
+```
+
+The `glimpse` function lists the dimensions of the data at the top (which are also available through the `dim` function (which is one of the OG functions from S). Below that is a list of the names of the 6 columns, which type of data is stored in each (with `<chr>` corresponding to character or text data, and `<dbl>` corresponding to floating point numerical data). `glimpse` also shows the first values in each of the columns. Overall, `glimpse` and `head` (as well as `tail`, if that suits your fancy) are probably the first functions you should use when starting a data analysis project. It is important to orient yourself to the data early.
+
+```{r}
+dim(portfolio)
+```
+
+So let's do that. The `reward` column represents the monetary value of the promotion (0\$ for informational communications like the one in row 3, and a value equal to the `difficulty` in a bogo sale, like those in rows one and two). `difficulty`, in turn, is the amount of money the customer has to spend to receive the reward. Both `difficulty` and `reward` are measured in dollars. `channels` is a list of strings that describe how the offer was communicated to the customers, and `offer_type` is either "bogo," "informational," or "discount." `duration` refers to the duration of the offer, but no unit is specified. I suspect it is measured in days. Finally, the `id` is an alphanumeric code that we will use to merge our three datasets
+
+To view just the first few rows of the data, you can use the `head` function. The `tail` function would show the last few rows of the `profile` table.
+
+```{r profile, echo=TRUE}
+head(profile)
+glimpse(profile)
+```
+
+As we can see, the profile data describes Starbucks customers according to their `gender`, their `age`, their `income`, and the date they joined the rewards program (`became_member_on`). The clients also have an `id`, which is another alphanumeric code that we will use to merge our three datasets.
+
+```{r transcript, echo=TRUE}
+head(transcript)
+glimpse(transcript)
+```
+
+The transcript table has only four variables in it: the `person` (the alphanumeric code corresponding to the client); the `value` (a string containing the alphanumeric code for the offer), the `event` (either "offer received," "offer viewed," "transaction," or "offer completed"), and the `time` which is the time - in hours - with the day starting at $\text{time} = 0$.
+
+I would like to momentarily draw your attention to the `value` column in the transcript table. This column is a dictionary, which is a data structure that is not easily interpretable by R. This column contiains the `offer_id` that we will use to merge the transcript table with the portfolio table, as well as the `amount` of money spent by the customer. We will need to extract this information from the `value` column before we can merge the transcript table with the portfolio table.
+
+That's tricky as shit in R, which does not really have dictionaries. Instead, I have gone done all of the data merging for you in Python, according to the instructions on this [Kaggle notebook](https://www.kaggle.com/code/chrisbohanon/starbucks-customer-segmentation). In any case, here is the new, merged data file:
+
+```{r}
+data <- read_csv(file.path(data_path, "starbucks_data.csv")) |> select(-...1)
+```
+
+Traditionally, you would use one of the `join` functions to merge the three data frames. I used the corresponding python method (the pandas `merge` method) to join the data which was (for a number of relatively unimportant reasons) much easier than merging the data in R.
+
+In any case, let's take a look at our final dataset. All of the variables will come from one (or more) of the three datasets above.
+
+```{r}
+# to save memory (i.e., allow R to run faster), we can remove the three original datasets
+rm(portfolio, profile, transcript)
+
+glimpse(data)
+```
+
+## Tidying the Starbucks Data
+
+Tidy data has the following characteristics:
+
+-   every column represents one variable
+
+-   every row represents one observation
+
+-   every cell has one value
+
+In truth, the process of "tidying" this data began in python. I would like to draw your attention to six new columns in the data. Firstly, there are two new columns called `offer_id_or_amount` and `offer_if_or_amount`. These two columns are probably the result of a typo, but before we get rid of one, it's best practice to see that they are identical. We'll make a simple hypothesis: `offer_id_or_amount` is the same as `offer_if_or_amount` for every observation. This hypothesis entails that there are 0 rows in the data where these two columns are **not** equal.
+
+In R (and many other programming languages), there is a difference between `=` and `==`. `=` (a single equals sign) is an assignment operator; it takes what is on its right side and stores it in the computers memory using the name on its left. Two equals signs (`==`), by contrast, is a comparison operator. When you use `==`, you are asking R to tell you whether the thing on the right is the same as the thing on the left, resulting in R returning a value of either `TRUE` or `FALSE`. We can use `!=` to ask R whether the thing on the right is **not** the same as the thing on the left.
+
+```{r}
+data |> 
+  filter(offer_id_or_amount != offer_if_or_amount)
+```
+
+As you can see, I used the `filter` function (and the `!=` operator) to filter out all of the observations where the two columns are **not** equal. Because there are 0 rows in the result, I conclude that the two columns are identical. We can use the `select` function and a minus sign (`-`) to tell R that we would like to preserve all of the columns in the data except for `offer_if_or_amount`.
+
+```{r}
+# we need to reassign the name 'data' to the version with the errant column removed
+data <- data |> 
+  select(-offer_if_or_amount)
+```
+
+Ok. Now that that's out of the way, there are additionally four new columns: the last four. Previously, in `portfolio`, the `channel` variable stored lists of values (in a form like `[web, mobile, social]`). This is not tidy because it breaks the third rule, allowing multiple values to reside within a single cell. I did something called **dummy coding** the variables. Take a look, and I think you'll get the idea. The individual channels are split into separate columns, which are filled with 0's and 1's (and NA values, more on that later) to indicate the use or lack of use of that channel. It communicates the same information, except with one value per cell instead of a list of values.
+
+```{r}
+data |> 
+  select(starts_with("channel")) |> 
+  drop_na() |> 
+  slice_sample(n=10)
+```
+
+R is pretty good about catching most normally formatted NA values during the input process. It will call blank cells NA, as well as any cell with "NA" or "N/A" in it.
+
+```{r}
+# compute number of NA values in each column
+data |> 
+  summarise_all(~sum(is.na(.)))
+```

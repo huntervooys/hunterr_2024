@@ -1,0 +1,166 @@
+country,activity,time_spent,women_to_men,continent
+Australia,Unpaid work,243.16887,1.812398354901748,Oceania
+Austria,Unpaid work,202,1.9896961162221676,Europe
+Belgium,Unpaid work,191.82016,1.6461056549111557,Europe
+Canada,Unpaid work,186,1.509785241304571,North America
+Denmark,Unpaid work,216.62733,1.3044688595569436,Europe
+Finland,Unpaid work,196.87715,1.4972825058432062,Europe
+France,Unpaid work,181.09856,1.6602324227644325,Europe
+Germany,Unpaid work,195.93103,1.6105507065949596,Europe
+Greece,Unpaid work,180.20116,2.7289688338560496,Europe
+Hungary,Unpaid work,229.15895,1.809568990714302,Europe
+Ireland,Unpaid work,209.64148,2.3036112906039348,Europe
+Italy,Unpaid work,219.03874,2.3436475133129653,Europe
+Japan,Unpaid work,132.01698,5.502036092424523,Asia
+South Korea,Unpaid work,131.70642,4.388431563030647,Asia
+Mexico,Unpaid work,263.88788,2.5208704632397,North America
+Netherlands,Unpaid work,185.56139,1.546903056154274,Europe
+New Zealand,Unpaid work,204,1.872340425531915,Oceania
+Norway,Unpaid work,195.98425,1.3497183223815448,Europe
+Poland,Unpaid work,225.9187,1.8579367992900486,Europe
+Portugal,Unpaid work,222.54546,3.4087678939019006,Europe
+Spain,Unpaid work,216.72911,1.9815588202316343,Europe
+Sweden,Unpaid work,196.49918,1.2874437426900585,Europe
+Turkey,Unpaid work,186.08949,4.513087073248126,Asia
+United Kingdom,Unpaid work,194.52788,1.7749078752557437,Europe
+United States,Unpaid work,219.21774,1.6357790561548975,North America
+China,Unpaid work,163.88618,2.5714285714285716,Asia
+Estonia,Unpaid work,207.68231,1.5559865385135285,Europe
+India,Unpaid work,191.14615,6.798417037554366,Asia
+Latvia,Unpaid work,196.07454,1.9522097575753372,Europe
+Slovenia,Unpaid work,230.67961,1.7192997337536884,Europe
+South Africa,Unpaid work,182.28479,2.4246210916469675,Africa
+Australia,Personal care,657.45654,1.0257921575971622,Oceania
+Austria,Personal care,632,1.0275196023444353,Europe
+Belgium,Personal care,664.04633,1.0446286175811748,Europe
+Canada,Personal care,636.57739,1.0498322058142393,North America
+Denmark,Personal care,659.35931,1.0471806949212406,Europe
+Finland,Personal care,640.48987,1.0327092045449837,Europe
+France,Personal care,752.24652,1.0241369542273184,Europe
+Germany,Personal care,648.02252,1.0330697674703113,Europe
+Greece,Personal care,684.60358,0.9851283385834099,Europe
+Hungary,Personal care,683.13916,0.9897692398447433,Europe
+Ireland,Personal care,608.9137,1.0477570270307262,Europe
+Italy,Personal care,707.80823,0.9929734470352043,Europe
+Japan,Personal care,620.03809,1.0215159238304918,Asia
+South Korea,Personal care,677.84741,1.005984368313801,Asia
+Mexico,Personal care,633.58386,1.0281054410087715,North America
+Netherlands,Personal care,681.59064,1.0456679585179072,Europe
+New Zealand,Personal care,648,1.02660406885759,Oceania
+Norway,Personal care,627.27295,1.0443697203486866,Europe
+Poland,Personal care,657.11884,1.033414286069628,Europe
+Portugal,Personal care,675.69232,0.9948471332742587,Europe
+Spain,Personal care,691.79242,0.9851801027436575,Europe
+Sweden,Personal care,622.46954,1.036726481178396,Europe
+Turkey,Personal care,681.79669,1.007964244789181,Asia
+United Kingdom,Personal care,645.20435,1.0323038353036673,Europe
+United States,Personal care,651.58569,1.0504429820273202,North America
+China,Personal care,693.51837,0.9942528735632183,Asia
+Estonia,Personal care,662.67316,0.9995992685539768,Europe
+India,Personal care,687.48993,0.9531689307274674,Asia
+Latvia,Personal care,641.2962,1.0063955775310653,Europe
+Slovenia,Personal care,628.12762,0.9979152199030106,Europe
+South Africa,Personal care,695.07886,0.9992194396598368,Africa
+Australia,Leisure,281.19528,0.9056282506457147,Oceania
+Austria,Leisure,291.20932,0.890242210664867,Europe
+Belgium,Leisure,339.35016,0.8672781318822662,Europe
+Canada,Leisure,278.93344,0.8719283872019957,North America
+Denmark,Leisure,328.84482,0.9413032414783888,Europe
+Finland,Leisure,330.98871,0.8463080591905825,Europe
+France,Leisure,293.54263,0.8452439563965621,Europe
+Germany,Leisure,331.15182,0.9119563691116961,Europe
+Greece,Leisure,341.3912,0.8274159546788528,Europe
+Hungary,Leisure,281.3497,0.8334747438887502,Europe
+Ireland,Leisure,312.31158,0.8501286950714627,Europe
+Italy,Leisure,323.25861,0.7673463358330072,Europe
+Japan,Leisure,278.31256,0.9121812861280789,Asia
+South Korea,Leisure,258.26019,0.8954791630161199,Asia
+Mexico,Leisure,171.92743,0.852674267007413,North America
+Netherlands,Leisure,314.76401,0.9109114474239494,Europe
+New Zealand,Leisure,301,0.9640522875816994,Oceania
+Norway,Leisure,368.24329,0.987874106662843,Europe
+Poland,Leisure,286.15439,0.8438685173633214,Europe
+Portugal,Leisure,240.67133,0.6909324730640439,Europe
+Spain,Leisure,316.04926,0.8180320405681091,Europe
+Sweden,Leisure,321.48456,0.9059545857988166,Europe
+Turkey,Leisure,285.73074,0.89863077850586,Asia
+United Kingdom,Leisure,305.53094,0.8718659053966002,Europe
+United States,Leisure,285.52322,0.8692047789094249,North America
+China,Leisure,227.84178,0.8508064516129032,Asia
+Estonia,Leisure,309.40707,0.8045125935503467,Europe
+India,Leisure,253.99612,0.7817220703071376,Asia
+Latvia,Leisure,268.84131,0.8580599146044274,Europe
+Slovenia,Leisure,310.56866,0.8405059430584936,Europe
+South Africa,Leisure,305.89819,NA,Africa
+Australia,Other,20.013899,1.2179784469855781,Oceania
+Austria,Other,8.4071388,0.9032785028005783,Europe
+Belgium,Other,9.2212801,1.0637345841056287,Europe
+Canada,Other,33.91396,1.1216945926724702,North America
+Denmark,Other,10.351957,0.8573350877978337,Europe
+Finland,Other,42.547142,0.8867237026358258,Europe
+France,Other,8.9471149,1.2719161642317187,Europe
+Germany,Other,17.013493,1.100747244278696,Europe
+Greece,Other,6.0942068,1.1293349164713933,Europe
+Hungary,Other,8.7381868,0.7215437149834277,Europe
+Ireland,Other,41.172009,1.0636084824842307,Europe
+Italy,Other,13.185362,1.18502789439185,Europe
+Japan,Other,47.087002,1.207795054836261,Asia
+South Korea,Other,27.73358,1.3377220777168173,Asia
+Mexico,Other,21.448614,1.1949858544761214,North America
+Netherlands,Other,15.296655,1.210790387645859,Europe
+New Zealand,Other,17,1.1875,Oceania
+Norway,Other,7.2344952,0.5343458834869178,Europe
+Poland,Other,11.220911,1.2313857244989628,Europe
+Portugal,Other,6.0419579,1.3990224083670568,Europe
+Spain,Other,13.424608,0.964759050012308,Europe
+Sweden,Other,6.1398563,0.7147821,Europe
+Turkey,Other,40.09676,1.3512376783288218,Asia
+United Kingdom,Other,32.471893,1.1736961092621114,Europe
+United States,Other,23.83816,1.4067215442964656,North America
+China,Other,14.989591,0.8,Asia
+Estonia,Other,5,0.6907466591957588,Europe
+India,Other,12.388403,1.0249629913128286,Asia
+Latvia,Other,3.8495073,1.6365680771301552,Europe
+Slovenia,Other,5.9916782,1.19749826857289,Europe
+South Africa,Other,16.16213,1.419005342480307,Africa
+Australia,Paid work or study,238.16539,0.5656857150149038,Oceania
+Austria,Paid work or study,306.43021,0.6819254297735431,Europe
+Belgium,Paid work or study,235.75362,0.7279120840256412,Europe
+Canada,Paid work or study,304.64124,0.7878826136623338,North America
+Denmark,Paid work or study,224.81659,0.748212648434879,Europe
+Finland,Paid work or study,229.097,0.8444288282567401,Europe
+France,Paid work or study,204.16515,0.7458063779137563,Europe
+Germany,Paid work or study,247.88115,0.7096070142739718,Europe
+Greece,Paid work or study,227.70988,0.6728246142017339,Europe
+Hungary,Paid work or study,237.614,0.7427140536593398,Europe
+Ireland,Paid work or study,267.9613,0.5719679369052341,Europe
+Italy,Paid work or study,176.70906,0.6028591670562857,Europe
+Japan,Paid work or study,362.6546,0.6010048079630295,Asia
+South Korea,Paid work or study,344.45236,0.642948496045501,Asia
+Mexico,Paid work or study,349.15216,0.49406699910175544,North America
+Netherlands,Paid work or study,242.78703,0.7069317346671944,Europe
+New Zealand,Paid work or study,270,0.606508875739645,Oceania
+Norway,Paid work or study,241.26506,0.720979772004691,Europe
+Poland,Paid work or study,259.58719,0.6454967290367721,Europe
+Portugal,Paid work or study,295.04895,0.6211874850031045,Europe
+Spain,Paid work or study,202.00473,0.7058977866108215,Europe
+Sweden,Paid work or study,293.40686,0.8792047923322683,Europe
+Turkey,Paid work or study,246.31599,0.37389307783065084,Asia
+United Kingdom,Paid work or study,262.26492,0.7005624498304478,Europe
+United States,Paid work or study,288.85577,0.7445752690063286,North America
+China,Paid work or study,339.76404,0.7461538461538462,Asia
+Estonia,Paid work or study,255.57736,0.9272203270346052,Europe
+India,Paid work or study,294.9794,0.47290667296718436,Asia
+Latvia,Paid work or study,329.93842,0.765307905376649,Europe
+Slovenia,Paid work or study,264.63245,0.7809771417315634,Europe
+South Africa,Paid work or study,240.57607,0.6630110879274557,Africa
+Luxembourg,Unpaid work,179.15561,1.979079692468762,Europe
+Lithuania,Unpaid work,224.47133,1.925665194981809,Europe
+Luxembourg,Personal care,685.66821,1.02533605746743,Europe
+Lithuania,Personal care,645.53864,1.0007359346777813,Europe
+Luxembourg,Leisure,276.38571,0.8461144073104532,Europe
+Lithuania,Leisure,246.6068,0.7629358621973908,Europe
+Luxembourg,Other,14.063417,1.1141934873630865,Europe
+Lithuania,Other,8.1680727,1.143229622087753,Europe
+Luxembourg,Paid work or study,284.68814,0.723848447050854,Europe
+Lithuania,Paid work or study,315.21515,0.788277643544383,Europe

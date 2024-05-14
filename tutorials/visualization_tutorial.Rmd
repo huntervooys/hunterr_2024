@@ -1,0 +1,756 @@
+---
+title: "Visualizing the Iris Data"
+output:
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+    theme: cosmo
+runtime: shiny_prerendered
+---
+
+## The Iris Data
+
+```{r setup, echo=FALSE, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(png)
+library(shiny)
+library(ggridges)
+
+iris <- iris |> 
+  janitor::clean_names()
+```
+
+We are going to use Edgar Anderson's Iris data, which is included in every R instillation (in the `datasets` package).
+
+The help-page for a dataset includes a number of parts. First is a brief description, then the usage (which is more helpful for functions, which take arguments), then the format (which describes the structure of the data), and some other stuff that's not super important.
+
+```{r iris_help, exercise=TRUE}
+?iris
+```
+
+Use a function that will allow you to look at each of the variables in the iris data. What are the columns of the dataset called, what type of data is in each, and what is the first value in each column?
+
+```{r iris_glimpse, exercise=TRUE}
+
+```
+
+```{r iris_glimpse-hint}
+?glimpse
+```
+
+```{r iris_glimpse-solution}
+glimpse(iris)
+```
+
+You can look at [this image](https://en.wikipedia.org/wiki/Sepal#/media/File:Mature_flower_diagram.svg) to find out more about the anatomy of a flower (if you, like me, do not know what a sepal is).
+
+## Iris Histograms
+
+```{r}
+glimpse(iris)
+```
+
+We are going to make a plot with `sepal_width` and `petal_length`. Before we do that, we might want to get a sense of the distribution of those two (numeric) variables. We can do this with a histogram or with a boxplot, each of which only take one x or y mapping.
+
+Set the data and mappings to this plot to make a histogram of `sepal_width`:
+
+```{r sepal_width_hist, exercise=TRUE, exercise.blanks=TRUE, exercise.eval=FALSE}
+ggplot(data = ___,
+       mapping = aes(x = ___)) +
+  geom_histogram()
+```
+
+```{r sepal_width_hist-solution}
+ggplot(data = iris,
+       mapping = aes(x = sepal_width)) +
+  geom_histogram()
+```
+
+Isn't that wonderful? Oh, it's not. We forgot to set the bin width or a number of bins for our histogram. Use the following interactive to decide on an appropriate number of bins for this histogram.
+
+```{r sepal_width_hist_bins, context="render", echo=FALSE}
+sliderInput(inputId = "sepal_width_bins",
+            label = "Number of Bins",
+            min = 1,
+            max = 50,
+            value = 30)
+plotOutput("sepal_width_histogram")
+```
+
+```{r sepal_width_hist_bins_server, context="server", echo=FALSE}
+output$sepal_width_histogram <- renderPlot({
+  iris |> 
+    ggplot(aes(x = sepal_width)) +
+    geom_histogram(bins = input$sepal_width_bins)
+})
+```
+
+Use the `bins` argument in the `geom_histogram` function to produce a histogram with an appropriate number of bins.
+
+```{r final_sepal_width_hist, exercise=TRUE, exercise.blanks=TRUE}
+ggplot(data = iris,
+       mapping = aes(x = sepal_width)) +
+  geom_histogram(bins = ___)
+```
+
+```{r final_sepal_width_hist-solution}
+ggplot(data = iris,
+       mapping = aes(x = sepal_width)) +
+  geom_histogram(bins = 10)
+```
+
+Finally, change the color of the histogram; make it blue (you can try out other colors, as well).
+
+```{r color_sepal_width_hist, exercise=TRUE, exercise.blanks=TRUE}
+ggplot(data = iris,
+       mapping = aes(x = sepal_width)) +
+  geom_histogram(bins = 10, ___ = "blue")
+```
+
+```{r color_sepal_width_hist-solution}
+ggplot(data = iris,
+       mapping = aes(x = sepal_width)) +
+  geom_histogram(bins = 10, fill = "blue")
+```
+
+The sepal widths appear to be roughly normally distributed. We'll use our same procedure to make a histogram of the petal lengths, which do not appear to be normally distributed.
+
+```{r}
+ggplot(data = iris,
+       mapping = aes(x = petal_length)) +
+  geom_histogram(bins = 10, fill = "blue")
+```
+
+Is the petal width the same across iris species? We can answer this question by adding a facet to our data; lets use the `facet_wrap` function.
+
+```{r sepal_width_facet_hist, exercise=TRUE, exercise.blanks=TRUE}
+ggplot(data = iris,
+       mapping = aes(x = petal_length)) +
+  geom_histogram(bins = 10) +
+  facet_wrap(~ ___)
+```
+
+```{r sepal_width_facet_hist-solution}
+ggplot(data = iris,
+       mapping = aes(x = petal_length)) +
+  geom_histogram(bins = 10) +
+  facet_wrap(~ species)
+```
+
+These histograms show us that the 3 species are different, but they don't do so optimally. To address this question, it might be nice to have some way of comparing the distributions on a single plot.
+
+## More Distribution Plots
+
+### Boxplots
+
+A boxplot shows you the median and first and third quartiles of the data. What's nice about a box plot is that you can put multiple of them in a single plot, which makes comparison very easy.
+
+Create 3 boxplots: represent `species` on the x-axis and `sepal_width` on the y-axis
+
+```{r sepal_width_boxplots, exercise=TRUE, exercise.blanks=TRUE}
+ggplot(data = iris,
+       mapping = aes(___)) +
+  geom_boxplot()
+```
+
+```{r sepal_width_boxplots-solution}
+ggplot(data = iris,
+       mapping = aes(x = species,
+                     y = sepal_width)) +
+  geom_boxplot()
+```
+
+Which species has the smallest petal length? Is there any overlap in petal lengths between species? Use box-plots to answer these question. Add a `fill` mapping to the box-plots to make them more visually interesting.
+
+```{r petal_length_boxplots, exercise=TRUE}
+
+```
+
+```{r petal_length_boxplots-hint}
+ggplot(data = iris,
+       mapping = aes(x = species,
+                     y = petal_length,
+                     fill = species))
+```
+
+```{r petal_length_boxplots-solution}
+ggplot(data = iris,
+       mapping = aes(x = species,
+                     y = petal_length,
+                     fill = species)) +
+  geom_boxplot()
+```
+
+### Density Plots
+
+Make this plot prettier by adding color and or fill as an aesthetic. If you add a fill, change the alpha value of `geom_density`.
+
+```{r petal_width_density, exercise=TRUE}
+ggplot(data = iris,
+       mapping = aes(x = petal_length,
+                     group = species)) +
+  geom_density()
+```
+
+```{r petal_width_density-solution}
+ggplot(data = iris,
+       mapping = aes(x = petal_length,
+                     fill = species)) +
+  geom_density(color = "black",
+               alpha = 0.5) 
+```
+
+### Density Ridges
+
+Another way to compare multiple distributions on a single plot is to make a density ridge plot, which I think looks pretty cool. (Certainly much cooler than the pussy plot, which I will not show you how to make because you are not allowed; its in the rules.)
+
+```{r pussy_plot, echo=FALSE}
+ggplot(data = iris,
+       mapping = aes(x = species, 
+                     y = petal_length,
+                     fill = species)) +
+   geom_violin()
+```
+
+Ridge plots usually look best when you set them horizontally, unlike our boxplots which are set vertically. The geom function you need to make a ridgeline plot is `geom_density_ridges()` from the `ggridges` package (which I have already loaded for you). Make me a plot that matches the following specifications:
+
+-   the petal length is on the x-axis
+
+-   the species is on the y-axis
+
+-   the ridges are filled, depending on the species
+
+```{r petal_length_ridges, exercise=TRUE, exercise.blanks=TRUE}
+ggplot(___) +
+  geom_density_ridges(alpha = 0.5)
+```
+
+```{r petal_length_ridges-solution}
+ggplot(data = iris,
+       mapping = aes(x = petal_length,
+                     y = species,
+                     fill = species)) +
+  geom_density_ridges(alpha=0.5)
+```
+
+-   What does the `alpha` argument do? What happens when you change it?
+
+-   What happens when you set a `color` aesthetic in addition to the `fill` aesthetic?
+
+### Summary Plots
+
+In R, it is easy enough to create your own box-plot-type plot using the `stat_summary` function. This plot creates summaries with large dots at the median and dashed lines the show the entire range of petal lengths for each species. What does the `"jitter"` argument do? (Why did I use it?)
+
+```{r petal_length_jitter, exercise=TRUE, exercise.eval=TRUE}
+ggplot(data = iris,
+       mapping = aes(x = petal_length,
+                     y = species)) +
+  stat_summary(fun.min = min,
+               fun.max = max,
+               fun = median,
+               color = "blue",
+               size = 2,
+               linetype = "dashed") +
+  geom_point(position = "jitter")
+```
+
+## Scatter Plots
+
+Make the following plot.
+
+```{r, echo=FALSE, warning=FALSE}
+ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length)) +
+  
+  # add scatter plot
+  geom_point(mapping = aes(color = species, 
+                           shape = species)) +
+  
+  # add black regression lines
+  geom_smooth(mapping = aes(group = species),
+              formula = y ~ x,
+              color = "black",
+              method = "lm",
+              linetype = "dashed",
+              se = FALSE) +
+  
+  # add labels
+  labs(title = "petal length and sepal width for 3 species of Iris",
+       x = "sepal width (cm)",
+       y = "petal length (cm)") +
+  
+  # add color scale
+  ggthemes::scale_color_colorblind() +
+  
+  # add a theme
+  theme_minimal() +
+  
+  # remove the legend
+  theme(legend.position = "bottom")
+```
+
+This exercise involves 7 steps:
+
+1.  make a ggplot
+2.  add a scatter plot
+3.  add black regression lines
+4.  add labels to the plot
+5.  add a color scale
+6.  add a theme
+7.  move the legend
+
+### make a ggplot
+
+Make a blank ggplot with an x and a y-axis.
+
+```{r ggplot, exercise=TRUE, exercise.blanks=TRUE}
+# make a ggplot
+p <- ggplot(data = iris,
+       mapping = aes(___ = ___,
+                     ___ = ___))
+
+p
+```
+
+```{r ggplot-solution}
+# make a ggplot
+p <- ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length))
+
+p
+```
+
+### add a scatter plot
+
+add a scatter-plot layer to the plot `p`. Set the `color` and `shape` aesthetics
+
+```{r scatter_plot-setup}
+p <- ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length))
+```
+
+```{r scatter_plot, exercise=TRUE, exercise.blanks=TRUE}
+p <- p +
+  ___
+
+p
+```
+
+```{r scatter_plot-solution}
+p <- p +
+  geom_point(mapping = aes(color = species,
+                           shape = species))
+```
+
+### add black regression lines
+
+The lines on the reference plot are dashed, black regression lines with no standard error. Add arguments to the `geom_smooth` function to make the lines look like this.
+
+```{r regression_line-setup}
+p <- ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length)) +
+  geom_point(mapping = aes(color = species,
+                           shape = species))
+```
+
+```{r regression_line, exercise=TRUE, exercise.eval=TRUE}
+p <- p + 
+  geom_smooth()
+
+p
+```
+
+```{r regression_line-hint-1}
+p <- p + 
+  geom_smooth(mapping = aes(group = species))
+
+p
+```
+
+```{r regression_line-hint-2}
+p <- p + 
+  geom_smooth(mapping = aes(group = species),
+              method = "lm")
+
+p
+```
+
+```{r regression_line-hint-3}
+p <- p + 
+  geom_smooth(mapping = aes(group = species),
+              method = "lm",
+              color = "black")
+
+p
+```
+
+```{r regression_line-hint-4}
+p <- p + 
+  geom_smooth(mapping = aes(group = species),
+              method = "lm",
+              color = "black",
+              se = FALSE)
+
+p
+```
+
+```{r regression_line-solution}
+p <- p + 
+  geom_smooth(mapping = aes(group = species),
+              method = "lm",
+              color = "black",
+              se = FALSE,
+              linetype = "dashed")
+
+p
+```
+
+### add labels
+
+```{r labels-setup}
+p <- ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length)) +
+  geom_point(mapping = aes(color = species,
+                           shape = species)) +
+  geom_smooth(mapping = aes(group = species),
+              method = "lm",
+              color = "black",
+              se = FALSE,
+              linetype = "dashed")
+```
+
+```{r labels, exercise=TRUE, exercise.blanks=TRUE}
+p <- p + 
+  labs(main = ___,
+       x = ___,
+       y = ___)
+```
+
+### add a color scale
+
+```{r color_scale-setup}
+p <- ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length)) +
+  geom_point(mapping = aes(color = species,
+                           shape = species)) +
+  geom_smooth(mapping = aes(group = species),
+              method = "lm",
+              color = "black",
+              se = FALSE,
+              linetype = "dashed") +
+  labs(title = "petal length and sepal width for 3 species of Iris",
+       x = "sepal width (cm)",
+       y = "petal length (cm)")
+```
+
+```{r color_scale, exercise=TRUE, exercise.blanks=TRUE}
+p <- p +
+  ___
+
+p
+```
+
+```{r color_scale-solution}
+p <- p +
+  ggthemes::scale_color_colorblind() 
+
+p
+```
+
+### add a theme
+
+```{r theme-setup}
+p <- ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length)) +
+  geom_point(mapping = aes(color = species,
+                           shape = species)) +
+  geom_smooth(mapping = aes(group = species),
+              method = "lm",
+              color = "black",
+              se = FALSE,
+              linetype = "dashed") +
+  labs(title = "petal length and sepal width for 3 species of Iris",
+       x = "sepal width (cm)",
+       y = "petal length (cm)") +
+  ggthemes::scale_color_colorblind() 
+```
+
+```{r theme, exercise=TRUE, exercise.blanks=TRUE}
+p <- p +
+  ___
+
+p
+```
+
+```{r theme-solution}
+p <- p +
+  theme_minimal()
+
+p
+```
+
+### move the legend
+
+the legend in the reference plot is on the bottom of the plot.
+
+```{r legend-setup}
+p <- ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length)) +
+  geom_point(mapping = aes(color = species,
+                           shape = species)) +
+  geom_smooth(mapping = aes(group = species),
+              method = "lm",
+              color = "black",
+              se = FALSE,
+              linetype = "dashed") +
+  labs(title = "petal length and sepal width for 3 species of Iris",
+       x = "sepal width (cm)",
+       y = "petal length (cm)") +
+  ggthemes::scale_color_colorblind() +
+  theme_minimal()
+```
+
+```{r legend, exercise=TRUE, exercise.blanks=TRUE}
+p <- p +
+  theme(legend.position = "___")
+
+p
+```
+
+```{r legend-solution}
+p <- p +
+  theme(legend.position = "bottom")
+
+p
+```
+
+### Bringing it all together
+
+Use all of the code you have written so far into a single, readable chunk
+
+```{r bring_it_all_together, exercise=TRUE, exercise.blanks=TRUE}
+# make a ggplot
+___ +
+  
+  # add scatter plot
+  ___ +
+  
+  # add black regression lines
+  ___ +
+  
+  # add labels
+  ___ +
+  
+  # add color scale
+  ___ +
+  
+  # add a theme
+  ___ +
+  
+  # move the legend
+  ___
+```
+
+```{r bring_it_all_together-hint-1}
+# make a ggplot
+ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length))
+
+  # add scatter plot
+  
+  # add black regression lines
+  
+  # add labels
+  
+  # add color scale
+  
+  # add a theme
+  
+  # move the legend
+```
+
+```{r bring_it_all_together-hint-2}
+# make a ggplot
+ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length)) +
+  
+  # add scatter plot
+  geom_point(mapping = aes(color = species, 
+                           shape = species))
+
+  # add black regression lines
+  
+  # add labels
+  
+  # add color scale
+  
+  # add a theme
+  
+  # move the legend
+```
+
+```{r bring_it_all_together-hint-3}
+# make a ggplot
+ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length)) +
+  
+  # add scatter plot
+  geom_point(mapping = aes(color = species, 
+                           shape = species)) +
+  
+  # add black regression lines
+  geom_smooth(mapping = aes(group = species),
+              formula = y ~ x,
+              color = "black",
+              method = "lm",
+              linetype = "dashed",
+              se = FALSE)
+
+  # add labels
+  
+  # add color scale
+  
+  # add a theme
+  
+  # move the legend
+```
+
+```{r bring_it_all_together-hint-4}
+# make a ggplot
+ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length)) +
+  
+  # add scatter plot
+  geom_point(mapping = aes(color = species, 
+                           shape = species)) +
+  
+  # add black regression lines
+  geom_smooth(mapping = aes(group = species),
+              formula = y ~ x,
+              color = "black",
+              method = "lm",
+              linetype = "dashed",
+              se = FALSE) +
+  
+  # add labels
+  labs(title = "petal length and sepal width for 3 species of Iris",
+       x = "sepal width (cm)",
+       y = "petal length (cm)")
+
+  # add color scale
+  
+  # add a theme
+  
+  # move the legend
+```
+
+```{r bring_it_all_together-hint-5}
+# make a ggplot
+ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length)) +
+  
+  # add scatter plot
+  geom_point(mapping = aes(color = species, 
+                           shape = species)) +
+  
+  # add black regression lines
+  geom_smooth(mapping = aes(group = species),
+              formula = y ~ x,
+              color = "black",
+              method = "lm",
+              linetype = "dashed",
+              se = FALSE) +
+  
+  # add labels
+  labs(title = "petal length and sepal width for 3 species of Iris",
+       x = "sepal width (cm)",
+       y = "petal length (cm)") +
+  
+  # add color scale
+  ggthemes::scale_color_colorblind()
+
+  # add a theme
+  
+  # move the legend
+```
+
+```{r bring_it_all_together-hint-6}
+# make a ggplot
+ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length)) +
+  
+  # add scatter plot
+  geom_point(mapping = aes(color = species, 
+                           shape = species)) +
+  
+  # add black regression lines
+  geom_smooth(mapping = aes(group = species),
+              formula = y ~ x,
+              color = "black",
+              method = "lm",
+              linetype = "dashed",
+              se = FALSE) +
+  
+  # add labels
+  labs(title = "petal length and sepal width for 3 species of Iris",
+       x = "sepal width (cm)",
+       y = "petal length (cm)") +
+  
+  # add color scale
+  ggthemes::scale_color_colorblind() +
+  
+  # add a theme
+  theme_minimal()
+
+  # move the legend
+```
+
+```{r bring_it_all_together-solution}
+# make a ggplot
+ggplot(data = iris,
+       mapping = aes(x = sepal_width,
+                     y = petal_length)) +
+  
+  # add scatter plot
+  geom_point(mapping = aes(color = species, 
+                           shape = species)) +
+  
+  # add black regression lines
+  geom_smooth(mapping = aes(group = species),
+              formula = y ~ x,
+              color = "black",
+              method = "lm",
+              linetype = "dashed",
+              se = FALSE) +
+  
+  # add labels
+  labs(title = "petal length and sepal width for 3 species of Iris",
+       x = "sepal width (cm)",
+       y = "petal length (cm)") +
+  
+  # add color scale
+  ggthemes::scale_color_colorblind() +
+  
+  # add a theme
+  theme_minimal() +
+  
+  # move the legend
+  theme(legend.position = "bottom")
+```
+
+Fabulous work!

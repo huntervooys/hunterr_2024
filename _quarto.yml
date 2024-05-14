@@ -23,13 +23,15 @@ book:
     - index.qmd
     - part: "R and Friends"
       chapters:
-      - intro.qmd
+      - 01_lore.qmd
+      - 02_r_and_friends.qmd
+      - 03_r_101.qmd
+      - 04_visualization.qmd
+      - data_analysis.qmd
     - part: "Statistics"
-      chapters:
-      - summary.qmd
-    - references.qmd
+    - 0R_references.qmd
   appendices:
-    - appendix.qmd
+    - 0A_resources.qmd
 
 bibliography: references.bib
 
@@ -49,8 +51,6 @@ format:
     code-copy: hover
     df-print: paged
     fig-align: center
-  pdf:
-    documentclass: scrreprt
 
 editor: visual
 

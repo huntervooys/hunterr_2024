@@ -1,0 +1,596 @@
+# Visualization
+
+```{r setup}
+#| echo: FALSE
+#| include: FALSE
+
+library(tidyverse)
+
+knitr::opts_chunk$set(warning = FALSE)
+
+iris <- iris |> janitor::clean_names()
+
+time_use <- read_csv("data/time_use_cleaned.csv")
+
+# from wikimedia: https://en.wikipedia.org/wiki/List_of_countries_by_coffee_production
+coffee <- read_csv("data/countries_by_coffee_production.csv") |> 
+  select(Country, Pounds) |> 
+  janitor::clean_names()
+
+# from worldbank: https://databank.worldbank.org/reports.aspx?source=2&series=SP.POP.TOTL&country=WLD#
+pop <- read_csv("data/2019_world_bank_pop.csv") |> 
+  select(`Country Name`, `2019 [YR2019]`) |> 
+  rename(country = `Country Name`,
+         pop_2019 = `2019 [YR2019]`)
+
+coffee <- inner_join(coffee, pop, by = "country") |> 
+  mutate(pop_2019 = as.integer(pop_2019))
+```
+
+Tidy data has the following characteristics:
+
+-   every column represents one variable
+
+-   every row represents one observation
+
+-   every cell has one value
+
+We will soon return to the process of "tidying" non-tidy data, but we will begin with tidy data as a given. This chapter is definitely inspired by and roughly based on other chapters, specifically [@wickhamDataVisualization2017] and [@wickhamDataVisualization2023]. If you would like to solidify the lessons from this chapter, I strongly suggest reviewing (and writing out the code from) those two chapters, as well; they contain the same ideas, but make use of different data.
+
+We will be looking at [data from the OECD](https://stats.oecd.org/Index.aspx?DataSetCode=TIME_USE)about how people in 33 countries spend their time. We will making plots with this data, but first I have to explain what it is.
+
+```{r}
+glimpse(time_use)
+```
+
+The data contains five variables (columns). `country`, `continent`, and `activity` are relatively self explanatory, as is `women_to_men` which is the ratio of how much time women spend on the `activity` to how much time men spend. `time_spent` is the number of minutes the average person in `country` spends, per minutes per day, on the `activity`.
+
+Categorical data, like `activity`, `country`, or `continent`, are likely to spawn different questions than numerical data, like `time_spent`, or `women_to_men`. The first question I have about this data is what activities are represented? We can use the `distinct` function to answer this question
+
+```{r}
+distinct(time_use, activity)
+```
+
+We can similarly determine which countries are in our data, noting that this data does not represent the entire global population.
+
+```{r}
+distinct(time_use, country)
+```
+
+If we look at the continents, we can see that there is even an entire continent omitted from our data: South America.
+
+```{r}
+distinct(time_use, continent)
+```
+
+Our end goal is the following plot:
+
+```{r}
+#| warning: FALSE
+#| echo: FALSE
+ggplot(
+  data = time_use,
+  mapping = aes(x = time_spent,
+                y = women_to_men)
+) +
+  # add data
+  geom_point(mapping = aes(color = continent,
+                           shape = continent)) +
+  # add regression line
+  geom_smooth(mapping = aes(group = activity),
+              method = "lm",
+              color = "black",
+              size = 2,
+              se=F) +
+  # add line to indicate gender parity
+  geom_hline(yintercept = 1, linetype = "dashed") +
+  # separate plots by activity
+  facet_wrap(~ activity,
+             nrow = 2,
+             scales = "free") +
+  # add labels
+  labs(
+    title = "Gender Parity in Time Spent in OECD Nations",
+    subtitle = "ATTN: all plots on different axes",
+    x = "time spent (minutes per day)",
+    y = "ratio of women's time spent to men's"
+  ) +
+  # add friendly colorscale
+  ggthemes::scale_color_colorblind() +
+  # add theme
+  theme_minimal()
+```
+
+This plot shows the amount of time the average person in each OECD country spends in each of 5 activities. On the y, axis is the ratio of how much time women spend on that activity to how much time men spend on that activity (on average). There is a dashed, horizontal line at $y=1$ that indicates parity between the two genders. Each plot is a scatter plot with a black regression line and each point is colored and shaped according to the continent of the country it represents. The slope of the regression time tells us whether gender parity increases or decreases with increases in the time spent on the activity. For example, countries in which people do more unpaid work seem to have more gender parity in the amount of unpaid work men and women do.
+
+## Plotting Basics
+
+The first step to making any plot is calling the `ggplot` function. If you look at the help page for the `ggplot` function (by typing `?ggplot` into an R console) , you will find that it takes 2 arguments: `data` and `mapping`. Ggplot expects that the `data` argument is going to be a data frame with tidy data in.
+
+```{r}
+ggplot(data = time_use)
+```
+
+As you can see, `ggplot` creates an empty plot. Next, we will add a `mapping` argument. The mapping will tell ggplot which aesthetics (like the x-axis, y-axis, color, shape, etc.) will be represented by which variables in the data. In this case, we want the `time_spent` variable on the x-axis and the `women_to_men` variable on the y-axis, as they appear in the reference plot. When we call the `ggplot` while providing a `data` and a `mapping` argument, R will create a blank plot with axes.
+
+```{r}
+ggplot(data = time_use, mapping = aes(x = time_spent, y = women_to_men))
+```
+
+As with any function in R, we do not need to write all of the arguments on a single line. We can separate the arguments onto different lines, as long as we make sure each line ends with a comma or the end parenthesis (i.e., the end of the function call). You may find that the following two code snippets are more readable than the one above, even though all three would produce the same output.
+
+```{r}
+#| eval: FALSE
+ggplot(data = time_use,
+       mapping = aes(x = time_spent, y = women_to_men))
+```
+
+```{r}
+#| eval: FALSE
+ggplot(
+  data = time_use,
+  mapping = aes(
+    x = time_spent,
+    y = women_to_men
+  )
+)
+```
+
+To R, it does not matter whether you type this function call out in 1 line or in 7; it is the same arguments being passed to the same function and thus produces the same result.
+
+### Geoms
+
+Our plot is missing something: can you spot it? There is no data on our plot! We represent data in a `ggplot` by using a `geom` function. Almost all of these functions start with `geom_` (like `geom_bar` or `geom_smooth`) or `stat_` (like `stat_count`). You can see a fuller list of the geom functions available on the [ggplot2 cheat sheet](https://www.maths.usyd.edu.au/u/UG/SM/STAT3022/r/current/Misc/data-visualization-2.1.pdf).
+
+```{r}
+ggplot(data = time_use,
+       mapping = aes(x = time_spent, y = women_to_men)) +
+  geom_point()
+```
+
+We add a geom by literally adding it (with the `+` operator) to the `ggplot` function call. The `+` always has to go at the end of the line. You can separate the functions by as many empty or commented lines as you'd like. You can also do this within function calls. So, this code will run:
+
+```{r}
+ggplot(data = time_use,
+       mapping = aes(x = time_spent, y = women_to_men)) +
+  
+  
+  # this is a comment
+  
+  geom_point()
+```
+
+as will this code:
+
+```{r}
+ggplot(data = time_use,
+       
+       # this is a comment
+       mapping = aes(x = time_spent, y = women_to_men)) +
+  geom_point()
+```
+
+and if you wanted to be really verbose, you could even do something like this:
+
+```{r}
+# create ggplot
+ggplot(
+  
+  # add data to plot
+  data = time_use,
+  
+  # create mapping
+  mapping = aes(
+    # map x-axis
+    x = time_spent,
+    # map y-axis
+    y = women_to_men
+  )
+) +
+  
+  # add scatterplot
+  geom_point()
+```
+
+What is the difference between a mapping and a style? A mapping connects one aesthetic to a variable, but a style just sets the aesthetic. For example, styling our scatter plot might mean turning all the points blue, whereas a mapping would match each activity to a color based on a scale. This is a graph that uses color as a style:
+
+```{r}
+ggplot(data = time_use,
+       mapping = aes(x = time_spent, y = women_to_men)) +
+  geom_point(color = "blue")
+```
+
+and this is a plot that uses color as a map:
+
+```{r}
+ggplot(data = time_use,
+       mapping = aes(x = time_spent, y = women_to_men)) +
+  geom_point(mapping = aes(color = activity))
+```
+
+You can put mappings in the `ggplot` function, or in any `geom` function. In the above code, the mapping for x and y is in the `ggplot` function, and the mapping for color is in the `geom_point` function.
+
+Every geom will **inherit** the mapping from the `ggplot` function. If we added another geom to the plot, we could see this. In the plot below, I added the `geom_smooth`, and - as you can see - it inherits the x and the y aesthetic from the `ggplot` function, but it does not inherit the color argument from the `geom_point` function.
+
+```{r}
+ggplot(data = time_use,
+       mapping = aes(x = time_spent, y = women_to_men)) +
+  geom_point(mapping = aes(color = activity)) +
+  geom_smooth()
+```
+
+If you wanted R to make differently colored smooth lines in this plot, you could add a color aesthetic to the `geom_smooth` function, or you could move the color aesthetic from the `geom_point` function to the `ggplot` function, thereby allowing the `geom_smooth` function to inherit a color aesthetic.
+
+```{r}
+ggplot(data = time_use,
+       mapping = aes(x = time_spent, 
+                     y = women_to_men,
+                     color = activity)) +
+  geom_point() +
+  geom_smooth()
+```
+
+Let's do a little investigating with just the `geom_smooth` function.
+
+```{r}
+ggplot(data = time_use,
+       mapping = aes(x = time_spent, y = women_to_men)) +
+  geom_smooth()
+```
+
+We used the `color` aesthetic to make separate lines above, but we didn't need to. We can also use the `group` or `linetype` arguments to create separate lines
+
+```{r}
+ggplot(data = time_use,
+       mapping = aes(x = time_spent, y = women_to_men)) +
+  geom_smooth(mapping = aes(group = activity))
+```
+
+```{r}
+ggplot(data = time_use,
+       mapping = aes(x = time_spent, y = women_to_men)) +
+  geom_smooth(mapping = aes(linetype = activity))
+```
+
+We can change the data supplied to `geom_smooth` to draw only one line:
+
+```{r}
+ggplot(data = time_use,
+       mapping = aes(x = time_spent, y = women_to_men)) +
+  geom_point(mapping = aes(color = continent)) +
+  geom_smooth(data = filter(time_use, activity == "Unpaid work"),
+    mapping = aes(group = activity))
+```
+
+You should use the help page (`?geom_smooth`) to read more about the aesthetics and arguments the function can take. I will only highlight two more: `method`, and `se`. I frequently find myself favoring a linear regression line (rather than the default which uses the [LOESS smoothing function](https://en.wikipedia.org/wiki/Local_regression) (a type of local, polynomial regression). You can get a straight line by changing the `method` argument to "lm". The `se` argument can be set to `T` or `TRUE` or `F` or `FALSE`, and it controls whether the plot includes an gray error area.
+
+```{r}
+ggplot(data = time_use,
+       mapping = aes(x = time_spent, y = women_to_men)) +
+  geom_smooth(mapping = aes(group = activity), 
+              method = "lm",
+              se = FALSE)
+```
+
+On a completely separate note, you use a very similar process of setting the `data` and `mapping` arguments to make a bar chart. Ggplot makes a distinction between a bar chart, which has a single, discrete aesthetic mapping (like one that maps x to continent).
+
+```{r}
+ggplot(data = distinct(time_use, country, continent),
+       mapping = aes(x = continent)) +
+  geom_bar()
+```
+
+A column chart takes 2 mappings: a discrete `x` aesthetic (like `activity`) and a continuous `y` aesthetic (like `time_spent`).
+
+```{r}
+ggplot(
+  data = time_use,
+  mapping = aes(x = continent, 
+                y = time_spent,
+                color = activity)
+) +
+  geom_col()
+
+```
+
+Bar charts are a great example of the difference between the `color` and the `fill` aesthetics. Points and lines have only colors, but bars and columns (and other geoms, like density plots) have fills, as well. Let's fix the last plot.
+
+```{r}
+ggplot(
+  data = time_use,
+  mapping = aes(x = continent, 
+                y = time_spent,
+                fill = activity)
+) +
+  geom_col()
+```
+
+This plot does not provide a helpful comparison of the time use in OECD countries across various continents because all of the columns have a different height. In reality, we would like all of the columns to be the same height so we can compare proportions. We can do this using the `position` argument
+
+```{r}
+ggplot(
+  data = time_use,
+  mapping = aes(x = continent, 
+                y = time_spent,
+                fill = activity)
+) +
+  geom_col(position = "fill")
+```
+
+This is a better plot to view the differences in OECD time use across continents. However, there is (again) very limited data for several continents which are either missed (i.e., most of Africa, Oceania, South America, and Asia) or have only very few countries (i.e., North America)
+
+### Faceting
+
+Using just the `ggplot` function and a few `geom` functions, we can get damn near the reference plots we started with.
+
+```{r}
+# initialize plot and axes
+ggplot(data = time_use,
+       mapping = aes(x = time_spent,
+                     y = women_to_men)) +
+  
+  # add scatter plot
+  geom_point(mapping = aes(color = continent,
+                           shape = continent)) +
+  
+  # add black regression line
+  geom_smooth(color = "black",
+              size = 2,
+              method = "lm",
+              se = FALSE) +
+  
+  # add dashed parity line (y = 1)
+  geom_hline(yintercept = 1, 
+             linetype = "dashed")
+```
+
+Faceting is tricky to explain in words, but it's very easy to understand if you can see it.
+
+```{r}
+# initialize plot and axes
+ggplot(data = time_use,
+       mapping = aes(x = time_spent,
+                     y = women_to_men)) +
+  
+  # add scatter plot
+  geom_point(mapping = aes(color = continent,
+                           shape = continent)) +
+  
+  # add black regression line
+  geom_smooth(color = "black",
+              size = 2,
+              method = "lm",
+              se = FALSE) +
+  
+  # add dashed parity line (y = 1)
+  geom_hline(yintercept = 1, 
+             linetype = "dashed") +
+  
+  # add a facet - activity
+  facet_wrap(~activity, 
+             nrow = 2)
+```
+
+There are two faceting functions: `facet_wrap` and `facet_grid`. Both have a `scales` argument, which is set as "fixed" by default. You can change it to:
+
+-   "free_x" to allow the x axes to have different limits in the different plots
+
+-   "free_y" to do the same for the y axes
+
+-   "free" to have both axes take different limits for each separate plot
+
+In this case, we'll just set the `scales` argument to `"free"` so that all of the data aren't packed so tightly.
+
+```{r}
+# initialize plot and axes
+ggplot(data = time_use,
+       mapping = aes(x = time_spent,
+                     y = women_to_men)) +
+  
+  # add scatter plot
+  geom_point(mapping = aes(color = continent,
+                           shape = continent)) +
+  
+  # add black regression line
+  geom_smooth(color = "black",
+              size = 2,
+              method = "lm",
+              se = FALSE) +
+  
+  # add dashed parity line (y = 1)
+  geom_hline(yintercept = 1, 
+             linetype = "dashed") +
+  
+  # add a facet - activity
+  facet_wrap(~activity, 
+             nrow = 2,
+             scales = "free")
+```
+
+`facet_grid` is helpful if you would like to facet on two variables at once
+
+```{r}
+# initialize plot and axes
+ggplot(data = time_use,
+       mapping = aes(x = time_spent,
+                     y = women_to_men)) +
+  
+  # add scatter plot
+  geom_point(mapping = aes(color = continent,
+                           shape = continent)) +
+  
+  # add black regression line
+  geom_smooth(color = "black",
+              size = 0.5,
+              method = "lm",
+              se = FALSE) +
+  
+  # add dashed parity line (y = 1)
+  geom_hline(yintercept = 1, 
+             linetype = "dashed") +
+  
+  # add a facet - activity
+  facet_grid(continent ~ activity, 
+             scales = "free")
+```
+
+With so few data, such extensive faceting is neither informative nor helpful, so we'll stick with just one facet: `activity`.
+
+## Plot Styling
+
+Our current plot is beginning to look very similar to the reference plot we were attempting to recreate. We have written 23 lines so far. To save space, I am going to save the plot that we currently have under the name `p`. When we call `p`, R will make the plot. We can also add things to `p`, just as we added them to the `ggplot` function.
+
+```{r}
+# save ggplot object under the name "p"
+p <- ggplot(data = time_use,
+       mapping = aes(x = time_spent,
+                     y = women_to_men)) +
+  
+  # add scatter plot
+  geom_point(mapping = aes(color = continent,
+                           shape = continent)) +
+  
+  # add black regression line
+  geom_smooth(color = "black",
+              size = 2,
+              method = "lm",
+              se = FALSE) +
+  
+  # add dashed parity line (y = 1)
+  geom_hline(yintercept = 1, 
+             linetype = "dashed") +
+  
+  # add a facet - activity
+  facet_wrap(~activity, 
+             nrow = 2,
+             scales = "free")
+
+p
+```
+
+### Labels
+
+By default, `ggplot` does not create a title or subtitle for the plot, and it uses the names of the variables for the axes and scales (i.e., color scale in our plot). The `labs` function allows you to update various text elements in the plot.
+
+```{r}
+p <- p + labs(title = "Gender Parity in Time Spent in OECD Nations",
+         subtitle = "ATTN: all plots on different axes",
+         x = "time spent (minutes per day)",
+         y = "ratio of women's time spent to men's")
+
+p
+```
+
+Adding labels to the outside of your plot is as simple as that. You could also use labels as a geom using the `geom_text` function. It takes an additional aesthetic, `label` that we have not yet seen.
+
+```{r}
+ggplot(data = filter(time_use, activity == "Unpaid work"),
+       mapping = aes(x = time_spent,
+                     y = women_to_men,
+                     color = continent)) +
+  geom_text(mapping = aes(label = country))
+```
+
+### Scales and Coordinates
+
+Our plot is different from the reference plot in which colors it uses. The reference plot uses black, orange, blue, green, and yellow; but, ours uses red, beige, green, blue, and purple. What gives? The reference plot uses a different color scale than does our plot. The color scale is the part of the plot that matches each continent to a unique color. The reference plot uses a color scale from the `ggthemes` package that is colorblind friendly.
+
+```{r}
+p <- p + ggthemes::scale_color_colorblind()
+
+p
+```
+
+scales also control the x and y axes, specifically continuous scales. We can use a `scale` function to set the limits or breaks for the axes. In our case, this allows us to demonstrate how much larger the gender disparity appears to be for unpaid work rather than for any of the other (measured) uses of time.
+
+```{r}
+p + 
+  scale_y_continuous(limits = c(0, 7), breaks = c(1, 3.5, 7))
+```
+
+we can use scale functions to add transformations, as well. There are functions like `scale_x_sqrt` and `scale_x_log10` that put the data on square root or log axes. Our time use data is not a great example of the utility of these types of axes. Instead, look at this data about coffee production:
+
+```{r}
+coffee_plot <- ggplot(data = coffee,
+       mapping = aes(x = pounds,
+                     y = pop_2019)) +
+  geom_text(mapping = aes(label = country)) +
+  labs(x = "pounds of coffee produced in 2019",
+       y = "population in 2019") +
+  geom_smooth(method = "lm", se = FALSE)
+
+coffee_plot
+```
+
+The coffee data is dominated by small producers, with many populations less than 100 million and many total annual productions less than 1 billion pounds. The relationship between the variables is obscured by the clumping of data, which is caused by the massive outliers of Brazil and India. A log-log plot (with log axes on the x and y) reveals a different perspective on this data. You must be careful, however, because log axes are not the easiest things to read.
+
+```{r}
+coffee_plot + 
+  scale_x_log10() +
+  scale_y_log10()
+```
+
+There are many more transformations the `scale` functions can perform (like a boxcox, or logit transform), and you can see a fuller list in the documentation of the `scale_x_continuous` function (or any of the continuous scale functions). Okay; bye, coffee data!
+
+We can finally use `scales` functions to control the labels on the axes. I find this is particularly helpful if you have percentages on one axis. We have a proportion, which can be represented as a percentage.
+
+```{r}
+p <- p + scale_y_continuous(labels = scales::percent_format())
+
+p
+```
+
+### Themes
+
+The plot we have still doesn't look quite like the reference plot we aimed toward. This can be explained by a difference in theme. The reference plot uses the minimal theme, whereas ours uses the default theme. We can "fix" that by using the `theme_minimal` function.
+
+```{r}
+p + theme_minimal()
+```
+
+You can see the other default themes by seeing the help page for `theme_minimal` (i.e., `?theme_minimal`, which is also the help page for the other built-in ggplot themes). My other favorite is `theme_classic`.
+
+```{r}
+p + theme_classic()
+```
+
+I also use `theme_void`, but typically only when making pie charts. `theme_void` removes most of the elements in the plot, including the x and y axes and gridlines.
+
+```{r}
+p + theme_void()
+
+p <- p + theme_minimal()
+```
+
+### Guides, Legends, and Text
+
+Although it makes no sense not to have it in this case, there are some cases in which you would like to remove the legend, which appears to the right of the plot by default. There are two ways to do this, using `guides` or using `theme`.
+
+`guides` is a function that is occasionally helpful for specifying which type of scale variables should be mapped to. You could set the guide to the color and/or shape arguments to "none" to remove one or both aspects of the legend.
+
+```{r}
+p + guides(
+  color = "none"
+)
+```
+
+You could also remove the legend, instead of removing variables from the legend. You would do this using the `legend.position` argument in the `theme` function.
+
+```{r}
+p + theme(legend.position = "none")
+```
+
+You could also move the legend around using the `legend.position` argument.
+
+```{r}
+p <- p + theme(legend.position = "top")
+
+p
+```
+
+Finally, you can use the `theme` function to make really specific changes to the plot, like changing the angle of the numbers of the y-axis
+
+```{r}
+p + theme(axis.text.x = element_text(angle = -30),
+          axis.text.y = element_text(angle = 30))
+```

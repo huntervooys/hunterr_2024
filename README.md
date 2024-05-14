@@ -12,6 +12,8 @@ From the [repo homepage](https://github.com/huntervooys/hunterr_2024), you can c
 https://github.com/huntervooys/hunterr_2024
 ```
 
+Within the Github Desktop app, you can keep this repo up to date on your machine by using the "fetch origin" and "pull origin" buttons, which will allow you to download changes to this project as I add them.
+
 Once the repository is on you machine, you can double click on the `hunterr_2024.Rproj` file to open the project up in RStudio.
 
 ## to open the book

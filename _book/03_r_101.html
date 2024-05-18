@@ -177,12 +177,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualization</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./data_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introductory Data Analysis</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -218,14 +212,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">on this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">3.1</span> Introduction</a></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types"><span class="header-section-number">3.2</span> data types</a>
+  <ul class="collapse">
+  <li><a href="#numeric-data" id="toc-numeric-data" class="nav-link" data-scroll-target="#numeric-data"><span class="header-section-number">3.2.1</span> Numeric Data</a></li>
+  <li><a href="#complex-numbers" id="toc-complex-numbers" class="nav-link" data-scroll-target="#complex-numbers"><span class="header-section-number">3.2.2</span> Complex Numbers</a></li>
+  <li><a href="#characters" id="toc-characters" class="nav-link" data-scroll-target="#characters"><span class="header-section-number">3.2.3</span> Characters</a></li>
+  <li><a href="#logical-data" id="toc-logical-data" class="nav-link" data-scroll-target="#logical-data"><span class="header-section-number">3.2.4</span> Logical Data</a></li>
+  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors"><span class="header-section-number">3.2.5</span> factors</a></li>
+  </ul></li>
+  <li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures"><span class="header-section-number">3.3</span> Data Structures</a></li>
+  <li><a href="#iteration" id="toc-iteration" class="nav-link" data-scroll-target="#iteration"><span class="header-section-number">3.4</span> Iteration</a></li>
+  <li><a href="#control-flow" id="toc-control-flow" class="nav-link" data-scroll-target="#control-flow"><span class="header-section-number">3.5</span> Control Flow</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">3.6</span> functions</a></li>
+  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries"><span class="header-section-number">3.7</span> Libraries</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"><span class="header-section-number">3.8</span> RStudio</a></li>
+  <li><a href="#tidyverse" id="toc-tidyverse" class="nav-link" data-scroll-target="#tidyverse"><span class="header-section-number">3.9</span> Tidyverse</a>
+  <ul class="collapse">
+  <li><a href="#readr" id="toc-readr" class="nav-link" data-scroll-target="#readr"><span class="header-section-number">3.9.1</span> readr</a></li>
+  <li><a href="#tibble" id="toc-tibble" class="nav-link" data-scroll-target="#tibble"><span class="header-section-number">3.9.2</span> tibble</a></li>
+  <li><a href="#dplyr" id="toc-dplyr" class="nav-link" data-scroll-target="#dplyr"><span class="header-section-number">3.9.3</span> dplyr</a></li>
+  <li><a href="#stringr" id="toc-stringr" class="nav-link" data-scroll-target="#stringr"><span class="header-section-number">3.9.4</span> stringr</a></li>
+  <li><a href="#lubridate" id="toc-lubridate" class="nav-link" data-scroll-target="#lubridate"><span class="header-section-number">3.9.5</span> lubridate</a></li>
+  <li><a href="#forcats" id="toc-forcats" class="nav-link" data-scroll-target="#forcats"><span class="header-section-number">3.9.6</span> forcats</a></li>
+  <li><a href="#purr" id="toc-purr" class="nav-link" data-scroll-target="#purr"><span class="header-section-number">3.9.7</span> purr</a></li>
+  <li><a href="#tidyr" id="toc-tidyr" class="nav-link" data-scroll-target="#tidyr"><span class="header-section-number">3.9.8</span> tidyr</a></li>
+  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2"><span class="header-section-number">3.9.9</span> ggplot2</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/huntervooys/hunterr_2024/edit/main/03_r_101.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/huntervooys/hunterr_2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R 101</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R 101</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -243,17 +269,227 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <ul>
-<li>check the r_101.rmd file in the <code>r_with_eli</code> directory for an outline</li>
-</ul>
-<ul>
 <li><p><a href="https://www.stat.auckland.ac.nz/~ihaka/courses/120/Lectures/lecture04.pdf">legal names - page 13</a></p></li>
 <li><p><a href="https://www.stat.auckland.ac.nz/~ihaka/courses/120/Lectures/lecture05.pdf">subsetting and logical vectors - page 2-7</a></p></li>
 <li><p><a href="https://www.stat.auckland.ac.nz/~ihaka/courses/120/Lectures/lecture05.pdf">control flow and functions - page 20-end</a></p></li>
+</ul>
+<section id="introduction" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">3.1</span> Introduction</h2>
+<p>This tutorial is adapted from a fabulous <a href="https://www.youtube.com/watch?v=QJCt9GNCD1M">youtube video by Very Normal</a>. I recommend watching this video before starting this tutorial.</p>
+</section>
+<section id="data-types" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="data-types"><span class="header-section-number">3.2</span> data types</h2>
+<section id="numeric-data" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="numeric-data"><span class="header-section-number">3.2.1</span> Numeric Data</h3>
+<div class="cell" data-exercise="true">
+<details open="" class="code-fold">
+<summary>show code for this result</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>a <span class="ot">&lt;-</span> <span class="dv">12</span> <span class="co"># numeric</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>b <span class="ot">&lt;-</span> <span class="dv">5</span>L <span class="co"># integer</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>c <span class="ot">&lt;-</span> <span class="fl">12.5</span> <span class="co"># double (floating point)</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">print</span>(a <span class="sc">+</span> b) <span class="co"># numeric </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 17</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>show code for this result</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">print</span>((a <span class="sc">+</span> b) <span class="sc">/</span> b)  <span class="co"># double (floating point)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.4</code></pre>
+</div>
+</div>
+</section>
+<section id="complex-numbers" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="complex-numbers"><span class="header-section-number">3.2.2</span> Complex Numbers</h3>
+<p>Realistically, you’re never going to use complex numbers, so you can safely skip this exercise. However, I think complex exponentiation is pretty, so you’d really be missing out.</p>
+<div class="cell" data-exercise="true" data-exercise.eval="true">
+<details open="" class="code-fold">
+<summary>show code for this result</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># change real and imaginary parts to see how the plot changes</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>z <span class="ot">&lt;-</span> (<span class="fl">0.8</span> <span class="sc">+</span> <span class="dv">1</span>i)</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># take z to the power of 1, 2, ..., whatever the 'to' argument is</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>complex_numbers <span class="ot">&lt;-</span> z <span class="sc">**</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, </span>
+<span id="cb5-6"><a href="#cb5-6"></a>                      <span class="at">to =</span> <span class="dv">12</span>, <span class="co"># change to plot more data </span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>                      <span class="at">by =</span> <span class="fl">0.1</span>) <span class="co"># change to plot more data</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co"># plot the complex numbers</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="fu">plot</span>(complex_numbers, <span class="at">type =</span> <span class="st">"o"</span>) <span class="co"># possible types: "p", "l", "b", "c", "o", "h", "s", "S", "n"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03_r_101_files/figure-html/complex_numbers-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="characters" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="characters"><span class="header-section-number">3.2.3</span> Characters</h3>
+<div class="cell" data-exercise="true">
+<details open="" class="code-fold">
+<summary>show code for this result</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>a <span class="ot">&lt;-</span> <span class="st">"hello"</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>b <span class="ot">&lt;-</span> <span class="st">'world'</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">print</span>(<span class="fu">paste</span>(a, b))  <span class="co"># paste is a function that concatenates strings</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "hello world"</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>show code for this result</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(a, b))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "helloworld"</code></pre>
+</div>
+</div>
+</section>
+<section id="logical-data" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="logical-data"><span class="header-section-number">3.2.4</span> Logical Data</h3>
+<div class="cell" data-exercise="true">
+<details open="" class="code-fold">
+<summary>show code for this result</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>show code for this result</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</section>
+<section id="factors" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="factors"><span class="header-section-number">3.2.5</span> factors</h3>
+<p>factors combine numbers and strings. They are useful for categorical data.</p>
+</section>
+</section>
+<section id="data-structures" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="data-structures"><span class="header-section-number">3.3</span> Data Structures</h2>
+<ul>
+<li><p>vectors: stores ordered data of the same type</p>
+<ul>
+<li>have indexes that start at 1</li>
+</ul></li>
+<li><p>matrix: stores data in 2 dimensions</p></li>
+<li><p>arrays: higher dimensional matrices</p></li>
+<li><p>lists: key value pairs</p>
+<ul>
+<li>if you don’t put names in the list, R will index them with numbers</li>
+</ul></li>
+<li><p>dataframes: each row is an observation, each column is a characteristic</p></li>
+<li><p>tibbles: data frames with extra functionality</p></li>
+</ul>
+</section>
+<section id="iteration" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="iteration"><span class="header-section-number">3.4</span> Iteration</h2>
+<ul>
+<li><p>for loop: will run code a certain number of times</p></li>
+<li><p>while loop: will run code until a certain condition is no longer met</p>
+<ul>
+<li>useful in optimization tasks (like sample size calculations)</li>
+</ul></li>
+</ul>
+</section>
+<section id="control-flow" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="control-flow"><span class="header-section-number">3.5</span> Control Flow</h2>
+<pre><code>if (condition) {
+  code to run if condition is met
+}</code></pre>
+<p>you can add else statements, and even chain else statements, but it is easy to get confused</p>
+</section>
+<section id="functions" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="functions"><span class="header-section-number">3.6</span> functions</h2>
+<pre><code>function_name = function(inputs) {
+
+  a bunch of code you would like to reuse
+  the last line of code is the output of the function
+
+}</code></pre>
+</section>
+<section id="libraries" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="libraries"><span class="header-section-number">3.7</span> Libraries</h2>
+<ul>
+<li><p>how to load and detach libraries</p></li>
+<li><p>devtools - downloading from github</p></li>
+<li><p>CRAN</p></li>
+</ul>
+</section>
+<section id="rstudio" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="rstudio"><span class="header-section-number">3.8</span> RStudio</h2>
+</section>
+<section id="tidyverse" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="tidyverse"><span class="header-section-number">3.9</span> Tidyverse</h2>
+<section id="readr" class="level3" data-number="3.9.1">
+<h3 data-number="3.9.1" class="anchored" data-anchor-id="readr"><span class="header-section-number">3.9.1</span> readr</h3>
+<ul>
+<li><p>read_csv and related funcions for reading data</p></li>
+<li><p>readxl::read_xlsx for excel files</p></li>
+</ul>
+</section>
+<section id="tibble" class="level3" data-number="3.9.2">
+<h3 data-number="3.9.2" class="anchored" data-anchor-id="tibble"><span class="header-section-number">3.9.2</span> tibble</h3>
+<ul>
+<li><p>how to make a tibble</p></li>
+<li><p>almost all of the functions in the tidyverse input and output tibbles; we can pipe data</p></li>
+</ul>
+</section>
+<section id="dplyr" class="level3" data-number="3.9.3">
+<h3 data-number="3.9.3" class="anchored" data-anchor-id="dplyr"><span class="header-section-number">3.9.3</span> dplyr</h3>
+<ul>
+<li><p>manipulation of data, especially useful for cleaning</p></li>
+<li><p>select: select or remove</p></li>
+<li><p>filter</p></li>
+<li><p>mutate: create new columns</p></li>
+</ul>
+</section>
+<section id="stringr" class="level3" data-number="3.9.4">
+<h3 data-number="3.9.4" class="anchored" data-anchor-id="stringr"><span class="header-section-number">3.9.4</span> stringr</h3>
+</section>
+<section id="lubridate" class="level3" data-number="3.9.5">
+<h3 data-number="3.9.5" class="anchored" data-anchor-id="lubridate"><span class="header-section-number">3.9.5</span> lubridate</h3>
+</section>
+<section id="forcats" class="level3" data-number="3.9.6">
+<h3 data-number="3.9.6" class="anchored" data-anchor-id="forcats"><span class="header-section-number">3.9.6</span> forcats</h3>
+</section>
+<section id="purr" class="level3" data-number="3.9.7">
+<h3 data-number="3.9.7" class="anchored" data-anchor-id="purr"><span class="header-section-number">3.9.7</span> purr</h3>
+<ul>
+<li><p>list columns are super useful - lists can have different data types</p></li>
+<li><p>map functions - output is a list column</p></li>
+</ul>
+</section>
+<section id="tidyr" class="level3" data-number="3.9.8">
+<h3 data-number="3.9.8" class="anchored" data-anchor-id="tidyr"><span class="header-section-number">3.9.8</span> tidyr</h3>
+<ul>
+<li><p>pivot wider</p></li>
+<li><p>pivot longer</p></li>
+</ul>
+</section>
+<section id="ggplot2" class="level3" data-number="3.9.9">
+<h3 data-number="3.9.9" class="anchored" data-anchor-id="ggplot2"><span class="header-section-number">3.9.9</span> ggplot2</h3>
+<ul>
+<li><p>mappings</p></li>
+<li><p>geom - like geom_line or geom_point</p></li>
+<li><p>you can add as many layers as you want</p></li>
+<li><p>themes</p></li>
 </ul>
 
 
 <!-- -->
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -728,28 +964,194 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu"># R 101</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="ss">-   </span>check the r_101.rmd file in the <span class="in">`r_with_eli`</span> directory for an outline</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="in">```{r setup}</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a></span>
-<span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="in">```</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">legal names - page 13</span><span class="co">](https://www.stat.auckland.ac.nz/~ihaka/courses/120/Lectures/lecture04.pdf)</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">subsetting and logical vectors - page 2-7</span><span class="co">](https://www.stat.auckland.ac.nz/~ihaka/courses/120/Lectures/lecture05.pdf)</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">control flow and functions - page 20-end</span><span class="co">](https://www.stat.auckland.ac.nz/~ihaka/courses/120/Lectures/lecture05.pdf)</span></span>
-<span id="cb1-15"><a href="#cb1-15"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="in">```{r}</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="in">```</span></span>
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu"># R 101</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="in">```{r setup}</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a></span>
+<span id="cb16-5"><a href="#cb16-5"></a></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="in">```</span></span>
+<span id="cb16-7"><a href="#cb16-7"></a></span>
+<span id="cb16-8"><a href="#cb16-8"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">legal names - page 13</span><span class="co">](https://www.stat.auckland.ac.nz/~ihaka/courses/120/Lectures/lecture04.pdf)</span></span>
+<span id="cb16-9"><a href="#cb16-9"></a></span>
+<span id="cb16-10"><a href="#cb16-10"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">subsetting and logical vectors - page 2-7</span><span class="co">](https://www.stat.auckland.ac.nz/~ihaka/courses/120/Lectures/lecture05.pdf)</span></span>
+<span id="cb16-11"><a href="#cb16-11"></a></span>
+<span id="cb16-12"><a href="#cb16-12"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">control flow and functions - page 20-end</span><span class="co">](https://www.stat.auckland.ac.nz/~ihaka/courses/120/Lectures/lecture05.pdf)</span></span>
+<span id="cb16-13"><a href="#cb16-13"></a></span>
+<span id="cb16-14"><a href="#cb16-14"></a><span class="fu">## Introduction</span></span>
+<span id="cb16-15"><a href="#cb16-15"></a></span>
+<span id="cb16-16"><a href="#cb16-16"></a>This tutorial is adapted from a fabulous <span class="co">[</span><span class="ot">youtube video by Very Normal</span><span class="co">](https://www.youtube.com/watch?v=QJCt9GNCD1M)</span>. I recommend watching this video before starting this tutorial.</span>
+<span id="cb16-17"><a href="#cb16-17"></a></span>
+<span id="cb16-18"><a href="#cb16-18"></a><span class="fu">## data types</span></span>
+<span id="cb16-19"><a href="#cb16-19"></a></span>
+<span id="cb16-20"><a href="#cb16-20"></a><span class="fu">### Numeric Data</span></span>
+<span id="cb16-21"><a href="#cb16-21"></a></span>
+<span id="cb16-22"><a href="#cb16-22"></a><span class="in">```{r numerics, exercise=TRUE}</span></span>
+<span id="cb16-23"><a href="#cb16-23"></a><span class="in">a &lt;- 12 # numeric</span></span>
+<span id="cb16-24"><a href="#cb16-24"></a><span class="in">b &lt;- 5L # integer</span></span>
+<span id="cb16-25"><a href="#cb16-25"></a><span class="in">c &lt;- 12.5 # double (floating point)</span></span>
+<span id="cb16-26"><a href="#cb16-26"></a></span>
+<span id="cb16-27"><a href="#cb16-27"></a><span class="in">print(a + b) # numeric </span></span>
+<span id="cb16-28"><a href="#cb16-28"></a><span class="in">print((a + b) / b)  # double (floating point)</span></span>
+<span id="cb16-29"><a href="#cb16-29"></a><span class="in">```</span></span>
+<span id="cb16-30"><a href="#cb16-30"></a></span>
+<span id="cb16-31"><a href="#cb16-31"></a><span class="fu">### Complex Numbers</span></span>
+<span id="cb16-32"><a href="#cb16-32"></a></span>
+<span id="cb16-33"><a href="#cb16-33"></a>Realistically, you're never going to use complex numbers, so you can safely skip this exercise. However, I think complex exponentiation is pretty, so you'd really be missing out.</span>
+<span id="cb16-34"><a href="#cb16-34"></a></span>
+<span id="cb16-35"><a href="#cb16-35"></a><span class="in">```{r complex_numbers, exercise=TRUE, exercise.eval=TRUE}</span></span>
+<span id="cb16-36"><a href="#cb16-36"></a></span>
+<span id="cb16-37"><a href="#cb16-37"></a><span class="in"># change real and imaginary parts to see how the plot changes</span></span>
+<span id="cb16-38"><a href="#cb16-38"></a><span class="in">z &lt;- (0.8 + 1i)</span></span>
+<span id="cb16-39"><a href="#cb16-39"></a></span>
+<span id="cb16-40"><a href="#cb16-40"></a><span class="in"># take z to the power of 1, 2, ..., whatever the 'to' argument is</span></span>
+<span id="cb16-41"><a href="#cb16-41"></a><span class="in">complex_numbers &lt;- z ** seq(from = 1, </span></span>
+<span id="cb16-42"><a href="#cb16-42"></a><span class="in">                      to = 12, # change to plot more data </span></span>
+<span id="cb16-43"><a href="#cb16-43"></a><span class="in">                      by = 0.1) # change to plot more data</span></span>
+<span id="cb16-44"><a href="#cb16-44"></a></span>
+<span id="cb16-45"><a href="#cb16-45"></a><span class="in"># plot the complex numbers</span></span>
+<span id="cb16-46"><a href="#cb16-46"></a><span class="in">plot(complex_numbers, type = "o") # possible types: "p", "l", "b", "c", "o", "h", "s", "S", "n"</span></span>
+<span id="cb16-47"><a href="#cb16-47"></a></span>
+<span id="cb16-48"><a href="#cb16-48"></a><span class="in">```</span></span>
+<span id="cb16-49"><a href="#cb16-49"></a></span>
+<span id="cb16-50"><a href="#cb16-50"></a><span class="fu">### Characters</span></span>
+<span id="cb16-51"><a href="#cb16-51"></a></span>
+<span id="cb16-52"><a href="#cb16-52"></a><span class="in">```{r characters, exercise=TRUE}</span></span>
+<span id="cb16-53"><a href="#cb16-53"></a><span class="in">a &lt;- "hello"</span></span>
+<span id="cb16-54"><a href="#cb16-54"></a><span class="in">b &lt;- 'world'</span></span>
+<span id="cb16-55"><a href="#cb16-55"></a></span>
+<span id="cb16-56"><a href="#cb16-56"></a><span class="in">print(paste(a, b))  # paste is a function that concatenates strings</span></span>
+<span id="cb16-57"><a href="#cb16-57"></a></span>
+<span id="cb16-58"><a href="#cb16-58"></a><span class="in">print(paste0(a, b))</span></span>
+<span id="cb16-59"><a href="#cb16-59"></a></span>
+<span id="cb16-60"><a href="#cb16-60"></a><span class="in">```</span></span>
+<span id="cb16-61"><a href="#cb16-61"></a></span>
+<span id="cb16-62"><a href="#cb16-62"></a><span class="fu">### Logical Data</span></span>
+<span id="cb16-63"><a href="#cb16-63"></a></span>
+<span id="cb16-64"><a href="#cb16-64"></a><span class="in">```{r logicals, exercise=TRUE}</span></span>
+<span id="cb16-65"><a href="#cb16-65"></a><span class="in">TRUE &amp; FALSE</span></span>
+<span id="cb16-66"><a href="#cb16-66"></a><span class="in">TRUE | FALSE</span></span>
+<span id="cb16-67"><a href="#cb16-67"></a><span class="in">```</span></span>
+<span id="cb16-68"><a href="#cb16-68"></a></span>
+<span id="cb16-69"><a href="#cb16-69"></a><span class="fu">### factors</span></span>
+<span id="cb16-70"><a href="#cb16-70"></a></span>
+<span id="cb16-71"><a href="#cb16-71"></a>factors combine numbers and strings. They are useful for categorical data.</span>
+<span id="cb16-72"><a href="#cb16-72"></a></span>
+<span id="cb16-73"><a href="#cb16-73"></a><span class="in">```{r factors, exercise=TRUE}</span></span>
+<span id="cb16-74"><a href="#cb16-74"></a></span>
+<span id="cb16-75"><a href="#cb16-75"></a><span class="in">```</span></span>
+<span id="cb16-76"><a href="#cb16-76"></a></span>
+<span id="cb16-77"><a href="#cb16-77"></a><span class="fu">## Data Structures</span></span>
+<span id="cb16-78"><a href="#cb16-78"></a></span>
+<span id="cb16-79"><a href="#cb16-79"></a><span class="ss">-   </span>vectors: stores ordered data of the same type</span>
+<span id="cb16-80"><a href="#cb16-80"></a></span>
+<span id="cb16-81"><a href="#cb16-81"></a><span class="ss">    -   </span>have indexes that start at 1</span>
+<span id="cb16-82"><a href="#cb16-82"></a></span>
+<span id="cb16-83"><a href="#cb16-83"></a><span class="ss">-   </span>matrix: stores data in 2 dimensions</span>
+<span id="cb16-84"><a href="#cb16-84"></a></span>
+<span id="cb16-85"><a href="#cb16-85"></a><span class="ss">-   </span>arrays: higher dimensional matrices</span>
+<span id="cb16-86"><a href="#cb16-86"></a></span>
+<span id="cb16-87"><a href="#cb16-87"></a><span class="ss">-   </span>lists: key value pairs</span>
+<span id="cb16-88"><a href="#cb16-88"></a></span>
+<span id="cb16-89"><a href="#cb16-89"></a><span class="ss">    -   </span>if you don't put names in the list, R will index them with numbers</span>
+<span id="cb16-90"><a href="#cb16-90"></a></span>
+<span id="cb16-91"><a href="#cb16-91"></a><span class="ss">-   </span>dataframes: each row is an observation, each column is a characteristic</span>
+<span id="cb16-92"><a href="#cb16-92"></a></span>
+<span id="cb16-93"><a href="#cb16-93"></a><span class="ss">-   </span>tibbles: data frames with extra functionality</span>
+<span id="cb16-94"><a href="#cb16-94"></a></span>
+<span id="cb16-95"><a href="#cb16-95"></a><span class="fu">## Iteration</span></span>
+<span id="cb16-96"><a href="#cb16-96"></a></span>
+<span id="cb16-97"><a href="#cb16-97"></a><span class="ss">-   </span>for loop: will run code a certain number of times</span>
+<span id="cb16-98"><a href="#cb16-98"></a></span>
+<span id="cb16-99"><a href="#cb16-99"></a><span class="ss">-   </span>while loop: will run code until a certain condition is no longer met</span>
+<span id="cb16-100"><a href="#cb16-100"></a></span>
+<span id="cb16-101"><a href="#cb16-101"></a><span class="ss">    -   </span>useful in optimization tasks (like sample size calculations)</span>
+<span id="cb16-102"><a href="#cb16-102"></a></span>
+<span id="cb16-103"><a href="#cb16-103"></a><span class="fu">## Control Flow</span></span>
+<span id="cb16-104"><a href="#cb16-104"></a></span>
+<span id="cb16-105"><a href="#cb16-105"></a><span class="in">```         </span></span>
+<span id="cb16-106"><a href="#cb16-106"></a><span class="in">if (condition) {</span></span>
+<span id="cb16-107"><a href="#cb16-107"></a><span class="in">  code to run if condition is met</span></span>
+<span id="cb16-108"><a href="#cb16-108"></a><span class="in">}</span></span>
+<span id="cb16-109"><a href="#cb16-109"></a><span class="in">```</span></span>
+<span id="cb16-110"><a href="#cb16-110"></a></span>
+<span id="cb16-111"><a href="#cb16-111"></a>you can add else statements, and even chain else statements, but it is easy to get confused</span>
+<span id="cb16-112"><a href="#cb16-112"></a></span>
+<span id="cb16-113"><a href="#cb16-113"></a><span class="fu">## functions</span></span>
+<span id="cb16-114"><a href="#cb16-114"></a></span>
+<span id="cb16-115"><a href="#cb16-115"></a><span class="in">```         </span></span>
+<span id="cb16-116"><a href="#cb16-116"></a><span class="in">function_name = function(inputs) {</span></span>
+<span id="cb16-117"><a href="#cb16-117"></a></span>
+<span id="cb16-118"><a href="#cb16-118"></a><span class="in">  a bunch of code you would like to reuse</span></span>
+<span id="cb16-119"><a href="#cb16-119"></a><span class="in">  the last line of code is the output of the function</span></span>
+<span id="cb16-120"><a href="#cb16-120"></a></span>
+<span id="cb16-121"><a href="#cb16-121"></a><span class="in">}</span></span>
+<span id="cb16-122"><a href="#cb16-122"></a><span class="in">```</span></span>
+<span id="cb16-123"><a href="#cb16-123"></a></span>
+<span id="cb16-124"><a href="#cb16-124"></a><span class="fu">## Libraries</span></span>
+<span id="cb16-125"><a href="#cb16-125"></a></span>
+<span id="cb16-126"><a href="#cb16-126"></a><span class="ss">-   </span>how to load and detach libraries</span>
+<span id="cb16-127"><a href="#cb16-127"></a></span>
+<span id="cb16-128"><a href="#cb16-128"></a><span class="ss">-   </span>devtools - downloading from github</span>
+<span id="cb16-129"><a href="#cb16-129"></a></span>
+<span id="cb16-130"><a href="#cb16-130"></a><span class="ss">-   </span>CRAN</span>
+<span id="cb16-131"><a href="#cb16-131"></a></span>
+<span id="cb16-132"><a href="#cb16-132"></a><span class="fu">## RStudio</span></span>
+<span id="cb16-133"><a href="#cb16-133"></a></span>
+<span id="cb16-134"><a href="#cb16-134"></a><span class="fu">## Tidyverse</span></span>
+<span id="cb16-135"><a href="#cb16-135"></a></span>
+<span id="cb16-136"><a href="#cb16-136"></a><span class="fu">### readr</span></span>
+<span id="cb16-137"><a href="#cb16-137"></a></span>
+<span id="cb16-138"><a href="#cb16-138"></a><span class="ss">-   </span>read_csv and related funcions for reading data</span>
+<span id="cb16-139"><a href="#cb16-139"></a></span>
+<span id="cb16-140"><a href="#cb16-140"></a><span class="ss">-   </span>readxl::read_xlsx for excel files</span>
+<span id="cb16-141"><a href="#cb16-141"></a></span>
+<span id="cb16-142"><a href="#cb16-142"></a><span class="fu">### tibble</span></span>
+<span id="cb16-143"><a href="#cb16-143"></a></span>
+<span id="cb16-144"><a href="#cb16-144"></a><span class="ss">-   </span>how to make a tibble</span>
+<span id="cb16-145"><a href="#cb16-145"></a></span>
+<span id="cb16-146"><a href="#cb16-146"></a><span class="ss">-   </span>almost all of the functions in the tidyverse input and output tibbles; we can pipe data</span>
+<span id="cb16-147"><a href="#cb16-147"></a></span>
+<span id="cb16-148"><a href="#cb16-148"></a><span class="fu">### dplyr</span></span>
+<span id="cb16-149"><a href="#cb16-149"></a></span>
+<span id="cb16-150"><a href="#cb16-150"></a><span class="ss">-   </span>manipulation of data, especially useful for cleaning</span>
+<span id="cb16-151"><a href="#cb16-151"></a></span>
+<span id="cb16-152"><a href="#cb16-152"></a><span class="ss">-   </span>select: select or remove</span>
+<span id="cb16-153"><a href="#cb16-153"></a></span>
+<span id="cb16-154"><a href="#cb16-154"></a><span class="ss">-   </span>filter</span>
+<span id="cb16-155"><a href="#cb16-155"></a></span>
+<span id="cb16-156"><a href="#cb16-156"></a><span class="ss">-   </span>mutate: create new columns</span>
+<span id="cb16-157"><a href="#cb16-157"></a></span>
+<span id="cb16-158"><a href="#cb16-158"></a><span class="fu">### stringr</span></span>
+<span id="cb16-159"><a href="#cb16-159"></a></span>
+<span id="cb16-160"><a href="#cb16-160"></a><span class="fu">### lubridate</span></span>
+<span id="cb16-161"><a href="#cb16-161"></a></span>
+<span id="cb16-162"><a href="#cb16-162"></a><span class="fu">### forcats</span></span>
+<span id="cb16-163"><a href="#cb16-163"></a></span>
+<span id="cb16-164"><a href="#cb16-164"></a><span class="fu">### purr</span></span>
+<span id="cb16-165"><a href="#cb16-165"></a></span>
+<span id="cb16-166"><a href="#cb16-166"></a><span class="ss">-   </span>list columns are super useful - lists can have different data types</span>
+<span id="cb16-167"><a href="#cb16-167"></a></span>
+<span id="cb16-168"><a href="#cb16-168"></a><span class="ss">-   </span>map functions - output is a list column</span>
+<span id="cb16-169"><a href="#cb16-169"></a></span>
+<span id="cb16-170"><a href="#cb16-170"></a><span class="fu">### tidyr</span></span>
+<span id="cb16-171"><a href="#cb16-171"></a></span>
+<span id="cb16-172"><a href="#cb16-172"></a><span class="ss">-   </span>pivot wider</span>
+<span id="cb16-173"><a href="#cb16-173"></a></span>
+<span id="cb16-174"><a href="#cb16-174"></a><span class="ss">-   </span>pivot longer</span>
+<span id="cb16-175"><a href="#cb16-175"></a></span>
+<span id="cb16-176"><a href="#cb16-176"></a><span class="fu">### ggplot2</span></span>
+<span id="cb16-177"><a href="#cb16-177"></a></span>
+<span id="cb16-178"><a href="#cb16-178"></a><span class="ss">-   </span>mappings</span>
+<span id="cb16-179"><a href="#cb16-179"></a></span>
+<span id="cb16-180"><a href="#cb16-180"></a><span class="ss">-   </span>geom - like geom_line or geom_point</span>
+<span id="cb16-181"><a href="#cb16-181"></a></span>
+<span id="cb16-182"><a href="#cb16-182"></a><span class="ss">-   </span>you can add as many layers as you want</span>
+<span id="cb16-183"><a href="#cb16-183"></a></span>
+<span id="cb16-184"><a href="#cb16-184"></a><span class="ss">-   </span>themes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/huntervooys/hunterr_2024/edit/main/03_r_101.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/huntervooys/hunterr_2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/huntervooys/hunterr_2024/edit/main/03_r_101.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/huntervooys/hunterr_2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

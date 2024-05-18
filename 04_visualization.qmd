@@ -272,7 +272,7 @@ ggplot(data = time_use,
               se = FALSE)
 ```
 
-On a completely separate note, you use a very similar process of setting the `data` and `mapping` arguments to make a bar chart. Ggplot makes a distinction between a bar chart, which has a single, discrete aesthetic mapping (like one that maps x to continent).
+On a completely separate note, you use a very similar process of setting the `data` and `mapping` arguments to make a bar chart. Ggplot makes a distinction between a bar chart and a column chart (even though they can appear to be identical). A bar chart has a single, discrete aesthetic mapping (like one that maps x to continent).
 
 ```{r}
 ggplot(data = distinct(time_use, country, continent),
@@ -407,7 +407,7 @@ ggplot(data = time_use,
              scales = "free")
 ```
 
-`facet_grid` is helpful if you would like to facet on two variables at once
+`facet_grid` is helpful if you would like to facet on two (discrete!) variables at once (like activity and continent in the plot below).
 
 ```{r}
 # initialize plot and axes
@@ -522,7 +522,7 @@ coffee_plot <- ggplot(data = coffee,
 coffee_plot
 ```
 
-The coffee data is dominated by small producers, with many populations less than 100 million and many total annual productions less than 1 billion pounds. The relationship between the variables is obscured by the clumping of data, which is caused by the massive outliers of Brazil and India. A log-log plot (with log axes on the x and y) reveals a different perspective on this data. You must be careful, however, because log axes are not the easiest things to read.
+The coffee data is dominated by small producers - with many populations and productions below 10 million people and pounds. The relationship between the variables is obscured by the clumping of data, which is caused by the massive outliers of Brazil (massive production) and India (massive population). A log-log plot (with log axes on the x and y) reveals a different perspective on this data. You must be careful, however, because log axes are not incredibly easy for most people to read, and the essentially everyone (including those that can read log-log scales) expects the scales on a plot to be linear unless explicitly warned otherwise.
 
 ```{r}
 coffee_plot + 

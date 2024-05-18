@@ -8,9 +8,9 @@
 
 ## Early 19th Century: the birth of programming
 
-The idea of a programmable computer is not difficult to understand. The primary goal is to make a machine that you can use for different tasks, depending on what program you feed to that machine. Programs are written in code, which today is stored as text files on a computer. The programmable machine also lives within the computer, so running the program is as simple as telling the machine part of the computer where the program is located; and then the program runs.
+The idea of a programmable computer is not difficult to understand. The primary goal is to make a machine that you can use for different tasks, depending on what program you feed to that machine. Programs are written in code, which today is stored as text files on a computer. The programmable machine also lives within the computer, so running the program is as simple as telling the machine part of the computer where the program is located; then, the machine part of the computer tries to read find the and read the program at the specified location, and the (hopefully) program runs.
 
-Folks in the 19th century did not have access to digital text files, and so they could not write their computers on them. How did they write programs, and which sort of programs did they write? These are the primary questions I hope to address in this section?
+Folks in the 19th century did not have access to digital text files, and so they could not write their programs on them. How did they write programs, and which sort of programs did they write? These are the primary questions I hope to address in this very first section?
 
 ### Jacquard's Loom: the punched card
 
@@ -20,29 +20,31 @@ So, Jacquard wrote programs to produce beautiful woven fabrics, but more importa
 
 ### Babbage, Lovelace, and the Analytical Engine
 
-General-purpose digital computers, the sort of computers that can run R, emerged as an idea in the early-to-mid 19th century. Up to that point, computers were either mechanical (mechanical computers are fascinating, by the way) or just humans. The meager statistics that existed were to be computed by hand.
+General-purpose digital computers, the sort of computers that can run R, emerged as an idea in the early-to-mid 19th century. Up to that point, computers were either mechanical (mechanical computers are fascinating, by the way) or just humans.
 
-One of the first to develop a design for a general-purpose computer was Charles Babbage, working in the early part of the 19th century. In the 1830's he proposed a massively complicated, general-purpose, steam-powered computer, which he called the analytical engine. The computer was only capable of carrying out the four basic operations of arithmetic: addition, subtraction, multiplication, and division.
+One of the first to develop a design for a general-purpose computer was Charles Babbage, working in the early part of the 19th century. In the 1830's he proposed a massively complicated, general-purpose, steam-powered computer, which he called the analytical engine. The computer was only capable of carrying out the four basic operations of arithmetic: addition, subtraction, multiplication, and division; it was designed to take input via punched card, just like Jacquard's loom.
 
-The analytical engine stored numbers in the same format Babbage and Lovelace did: as decimals. A number like 17 would be split and stored as decimals: one ten and seven ones. Although Babbage fully designed and began to construct the analytical engine, it was never completed.
+::: {.callout-note title="Lady Lovelace" collapse="true"}
+During the 1830's and 1840's, Lady Ada Lovelace communicated with Charles Babbage (and several others involved in similar work) with the intention to collaborate with him in studying the analytical engine. It was Lady Lovelace who wrote the first substantial computer program, whose purpose was to compute Fibonacci numbers [@tibeesFirstComputerProgram2020]. Her program, written in the iconic note G, used only the four simple arithmetic operations.
 
-During the 1830's and 1840's, Lady Ada Lovelace communicated with Charles Babbage (and several others involved in similar work) with the intention to collaborate with him in studying the analytical engine. It was Lady Lovelace who wrote the first substantial computer program, whose purpose was to compute Fibonacci numbers [@tibeesFirstComputerProgram2020]. Her program, written in the iconic note G, used only the four simple arithmetic operations: addition, subtraction, multiplication, and division. These were the only four operations the analytical engine was capable of carrying out.
-
-Lovelace was interested in discovering the capabilities of the analytical engine. Her program computing Fibonacci numbers was important because it used loops in computation. Lovelace, whose father was the poet Lord Byron, was also interested in non-mathematical applications for the machine. She suggested that a sufficiently mathematical theory of sound could enable to engine to compose complex and scientific music [@tibeesFirstComputerProgram2020].
+Lovelace was interested in discovering the capabilities of the analytical engine. Her program computing Fibonacci numbers was important because it used loops in computation. Lovelace, daughter of the poet Lord Byron, was also interested in non-mathematical applications for the machine. She suggested that a sufficiently mathematical theory of sound could enable to engine to compose complex and scientific symphonies [@tibeesFirstComputerProgram2020]. Isn't that beautiful!
+:::
 
 ## Middle and Late 19th century
 
 ### 1830-1870(ish)
 
-The middle of the 19th century was a period of massive global shifts. Liberation from enslavement was spreading across the globe after the Haitian revolution terrified white men of the institution that was already beginning to lose economic utility. Abolition became the law of most empires. Within the space of 40 years from 1830 until 1870, abolition was adopted in the British empire (except India, I think), the Russian empire (serfdom), the French empire, the Dutch empire/the Dutch East India Company, the Portuguese empire and the American empire.
+The middle of the 19th century was a period of massive global shifts. Liberation from enslavement was spreading across the globe after the Haitian revolution left white men horrified at the peculiar institution, which was also losing economic utility (see *Capitalism and Slavery* by Eric Williams).
 
 Also within that 40 year period was:
+
+-   abolition (as a matter of law, anyways): British Empire (1834), French Empire (1848), Russian Empire (1861), Dutch Empire (and Dutch East India Company; 1863-73), American Empire (1865), Portuguese Empire (1869)
 
 -   Samuel Colt's invention of a revolver that can be mass-produced (1836?)
 
 -   the development of the telegraph (1830s)
 
--   the trail of tears (starting 1836?)
+-   the trail of tears (starting 1836)
 
 -   the revolutions of 1848 and the publication of the communist manifesto
 

@@ -23,9 +23,13 @@ This document you are reading now is called a Quarto book. We will talk more abo
 
 ### Features of This Book
 
+::: {.callout-important collapse="false" title="callouts"}
+This book let's me put many of my least relevant tangents in these collapsible little notes.
+:::
+
 The features of this book, which are achieved easily through Quarto, explain its format. Code snippets appear in this book, but only if you want them to. Each code snippet is collapsible by clicking the triangle next to "show code for this result". If you really hate code, you can click the "\</\> Code" button on the top of each page and hide (or show) all the code at once. Speaking of the "\</\> Code" button, if you click "View Source" you can see all of the code that was used to create the page.
 
-Quarto also lets me show you "paged tables" which I think are kind of a neat idea. Unfortunately, I don't think they're all that helpful. Call this lesson one. In the following code, I generate 1000 random numbers between -10 and 10, which I label `x`. Then, I apply the `mystery_function` to each number, producing `y`. What does the mystery function do?
+Quarto also lets me show you "paged tables." In the following code, I generate 1000 random numbers between -10 and 10, which I label `x`. Then, I apply the `mystery_function` to each number, producing `y`. What does `mystery_function` do?
 
 ```{r}
 table_1 <- tibble(
@@ -37,31 +41,46 @@ table_1
 
 Quarto also let's me show you plots, like the one below. What do you think `mystery_function` does now?
 
-```{r}
-plot(table_1)
+```{r, warning=FALSE}
+qplot(x = table_1$x, y = table_1$y) +
+  labs(x = "x", y = "mystery_function(x)")
 ```
 
 In reality, `mystery_function` just squares `x`, so:
 
 $$
-y = x^2
+\mathtt{mystery\_function}(x) = x^2
 $$ {#eq-first}
 
-All of the chunks of code have line numbers (because I intend for you to ask me specific questions about them). For any chunk, a little clipboard appears when you hover over the code listing, and you can copy it by clicking on the clipboard. (This includes the code in the "View Source" pane, meaning you can copy the entire page, text and all.)
+All of the chunks of code have line numbers. For any chunk, a little clipboard appears when you hover over the code listing, and you can copy it by clicking on the clipboard. (This includes the code in the "View Source" pane, meaning you can copy the entire page, text and all.)
 
-Quarto also processes citations, so I can, for example, easily direct you towards my two fathers: @turingComputableNumbersApplication1936 and @foucaultHistorySexuality1978. It will also process links so that I can, for example, send you back to the top of the page: @lst-first.
+Quarto also processes citations, so I can, for example, easily direct you towards my two fathers: @turingComputableNumbersApplication1936 and @foucaultHistorySexuality1978. It will also process internal links so that I can, for example, send you back to the top of the page: @lst-first.
 
 Finally, Quarto allows me to annotate code, which is helpful to explain how it works when a high-level of technical detail is needed. For an example of those annotations and when they might be helpful, look to @fig-r_and_s.
 
 ### Tools {#sec-tools}
 
--   R: an open source statistical programming language
+R is an free and open-source statistical programming language.You use R by typing commands into an R console, which looks like this:
 
--   RStudio: a graphical (user) interface (GUI) and interactive development environment (IDE) with which to use R
+![](assets/R.jpg){width="550"}
 
--   tidyverse: a suite of data analysis software packages (collections of functions) within R that makes R code more consistent and easier to read
+::: {.callout-note title="RStudio" collapse="false"}
+RStudio is a graphical user interface (GUI) and interactive development environment (IDE) with which to use R. This means that RStudio contains an R console (lower left) and a variety of other tools (right), like a text editor (upper left). RStudio looks like this:
 
--   the grammar of graphics: a suite of software packages (that overlap with the tidyverse) that are useful for preparing graphics (like plots, maps, charts, etc.)
+![](assets/RStudio.jpg)
+:::
+
+::: {.callout-note title="Tidyverse" collapse="false"}
+Tidyverse is a collection of R packages that are designed to work well together and to acomplish data analysis tasks. The Tidyverse packages were developed by Hadley Wickham primarily, but also by teams of his collaborators. 
+
+Because Tidyverse is set of R pacakges, there is not picture to provide. Tidyverse exists as R functions that you can (and will) use in your code. 
+:::
+
+::: {.callout-note title="grammar of graphics" collapse="true"}
+The grammar of graphics refers to another set of R packages, exemplified by `ggplot2`, which is included in the tidyverse. The grammar of graphics is the tool that most R programmers use to produce the "production-quality graphics" for which R is known. Once you begin to produce plots with `ggplot2`, you are likely recognize that you have been seeing these plots for years.
+
+
+:::
 
 I believe that these tools will allow you to accomplish the vast majority of data analysis tasks, and that knowing how to use them will result in you understanding data analysis on a deeper level and being able to do it faster. That being said, these are not the only tools for data analysis. I encourage you to explore others, as well; particularly, if you intend to do a lot of work with text data, I would suggest python.
 
@@ -77,17 +96,15 @@ The current gold standard for the sort of work you are most likely to want to pr
 
 My goal for you is to write code that is readable and to put that code inside documents that are actively fun and/or interesting to read. (That's also, incidentally, my goal for me.)
 
-We are also going to do statistics! There are two approaches to statistics that we're going to adopt through these lessons, so I'd like to begin by elucidating the way in which these approaches are different. The first approach is for pretentious people - scientists and statistical purists. I intend to show you some of their formal techniques, like a variety of hypothesis tests. **The ultimate goal of both approaches is to predict the result of measurements.**
+We are also going to do statistics! There are two approaches to statistics that we're going to adopt through these lessons, so I'd like to begin by elucidating the way in which these approaches are different. I am more familiar with the first approach (exploratory data analysis). Confirmatory data analysis uses many of the same tools (like hypothesis testing, which I will show you), but it uses them in a different and moer complicated way.  **The ultimate goal of both approaches is to predict the result of measurements.**
 
--   machine learning: If the purpose of a statistical model is to predict data, then a model that makes the most accurate prediction is the best model. The model creation process is iterative. Once you see the results of a model, you can use the results to modify the model itself. Generally, practitioners recognize that there are a variety of different types of models that could be used for any task. Thus, they usually construct a variety of different models and then compare them to select a final model. Practitioners will use numbers (in diagnostic and statistic tables) or visuals (like a residuals plot) when comparing models.
+-   exploratory data analysis: If the purpose of a statistical model is to predict data, then a model that makes the most accurate prediction is the best model. The model creation process is iterative. Once you see the results of a model, you can use the results to modify the model itself. Generally, practitioners recognize that there are a variety of different types of models that could be used for any task. Thus, they usually construct a variety of different models and then compare them to select a final model. Practitioners will use numbers (in diagnostic and statistic tables) or visuals (like a residuals plot) when comparing models.
 
--   "real" statistics: In the best case, at least according to the "Open science" framework, the final statistical model will have been selected and preregistered before data is even collected. Statistics have to be rigorous to mean anything, a fact which the machine learning people ignore. They don't check model assumptions using statistical tests like the Shapiro-Wilk normality test, and they are constantly "p-hacking" and "HARKing" to forcibly extract findings from their data. They probably can't even do the math!
+-   confirmatory data analysis: In the best case, at least according to the "Open science" framework, the final statistical model will have been selected and preregistered before data is even collected. Statistics have to be rigorous to mean anything, a fact which the machine learning people (who do only exploratory work) ignore. They don't check model assumptions using statistical tests like the Shapiro-Wilk normality test, and they are constantly "p-hacking" and "HARKing" to forcibly extract findings from their data. Confirmatory data analysis rejects these practices, aiming instead for statistical models that are pre-specified (pre-registered), theoretically-based, and rigorous (whatever they take that to mean).
 
-I'm often somewhat flippant about the "real" statistics approach, which I think the "real" statisticians absolutely deserve as a result of their relentless gate-keeping. It is clear that their approach, relative to the machine learning approach, is on the way out. Machine learning is progressing in leaps and bounds (at least right now) while the "real" statisticians argue with each other about causality or whatever.
+I'm often somewhat flippant about the second approach, which suggest and attempts to discover Truth where I am skeptical it exists. In any case, the second approach is the only one that is taught in statistics courses. This is a mistake. Firstly, exploratory data analysis is much more commond. Secondly, it is easier to get started doing exploratory (rather than confirmatory) data analysis. Because both of these approaches adopt many of the same tools, it seems to me that starting with exploratory data analysis and trying to make that make sense is the most effective way to learn confirmatory data analysis (which will require additional effort and research that I can't provide). 
 
-We won't throw the baby out with the bathwater, however. I have no intention of showing you how to do pure, "real" statistics because I do not pretend to really know or care how it is performed; but, many of the tools of "real" statistics are helpful or thought-provoking, and I'll try to bring them in within a framework that is more aligned with a computational or machine learning approach (e.g., using Monte Carlo simulations to do sample size calculations for traditional statistical tests).
-
-You should not think of these two approaches as completely separate and non-overlapping. They overlap quite a bit, in fact. The difference I want to draw out is context. Although machine learning people have become fully embedded within academia, I think the vast majority of "real" statisticians are academics. A professor is more likely to ask you to do "real" statistics than an employer, who is likely interested in elucidating a working hypothesis rather than a scientific "truth." My intention is to give you a basic foundation of knowledge and ability in R that you will allow you to efficiently evaluate, learn about, and complete either of these tasks.
+Thus, I intend to provide you with a strong understanding of data that you can directly apply to exploratory data analysis tasks. My hope is that this understanding will enable you to complete a diversity of tasks, including confirmatory data analysis, if that is of interest.
 
 ### Learning Objectives
 

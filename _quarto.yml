@@ -27,7 +27,6 @@ book:
       - 02_r_and_friends.qmd
       - 03_r_101.qmd
       - 04_visualization.qmd
-      - data_analysis.qmd
     - part: "Statistics"
     - 0R_references.qmd
   appendices:
@@ -51,6 +50,7 @@ format:
     code-copy: hover
     df-print: paged
     fig-align: center
+    callout-appearance: simple
 
 editor: visual
 

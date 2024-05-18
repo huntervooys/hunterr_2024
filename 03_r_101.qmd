@@ -1,7 +1,5 @@
 # R 101
 
--   check the r_101.rmd file in the `r_with_eli` directory for an outline
-
 ```{r setup}
 
 
@@ -13,6 +11,174 @@
 
 -   [control flow and functions - page 20-end](https://www.stat.auckland.ac.nz/~ihaka/courses/120/Lectures/lecture05.pdf)
 
-```{r}
+## Introduction
+
+This tutorial is adapted from a fabulous [youtube video by Very Normal](https://www.youtube.com/watch?v=QJCt9GNCD1M). I recommend watching this video before starting this tutorial.
+
+## data types
+
+### Numeric Data
+
+```{r numerics, exercise=TRUE}
+a <- 12 # numeric
+b <- 5L # integer
+c <- 12.5 # double (floating point)
+
+print(a + b) # numeric 
+print((a + b) / b)  # double (floating point)
+```
+
+### Complex Numbers
+
+Realistically, you're never going to use complex numbers, so you can safely skip this exercise. However, I think complex exponentiation is pretty, so you'd really be missing out.
+
+```{r complex_numbers, exercise=TRUE, exercise.eval=TRUE}
+
+# change real and imaginary parts to see how the plot changes
+z <- (0.8 + 1i)
+
+# take z to the power of 1, 2, ..., whatever the 'to' argument is
+complex_numbers <- z ** seq(from = 1, 
+                      to = 12, # change to plot more data 
+                      by = 0.1) # change to plot more data
+
+# plot the complex numbers
+plot(complex_numbers, type = "o") # possible types: "p", "l", "b", "c", "o", "h", "s", "S", "n"
 
 ```
+
+### Characters
+
+```{r characters, exercise=TRUE}
+a <- "hello"
+b <- 'world'
+
+print(paste(a, b))  # paste is a function that concatenates strings
+
+print(paste0(a, b))
+
+```
+
+### Logical Data
+
+```{r logicals, exercise=TRUE}
+TRUE & FALSE
+TRUE | FALSE
+```
+
+### factors
+
+factors combine numbers and strings. They are useful for categorical data.
+
+```{r factors, exercise=TRUE}
+
+```
+
+## Data Structures
+
+-   vectors: stores ordered data of the same type
+
+    -   have indexes that start at 1
+
+-   matrix: stores data in 2 dimensions
+
+-   arrays: higher dimensional matrices
+
+-   lists: key value pairs
+
+    -   if you don't put names in the list, R will index them with numbers
+
+-   dataframes: each row is an observation, each column is a characteristic
+
+-   tibbles: data frames with extra functionality
+
+## Iteration
+
+-   for loop: will run code a certain number of times
+
+-   while loop: will run code until a certain condition is no longer met
+
+    -   useful in optimization tasks (like sample size calculations)
+
+## Control Flow
+
+```         
+if (condition) {
+  code to run if condition is met
+}
+```
+
+you can add else statements, and even chain else statements, but it is easy to get confused
+
+## functions
+
+```         
+function_name = function(inputs) {
+
+  a bunch of code you would like to reuse
+  the last line of code is the output of the function
+
+}
+```
+
+## Libraries
+
+-   how to load and detach libraries
+
+-   devtools - downloading from github
+
+-   CRAN
+
+## RStudio
+
+## Tidyverse
+
+### readr
+
+-   read_csv and related funcions for reading data
+
+-   readxl::read_xlsx for excel files
+
+### tibble
+
+-   how to make a tibble
+
+-   almost all of the functions in the tidyverse input and output tibbles; we can pipe data
+
+### dplyr
+
+-   manipulation of data, especially useful for cleaning
+
+-   select: select or remove
+
+-   filter
+
+-   mutate: create new columns
+
+### stringr
+
+### lubridate
+
+### forcats
+
+### purr
+
+-   list columns are super useful - lists can have different data types
+
+-   map functions - output is a list column
+
+### tidyr
+
+-   pivot wider
+
+-   pivot longer
+
+### ggplot2
+
+-   mappings
+
+-   geom - like geom_line or geom_point
+
+-   you can add as many layers as you want
+
+-   themes

@@ -84,7 +84,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./data_analysis.html" rel="next">
+<link href="./0R_references.html" rel="next">
 <link href="./03_r_101.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -224,12 +224,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./04_visualization.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualization</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./data_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introductory Data Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -695,7 +689,7 @@ $ continent    &lt;chr&gt; "Oceania", "Europe", "Europe", "North America", "Euro
 </div>
 </div>
 </div>
-<p>On a completely separate note, you use a very similar process of setting the <code>data</code> and <code>mapping</code> arguments to make a bar chart. Ggplot makes a distinction between a bar chart, which has a single, discrete aesthetic mapping (like one that maps x to continent).</p>
+<p>On a completely separate note, you use a very similar process of setting the <code>data</code> and <code>mapping</code> arguments to make a bar chart. Ggplot makes a distinction between a bar chart and a column chart (even though they can appear to be identical). A bar chart has a single, discrete aesthetic mapping (like one that maps x to continent).</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>show code for this result</summary>
@@ -892,7 +886,7 @@ $ continent    &lt;chr&gt; "Oceania", "Europe", "Europe", "North America", "Euro
 </div>
 </div>
 </div>
-<p><code>facet_grid</code> is helpful if you would like to facet on two variables at once</p>
+<p><code>facet_grid</code> is helpful if you would like to facet on two (discrete!) variables at once (like activity and continent in the plot below).</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>show code for this result</summary>
@@ -1083,7 +1077,7 @@ $ continent    &lt;chr&gt; "Oceania", "Europe", "Europe", "North America", "Euro
 </div>
 </div>
 </div>
-<p>The coffee data is dominated by small producers, with many populations less than 100 million and many total annual productions less than 1 billion pounds. The relationship between the variables is obscured by the clumping of data, which is caused by the massive outliers of Brazil and India. A log-log plot (with log axes on the x and y) reveals a different perspective on this data. You must be careful, however, because log axes are not the easiest things to read.</p>
+<p>The coffee data is dominated by small producers - with many populations and productions below 10 million people and pounds. The relationship between the variables is obscured by the clumping of data, which is caused by the massive outliers of Brazil (massive production) and India (massive population). A log-log plot (with log axes on the x and y) reveals a different perspective on this data. You must be careful, however, because log axes are not incredibly easy for most people to read, and the essentially everyone (including those that can read log-log scales) expects the scales on a plot to be linear unless explicitly warned otherwise.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>show code for this result</summary>
@@ -1740,8 +1734,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./data_analysis.html" class="pagination-link" aria-label="Introductory Data Analysis">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introductory Data Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./0R_references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
@@ -2019,7 +2013,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb72-316"><a href="#cb72-316"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb72-317"><a href="#cb72-317"></a><span class="in">```</span></span>
 <span id="cb72-318"><a href="#cb72-318"></a></span>
-<span id="cb72-319"><a href="#cb72-319"></a>On a completely separate note, you use a very similar process of setting the <span class="in">`data`</span> and <span class="in">`mapping`</span> arguments to make a bar chart. Ggplot makes a distinction between a bar chart, which has a single, discrete aesthetic mapping (like one that maps x to continent).</span>
+<span id="cb72-319"><a href="#cb72-319"></a>On a completely separate note, you use a very similar process of setting the <span class="in">`data`</span> and <span class="in">`mapping`</span> arguments to make a bar chart. Ggplot makes a distinction between a bar chart and a column chart (even though they can appear to be identical). A bar chart has a single, discrete aesthetic mapping (like one that maps x to continent).</span>
 <span id="cb72-320"><a href="#cb72-320"></a></span>
 <span id="cb72-323"><a href="#cb72-323"></a><span class="in">```{r}</span></span>
 <span id="cb72-324"><a href="#cb72-324"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">distinct</span>(time_use, country, continent),</span>
@@ -2154,7 +2148,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb72-465"><a href="#cb72-465"></a>             <span class="at">scales =</span> <span class="st">"free"</span>)</span>
 <span id="cb72-466"><a href="#cb72-466"></a><span class="in">```</span></span>
 <span id="cb72-467"><a href="#cb72-467"></a></span>
-<span id="cb72-468"><a href="#cb72-468"></a><span class="in">`facet_grid`</span> is helpful if you would like to facet on two variables at once</span>
+<span id="cb72-468"><a href="#cb72-468"></a><span class="in">`facet_grid`</span> is helpful if you would like to facet on two (discrete!) variables at once (like activity and continent in the plot below).</span>
 <span id="cb72-469"><a href="#cb72-469"></a></span>
 <span id="cb72-472"><a href="#cb72-472"></a><span class="in">```{r}</span></span>
 <span id="cb72-473"><a href="#cb72-473"></a><span class="co"># initialize plot and axes</span></span>
@@ -2269,7 +2263,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb72-594"><a href="#cb72-594"></a>coffee_plot</span>
 <span id="cb72-595"><a href="#cb72-595"></a><span class="in">```</span></span>
 <span id="cb72-596"><a href="#cb72-596"></a></span>
-<span id="cb72-597"><a href="#cb72-597"></a>The coffee data is dominated by small producers, with many populations less than 100 million and many total annual productions less than 1 billion pounds. The relationship between the variables is obscured by the clumping of data, which is caused by the massive outliers of Brazil and India. A log-log plot (with log axes on the x and y) reveals a different perspective on this data. You must be careful, however, because log axes are not the easiest things to read.</span>
+<span id="cb72-597"><a href="#cb72-597"></a>The coffee data is dominated by small producers - with many populations and productions below 10 million people and pounds. The relationship between the variables is obscured by the clumping of data, which is caused by the massive outliers of Brazil (massive production) and India (massive population). A log-log plot (with log axes on the x and y) reveals a different perspective on this data. You must be careful, however, because log axes are not incredibly easy for most people to read, and the essentially everyone (including those that can read log-log scales) expects the scales on a plot to be linear unless explicitly warned otherwise.</span>
 <span id="cb72-598"><a href="#cb72-598"></a></span>
 <span id="cb72-601"><a href="#cb72-601"></a><span class="in">```{r}</span></span>
 <span id="cb72-602"><a href="#cb72-602"></a>coffee_plot <span class="sc">+</span> </span>

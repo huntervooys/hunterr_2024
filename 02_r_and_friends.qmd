@@ -1,6 +1,6 @@
-# R and Friends
+# Modern R
 
-## R and Friends
+## Initial Development of R (1990s)
 
 In 1991, two professors in New Zealand began to develop R, a process which they documented in [@ihakaLanguageDataAnalysis1996]. R is very similar to S; so similar, in fact, that it is frequently called a *dialect* of S. What is the difference between S and R? The creators of R describe it as having the syntax of S (meaning that most examples, including the following example, can be run in S or R) but the semantics of Scope (which is a programming language from the Lisp family).
 
@@ -40,7 +40,7 @@ In 1995, one of their colleagues convinced them to licence use of the software a
 
 I just bolded the term **free software**; why? As it turns out, the term **free software** has a specific definition that extends far beyond the idea of "software that you don't have to pay for." So what is free software? Free software is characterized by the four freedoms [@freesoftwarefoundationWhatFreeSoftware]:
 
-![Free Software Foundation's Four Essential Freedoms](assets/freedoms.jpg){alt="Free Software Foundation's Four Essential Freedoms"}
+![Free Software Foundation's Four Essential Freedoms](assets/freedoms.jpg)
 
 The idea of free software, and it's formation in the four freedoms seen above, came to be popular in the mid-80's after the Reagan government had made clear it's stance (and the republican, and soon the democratic, party's stance) on anti-trust enforcement. In the wake of the disruption to the computing (IBM) and telephone (AT&T) industries, the Reaganites declared that we were entering into an era of free, competitive trade while setting up a regulatory framework that would allow tech companies to consolidate power and market share ad infinitum, resulting in the current big 4(-ish): Apple, Alphabet (Google), Amazon, and Meta (and Microsoft, Nvidia, and potentially Tesla and like Netflix, depending on who you ask).
 
@@ -60,4 +60,86 @@ R itself provides you with basic statistical functionality. However, the vast ma
 library(tidyverse)
 ```
 
-![Hadley Wickham](assets/hadley.jpg){alt="Hadley Wickham"}
+The `tidyverse` is really a "meta"-package (as is the `tidymodels` package, by the way). This means that it is a package that contains a bunch of other packages. What, then, is a package? A package is a collection of functions that someone has written and made available online for your (free) use. An example is the `ggplot2` package, which is included in `tidyverse`. We'll be using it later.
+
+#### Where are packages and how many are there?
+
+I can answer the first question, which will reveal why an accurate answer for the second is impossible. [CRAN](https://cran.r-project.org/) is the **C**omprehensive **R** **A**rchive **N**etwork. CRAN stores a repository of several thousand R packages. When you use the function `install.packages()`, you are dowloading packages from CRAN. However, there are also R packages that are not on CRAN.
+
+The Bioconductor project is another repository of R packages (and also just a regular project, started by R co-creator Robert Gentleman). Bioconductor stores packages for a specific purpose, and that purpose is not ours, so we can safely ignore it. Packages can be (and frequently are) stored on GitHub, or similar online repositories. The `devtools` package has the functions you need to get packages from these other repositories (i.e., `devtools::install_github()`; and also to install packages stored on your computer).
+
+Finally, there are a multitude of packages that are stored on people's personal websites, and other non-repository internet locations. Installing (or counting) these packages is trickier than the others, but if all else fails, you can download the package from the internet and install it using `devtools::install_local()`.
+
+### Wickham's Tidyverse
+
+Let's return to the `tidyverse` package, or more precisely, the packages within. They are:
+
+-   `ggplot2` for data visualization
+-   `dplyr` for data manipulation
+-   `tidyr` for data tidying
+-   `readr` for data import
+-   `purrr` for functional programming
+-   `tibble` for tibbles (a modern version of data frames)
+-   `stringr` for string manipulation
+-   `forcats` for factor manipulation
+
+Tidyverse also includes a number of non-core packages, such as `haven` (for importing SPSS, Stata, and SAS files), `lubridate` (for data manipulation), `magrittr` (for piping), `readxl` (for importing Excel files), `modelr` (for some, limited modeling tasks), `reprex` (for producing reproducible examples), `rvest` (for scraping web pages), and `xml2` (for reading XML files). All of these packages (all 16 of them) were written (or co-written) by Hadley Wickham. Hadley also wrote `blob`, which is not in the list because I don't know it does. In the tidyverse, there are also two packages which Wickham did not write, those being `jsonlite` (for reading JSON files), and `glue` (not sure what this one does, either).
+
+When you run `library(tidyverse)`, as I did above, you load all eight of the core tidyverse packages. The others will not load, however. If you want to use a non-core package, you will have to load it separately or refer to it in the form `package::function()`. Let's take an example from the `lubridate` package, which is not in the core tidyverse. `lubridate` has a function called `now()`, which returns the current date and time. Trying to use this package without loading `lubridate` is equivalent to telling R to use a function without telling it that or where it exists. If you want to use this function, you will have to load the `lubridate` package with `library(package)`, or refer to it in the form `package::function()`. Both of these methods will allow R to find locate and run the `now()` functions.
+
+```{r}
+# R won't throw an error if we specify that now is from the lubridate package
+lubridate::now()
+# we could also load lubridate and just use now normally
+library(lubridate)
+now()
+```
+
+If you wanted to unload a package (for some reason), you could use the `unloadNamespace()` function. (A namespace is just the collection of functions in the package, each of which is associated with a name, like `now` or even `unloadNamespace`).
+
+[![Hadley Wickham](assets/hadley.jpg)](https://hadley.nz/)
+
+This is my friend Hadley Wickham. He is a god from New Zealand. He got his bachelors in biology at the University of Auckland (which you may recall as the home university of Ross Ihaka), where he also got a masters in statistics; then, Iowa State University gave him a PhD in 2008. His [PhD thesis](http://had.co.nz/thesis/practical-tools-hadley-wickham.pdf) was called "Practical tools for exploring data and models," but I would probably read some of his other work (particularly [R for data science](https://r4ds.had.co.nz/)) first/instead. He lives in Texas with his husband and dogs.
+
+Hadley is an adjunct professor at Rice University (allegedly), as well as Stanford (where he seems to have taught last in 2019 or 2020) and the University of Auckland (where he is an honorary professor). He is the chief scientist at Posit - the company that makes RStudio. Why do I worship this man? What has he done to deserve it?
+
+Hadley first stepped onto the scene with `ggplot2` (and a few others) in (and around) 2008. We'll use `ggplot2` soon enough, but I want to explain why it's important first. The graphical capabilities of R are quite good on their own, but using the base R functions is quite complicated. This is because the base plotting functions use a pen-on-paper approach, meaning that you have to specify each aspect on the plot individually with very few defaults. Although the base plotting functions are complicated enough for me to not know how to use them, `ggplot2` is much easier because it is based on the grammar of graphics (and because the interface Hadley designed works really well).
+
+Statisticians (and mathematicians) are really into the idea of abstraction. Other scientists use this tool, as well, but usually with much less vigor than the mathematician. She would like to talk about a graphic, but not any particular graphic. She wants to talk about the abstract idea of a graphic. What are its component parts? How do they fit together? What are the different sorts of plots and how do we tell them apart? What elements of a plot are required to communicate the information within? This sort of thing.
+
+This is the sort of questioning that leads to the grammar of graphics, which is a book by Leland Wilkinson. Wilkinson sets up a framework and an abstraction of the concept of "graphic" that is general enough to describe essentially any plot that has or will ever appear in a scientific journal.
+
+(Leland Wilkinson was an American psychologist, statistician, and computer scientist. He got a two degrees at Harvard, including a second bachelors in sacred divinity, and then received a PhD in psychology at Yale. I'm not going to say a lot about this man, but he has had a large influence on psychological statistics, to such an extent that he was the primary author of the APA's guidelines and explanations for statistical methods in psychology journals [@wilkinsonStatisticalMethodsPsychology1999].)
+
+In any case, Hadley Wickham read Wilkinson's book and built `ggplot2` according to the grammar of graphics framework (`gg` stands for grammar of graphics). This was necessary because Wilkinson's book is not software. It addresses theoretical questions, but not practical ones - how can I actually make this plot? `ggplot2` addresses these practical questions: you make the plot with `ggplot2`. To the greatest extent possible, the plot is specified by default and in accordance with the grammar of graphics framework. The plot is still fully customizable (like the base R graphics), but unlike with the base graphics, you can produce a very fine "finished" looking plot with very little code (and most every line of code will have a single, specific, and easy-to-understand purpose).
+
+### Tidy Data
+
+One of Wickham's first acts, the software package we now call `ggplot2`, was explosive, changing permanently the way the majority of R users make plots, and gaining definitively the attention of the open-source R community who were elated to make use of this new tool. As it turns out, this would be the first, not the last, time that Hadley Wickham caused such an explosion by introducing an innovative and complete technology to the community.
+
+Central to Wickham's work, at least since 2007 with the release of the `reshape` package, has been the structure of data. There are a lot of ways that you can put the same information in a table, and it is not easy to verbally describe the ways in which these schemes are different (at least not in any generalizable, abstract way). The case here is very similar to the case with graphics. Because "data" as such is probably most important to computer scientists, they have for literal decades been proposing abstractions and definitions according to which we should understand their use of that term. In the 1960s and 1970s the new technology in this regard was the relational database, which should be to some extent familiar to anyone who has ever used the organization and note-taking app Notion, which makes heavy use of these sorts of databases. With large datasets, especially in the 70's, using a relational structure to organize the data could speed up computation by reducing the amount of information that needs to be stored in most cases.
+
+The relational database is not super important for our purposes. All you need to know is that this is a way of storing usually large amounts of data in separate, inter-linked tables. The complexity of this scheme is relating the multiple tables to each other, and this task becomes nearly impossible if you do not have a consistent "philosophy of data" that allows you to consistently structure data and to know how it is structured without having to look at it. Using such a consistent approach to relational databases has two primary effects. First, programming is quicker because, after all of the data is correctly formatted, you save time having to look to check how individual tables are structured. Secondly, if all of the data that you're ever going to use has to be in the same format, then you can very easily use the same code to complete the same task with different data sets. Had all of these separate data sets been formatted differently, there is nary a chance you would ever be able to reuse code, at least not without some level of modification. Computer scientists and mathematicians can further elaborate on the benefits of a "philosophy of data," but none of the alleged benefits will ever be as important to me as is saving time.
+
+That brings us to this 2014 paper in which Wickham publishes his "philosophy of data": [@wickhamTidyData2014]. Wickham calls this framework the **tidy data framework**, and it has 3 relatively simple rules. (It may be useful to note that, as with `ggplot2`, the tidy data framework and the software that uses it are based on ideas that existed before Hadley Wickham. In this case, the tidy data framework is derived from the third normal form of relational databases, as set out by Cobb, who also invented the relational database.)
+
+1.  Each variable must have its own column
+2.  Each observation must have its own row
+3.  Each value must have it's own cell
+
+These three rules are from Wickham's textbook chapter on tidy data instead of the paper (which is less accessible and older; @wickhamTidyData2017). Take a look at the following examples of the same data in three different formats:
+
+```{r}
+table1
+table2
+table3
+```
+
+The first table is in tidy format because all the variables (country, year, cases, and population) have a column, each row is an observation of a specific country in a specific year, and each value has it's own cell. This is how you want your data to look because this is how Hadley Wickham expects it to look. The second and third tables, by contrast, are not tidy. table2 is untidy because the type column contains two variables (cases and population) as values in cell rather than where the should be (as the names of the columns). table3 is untidy because it breaks the third rule, containing both the cases and the population in one column, separated by a "/" (the rate column). A far more ideal solution, if the rate variable is needed, would be to do something like this in which that variable has its own column.
+
+```{r}
+table1 |> 
+  mutate(rate = cases / population)
+```
+
+The tidy data framework is the one that I use, and it's the one that I'm going to teach you. **In principle, there is nothing speical about this framework.** Any ol' "philosophy of data" will do, so long as it is consistent. That is in principle. In practice, it is not the case that "any ol' philosophy of data will do." A large variety of the tools that we will be using were developed by Hadley Wickham. These tools are designed to work specifically with data that is in tidy format. In practice, then, it is very important that you use this framework because any other framework would require you to develop your own set of tools, which is a lot of work that Hadley Wickham has already done for you.

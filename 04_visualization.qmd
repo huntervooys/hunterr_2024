@@ -1,5 +1,7 @@
 # Visualization
 
+> -   visualization: use R and the grammar of graphics (represented by `ggplot2` and related packages) to visualize data and to share data visualizations with others
+
 ```{r setup}
 #| echo: FALSE
 #| include: FALSE
@@ -508,7 +510,7 @@ p +
   scale_y_continuous(limits = c(0, 7), breaks = c(1, 3.5, 7))
 ```
 
-we can use scale functions to add transformations, as well. There are functions like `scale_x_sqrt` and `scale_x_log10` that put the data on square root or log axes. Our time use data is not a great example of the utility of these types of axes. Instead, look at this data about coffee production:
+we can use scale functions to add transformations, as well. There are functions like `scale_x_sqrt` and `scale_x_log10` that put the data on square root or log axes. (You can also use the `transform` argument in the scale functions to add a large variety of transformations.) Our time use data is not a great example of the utility of these types of axes. Instead, look at this data about coffee production:
 
 ```{r}
 coffee_plot <- ggplot(data = coffee,

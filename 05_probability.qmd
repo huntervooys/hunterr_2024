@@ -1,0 +1,7 @@
+# Probability Primer
+
+-   What is the law of large numbers?
+
+-   Why are normal distributions important? What is the central limit theorem?
+
+-   What is a probability distribution? How do you write a function for a pdf and what are the properties of a normal distribution?

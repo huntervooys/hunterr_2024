@@ -71,15 +71,13 @@ RStudio is a graphical user interface (GUI) and interactive development environm
 :::
 
 ::: {.callout-note title="Tidyverse" collapse="false"}
-Tidyverse is a collection of R packages that are designed to work well together and to acomplish data analysis tasks. The Tidyverse packages were developed by Hadley Wickham primarily, but also by teams of his collaborators. 
+Tidyverse is a collection of R packages that are designed to work well together and to acomplish data analysis tasks. The Tidyverse packages were developed by Hadley Wickham primarily, but also by teams of his collaborators.
 
-Because Tidyverse is set of R pacakges, there is not picture to provide. Tidyverse exists as R functions that you can (and will) use in your code. 
+Because Tidyverse is set of R pacakges, there is not picture to provide. Tidyverse exists as R functions that you can (and will) use in your code.
 :::
 
 ::: {.callout-note title="grammar of graphics" collapse="true"}
 The grammar of graphics refers to another set of R packages, exemplified by `ggplot2`, which is included in the tidyverse. The grammar of graphics is the tool that most R programmers use to produce the "production-quality graphics" for which R is known. Once you begin to produce plots with `ggplot2`, you are likely recognize that you have been seeing these plots for years.
-
-
 :::
 
 I believe that these tools will allow you to accomplish the vast majority of data analysis tasks, and that knowing how to use them will result in you understanding data analysis on a deeper level and being able to do it faster. That being said, these are not the only tools for data analysis. I encourage you to explore others, as well; particularly, if you intend to do a lot of work with text data, I would suggest python.
@@ -96,13 +94,13 @@ The current gold standard for the sort of work you are most likely to want to pr
 
 My goal for you is to write code that is readable and to put that code inside documents that are actively fun and/or interesting to read. (That's also, incidentally, my goal for me.)
 
-We are also going to do statistics! There are two approaches to statistics that we're going to adopt through these lessons, so I'd like to begin by elucidating the way in which these approaches are different. I am more familiar with the first approach (exploratory data analysis). Confirmatory data analysis uses many of the same tools (like hypothesis testing, which I will show you), but it uses them in a different and moer complicated way.  **The ultimate goal of both approaches is to predict the result of measurements.**
+We are also going to do statistics! There are two approaches to statistics that we're going to adopt through these lessons, so I'd like to begin by elucidating the way in which these approaches are different. I am more familiar with the first approach (exploratory data analysis). Confirmatory data analysis uses many of the same tools (like hypothesis testing, which I will show you), but it uses them in a different and moer complicated way. **The ultimate goal of both approaches is to predict the result of measurements.**
 
 -   exploratory data analysis: If the purpose of a statistical model is to predict data, then a model that makes the most accurate prediction is the best model. The model creation process is iterative. Once you see the results of a model, you can use the results to modify the model itself. Generally, practitioners recognize that there are a variety of different types of models that could be used for any task. Thus, they usually construct a variety of different models and then compare them to select a final model. Practitioners will use numbers (in diagnostic and statistic tables) or visuals (like a residuals plot) when comparing models.
 
 -   confirmatory data analysis: In the best case, at least according to the "Open science" framework, the final statistical model will have been selected and preregistered before data is even collected. Statistics have to be rigorous to mean anything, a fact which the machine learning people (who do only exploratory work) ignore. They don't check model assumptions using statistical tests like the Shapiro-Wilk normality test, and they are constantly "p-hacking" and "HARKing" to forcibly extract findings from their data. Confirmatory data analysis rejects these practices, aiming instead for statistical models that are pre-specified (pre-registered), theoretically-based, and rigorous (whatever they take that to mean).
 
-I'm often somewhat flippant about the second approach, which suggest and attempts to discover Truth where I am skeptical it exists. In any case, the second approach is the only one that is taught in statistics courses. This is a mistake. Firstly, exploratory data analysis is much more commond. Secondly, it is easier to get started doing exploratory (rather than confirmatory) data analysis. Because both of these approaches adopt many of the same tools, it seems to me that starting with exploratory data analysis and trying to make that make sense is the most effective way to learn confirmatory data analysis (which will require additional effort and research that I can't provide). 
+I'm often somewhat flippant about the second approach, which suggest and attempts to discover Truth where I am skeptical it exists. In any case, the second approach is the only one that is taught in statistics courses. This is a mistake. Firstly, exploratory data analysis is much more commond. Secondly, it is easier to get started doing exploratory (rather than confirmatory) data analysis. Because both of these approaches adopt many of the same tools, it seems to me that starting with exploratory data analysis and trying to make that make sense is the most effective way to learn confirmatory data analysis (which will require additional effort and research that I can't provide).
 
 Thus, I intend to provide you with a strong understanding of data that you can directly apply to exploratory data analysis tasks. My hope is that this understanding will enable you to complete a diversity of tasks, including confirmatory data analysis, if that is of interest.
 

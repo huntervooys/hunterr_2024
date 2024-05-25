@@ -98,7 +98,7 @@ The late 19th century was also, notoriously, the era of massive trusts in the Un
 
 Another monopoly was also forming. Using Jacquard's punched cards, an American man designed and patented a system to read punched cards. In 1890, this punched card system was used to complete the census, resulting in the 1890 census being completed two years quicker than the 1880 one. The company that developed this technology would go on to become IBM, which enjoyed monopoly status in the computing industry for several decades.
 
-## Early 19th century: the advent of computing
+## Early 19th century: the advent of computing {#sec-early-19th-century-the-advent-of-computing}
 
 Near the end of the 19th century, a mathematician named David Hilbert decided that mathematics needed to be formalized. Up to that point, it had developed as myriad sub-disciplines that failed to cohere into a single, interconnected web of mathematics. Hilbert believed that it should, and his goal was to formalize this system. He believed that such a system (of mathematical axioms) needed to have three properties:
 

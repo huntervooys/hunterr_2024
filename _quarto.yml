@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "hunterr_2024"
@@ -28,6 +29,8 @@ book:
       - 03_r_101.qmd
       - 04_visualization.qmd
     - part: "Statistics"
+      chapters:
+        - 05_probability.qmd
     - 0R_references.qmd
   appendices:
     - 0A_resources.qmd
@@ -43,8 +46,7 @@ format:
     citations-hover: true
     footnotes-hover: true
     crossrefs-hover: true
-    code-fold: show
-    code-summary: "show code for this result"
+    code-fold: false
     code-tools: true
     code-line-numbers: true
     code-copy: hover

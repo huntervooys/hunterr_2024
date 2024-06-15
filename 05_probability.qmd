@@ -1,0 +1,103 @@
+# Probability Primer
+
+```{r setup, include=FALSE, echo=FALSE}
+library(tidyverse)
+```
+
+-   What is the law of large numbers?
+
+-   Why are normal distributions important? What is the central limit theorem?
+
+-   What is a probability distribution? How do you write a function for a pdf and what are the properties of a normal distribution?
+
+```{r}
+songs <- read_csv(
+  file = "data/Iconic_Songs_Dataset.csv",
+  col_types = list(
+    Genre = "factor"
+  )
+) |> 
+  
+  # convert names to lowercase
+  janitor::clean_names() |> 
+  
+  # lump together genres will very little representation
+  mutate(genre = fct_lump(genre, n = 5)) |> 
+  
+  # add season variable
+  mutate(
+    season = case_when(
+      release_date < "2024-03-21" ~ "winter",
+      release_date < "2024-06-21" ~ "spring",
+      release_date < "2024-09-21" ~ "summer",
+      release_date < "2024-12-21" ~ "fall",
+      TRUE ~ "winter"
+    ),
+    season = factor(season)
+  ) |> 
+  
+  ####### linguistic variables
+  mutate(
+    length = str_length(title),
+    num_words = str_count(title, "\\w+"),
+    num_consonants = str_count(title, "[^aeiou\\s]"),
+    num_vowels = str_count(title, "[aeiou]")
+  )
+  
+
+glimpse(songs)
+
+regression_data <- songs |> 
+  select(
+    popularity,
+    genre,
+    duration,
+    season,
+    length,
+    num_words,
+    num_consonants,
+    num_vowels
+  )
+
+```
+
+```{r}
+lin_reg <- lm(popularity ~ ., data = regression_data)
+summary(lin_reg)
+
+library(broom)
+
+lin_reg <- lm(popularity ~ genre + duration + season, data = regression_data)
+tidy(lin_reg)
+```
+
+```{r}
+generate <- function(n, beta, sigma, degree) {
+  tibble(
+    x = runif(n, -10, 10),
+    y = beta * (x ^ degree) + rnorm(n, 0, sigma)
+  )
+}
+
+generate(100, 10, 500, 2) |> 
+  ggplot(aes(x = x, y = y)) +
+  geom_point() +
+  geom_smooth(formula = y ~ x,
+              method = "lm", 
+              se = T,
+              color = "red") +
+  geom_smooth(formula = y ~ poly(x, 2),
+              method = "lm", 
+              se = T,
+              color = "green") +
+  geom_smooth(formula = y ~ poly(x, 4),
+              method = "lm", 
+              se = T,
+              color = "blue") +
+  geom_smooth(formula = y ~ poly(x, 10),
+              method = "lm", 
+              se = T,
+              color = "yellow") +
+  theme_minimal()
+```
+

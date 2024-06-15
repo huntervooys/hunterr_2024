@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Hunter Vooys">
+<meta name="dcterms.date" content="2024-05-05">
+
+<title>hunterr_2024</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./01_lore.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "/"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">hunterr_2024</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">hunterr_2024</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/huntervooys/hunterr_2024" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">R and Friends</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_lore.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Lore</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_r_and_friends.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modern R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_r_101.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R 101</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualization</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probability Primer</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_eugenics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Regression and Power</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classification</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./0R_references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./0A_resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Getting Help</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">on this page</h2>
+   
+  <ul>
+  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <ul class="collapse">
+  <li><a href="#this-book" id="toc-this-book" class="nav-link" data-scroll-target="#this-book">This book</a>
+  <ul class="collapse">
+  <li><a href="#features-of-this-book" id="toc-features-of-this-book" class="nav-link" data-scroll-target="#features-of-this-book">Features of This Book</a></li>
+  <li><a href="#sec-tools" id="toc-sec-tools" class="nav-link" data-scroll-target="#sec-tools">Tools</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/huntervooys/hunterr_2024/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/huntervooys/hunterr_2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block">hunterr_2024</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Hunter Vooys </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 5, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+
+<section id="preface" class="level1 unnumbered">
+<h1 class="unnumbered">Preface</h1><p><img src="assets/cover.png" title="hunterr_2024" class="quarto-cover-image img-fluid"></p>
+<div class="cell">
+<div id="lst-first" class="r cell-code listing quarto-float">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-first-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;1: greeting
+</figcaption>
+<div aria-describedby="lst-first-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="sourceCode cell-code" id="lst-first"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="lst-first-1"><a href="#lst-first-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Good Morning! 🤗"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</figure>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Good Morning! 🤗"</code></pre>
+</div>
+</div>
+<section id="this-book" class="level2">
+<h2 class="anchored" data-anchor-id="this-book">This book</h2>
+<p>This document you are reading now is called a Quarto book. We will talk more about Quarto later, but for now, all you need to know about Quarto books is that they:</p>
+<ul>
+<li><p>are relatively simple to construct,</p></li>
+<li><p>can contain R code snippets and their outputs,</p></li>
+<li><p>are pretty enough for me to be temporarily satisfied.</p></li>
+</ul>
+<section id="features-of-this-book" class="level3">
+<h3 class="anchored" data-anchor-id="features-of-this-book">Features of This Book</h3>
+<div class="callout callout-style-simple callout-important callout-titled" title="callouts">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+callouts
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>This book let’s me put many of my least relevant tangents in these collapsible little notes.</p>
+</div>
+</div>
+</div>
+<p>The features of this book, which are achieved easily through Quarto, explain its format. Code snippets appear in this book, but only if you want them to. Each code snippet is collapsible by clicking the triangle next to “show code for this result”. If you really hate code, you can click the “&lt;/&gt; Code” button on the top of each page and hide (or show) all the code at once. Speaking of the “&lt;/&gt; Code” button, if you click “View Source” you can see all of the code that was used to create the page.</p>
+<p>Quarto also lets me show you “paged tables.” In the following code, I generate 1000 random numbers between -10 and 10, which I label <code>x</code>. Then, I apply the <code>mystery_function</code> to each number, producing <code>y</code>. What does <code>mystery_function</code> do?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>table_1 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="at">x =</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">1000</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="at">max =</span> <span class="dv">10</span>),</span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="at">y =</span> <span class="fu">mystery_function</span>(x)</span>
+<span id="cb2-4"><a href="#cb2-4"></a>)</span>
+<span id="cb2-5"><a href="#cb2-5"></a>table_1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["y"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"-7.63941766","2":"5.836070e+01"},{"1":"-2.87272605","2":"8.252555e+00"},{"1":"3.83452423","2":"1.470358e+01"},{"1":"6.91316414","2":"4.779184e+01"},{"1":"2.76902467","2":"7.667498e+00"},{"1":"-7.65504497","2":"5.859971e+01"},{"1":"1.55308899","2":"2.412085e+00"},{"1":"5.29570675","2":"2.804451e+01"},{"1":"6.23697372","2":"3.889984e+01"},{"1":"7.75874401","2":"6.019811e+01"},{"1":"-4.12462282","2":"1.701251e+01"},{"1":"-1.65061385","2":"2.724526e+00"},{"1":"-5.42485004","2":"2.942900e+01"},{"1":"5.67368743","2":"3.219073e+01"},{"1":"-5.81481869","2":"3.381212e+01"},{"1":"5.18123042","2":"2.684515e+01"},{"1":"1.53653727","2":"2.360947e+00"},{"1":"-8.71854253","2":"7.601298e+01"},{"1":"8.29046546","2":"6.873182e+01"},{"1":"-2.92210875","2":"8.538720e+00"},{"1":"-4.76181102","2":"2.267484e+01"},{"1":"4.11174780","2":"1.690647e+01"},{"1":"-9.41968271","2":"8.873042e+01"},{"1":"2.70099110","2":"7.295353e+00"},{"1":"3.80915788","2":"1.450968e+01"},{"1":"-9.21277867","2":"8.487529e+01"},{"1":"1.06149908","2":"1.126780e+00"},{"1":"-3.18296304","2":"1.013125e+01"},{"1":"-8.44682675","2":"7.134888e+01"},{"1":"-2.15124415","2":"4.627851e+00"},{"1":"-2.31091673","2":"5.340336e+00"},{"1":"-1.43988438","2":"2.073267e+00"},{"1":"-2.44555470","2":"5.980738e+00"},{"1":"-7.66351535","2":"5.872947e+01"},{"1":"3.70327704","2":"1.371426e+01"},{"1":"3.25138588","2":"1.057151e+01"},{"1":"2.43151651","2":"5.912273e+00"},{"1":"3.68950804","2":"1.361247e+01"},{"1":"2.10190921","2":"4.418022e+00"},{"1":"-7.48398145","2":"5.600998e+01"},{"1":"-6.28402436","2":"3.948896e+01"},{"1":"-0.77251096","2":"5.967732e-01"},{"1":"5.08404757","2":"2.584754e+01"},{"1":"0.52287366","2":"2.733969e-01"},{"1":"8.84541867","2":"7.824143e+01"},{"1":"-5.94469179","2":"3.533936e+01"},{"1":"7.30307831","2":"5.333495e+01"},{"1":"1.69746009","2":"2.881371e+00"},{"1":"2.65249737","2":"7.035742e+00"},{"1":"-9.56776566","2":"9.154214e+01"},{"1":"-0.25355020","2":"6.428770e-02"},{"1":"2.11018716","2":"4.452890e+00"},{"1":"8.09899550","2":"6.559373e+01"},{"1":"0.32403719","2":"1.050001e-01"},{"1":"-2.72978553","2":"7.451729e+00"},{"1":"9.27067359","2":"8.594539e+01"},{"1":"4.30589195","2":"1.854071e+01"},{"1":"-2.93958973","2":"8.641188e+00"},{"1":"3.69133060","2":"1.362592e+01"},{"1":"-5.60434873","2":"3.140872e+01"},{"1":"4.23212169","2":"1.791085e+01"},{"1":"3.40582139","2":"1.159962e+01"},{"1":"-4.73216428","2":"2.239338e+01"},{"1":"5.78322082","2":"3.344564e+01"},{"1":"-8.23376868","2":"6.779495e+01"},{"1":"1.69517660","2":"2.873624e+00"},{"1":"-4.87709941","2":"2.378610e+01"},{"1":"-4.05145355","2":"1.641428e+01"},{"1":"2.00594177","2":"4.023802e+00"},{"1":"6.54392470","2":"4.282295e+01"},{"1":"-2.92254848","2":"8.541290e+00"},{"1":"1.74375427","2":"3.040679e+00"},{"1":"6.07605227","2":"3.691841e+01"},{"1":"5.70618683","2":"3.256057e+01"},{"1":"-3.28519646","2":"1.079252e+01"},{"1":"-7.77301981","2":"6.041984e+01"},{"1":"-4.96885790","2":"2.468955e+01"},{"1":"3.43381641","2":"1.179110e+01"},{"1":"-2.87610064","2":"8.271955e+00"},{"1":"4.47329212","2":"2.001034e+01"},{"1":"3.00536972","2":"9.032247e+00"},{"1":"1.24739696","2":"1.555999e+00"},{"1":"-7.09811859","2":"5.038329e+01"},{"1":"3.81261740","2":"1.453605e+01"},{"1":"7.45356808","2":"5.555568e+01"},{"1":"0.03925486","2":"1.540944e-03"},{"1":"6.12651051","2":"3.753413e+01"},{"1":"-1.01537577","2":"1.030988e+00"},{"1":"2.72711566","2":"7.437160e+00"},{"1":"-6.58134814","2":"4.331414e+01"},{"1":"6.58726830","2":"4.339210e+01"},{"1":"4.39346967","2":"1.930258e+01"},{"1":"-9.19715786","2":"8.458771e+01"},{"1":"-3.37499626","2":"1.139060e+01"},{"1":"3.72448150","2":"1.387176e+01"},{"1":"-3.48927454","2":"1.217504e+01"},{"1":"7.83529272","2":"6.139181e+01"},{"1":"-5.71270946","2":"3.263505e+01"},{"1":"4.77385203","2":"2.278966e+01"},{"1":"5.55272474","2":"3.083275e+01"},{"1":"-4.66898735","2":"2.179944e+01"},{"1":"-9.20672490","2":"8.476378e+01"},{"1":"2.53706397","2":"6.436694e+00"},{"1":"-0.63888307","2":"4.081716e-01"},{"1":"-2.19420102","2":"4.814518e+00"},{"1":"7.03435138","2":"4.948210e+01"},{"1":"-4.38945961","2":"1.926736e+01"},{"1":"-5.82210188","2":"3.389687e+01"},{"1":"-1.11283174","2":"1.238394e+00"},{"1":"-1.36154624","2":"1.853808e+00"},{"1":"2.38287402","2":"5.678089e+00"},{"1":"-5.29954561","2":"2.808518e+01"},{"1":"-0.63826675","2":"4.073844e-01"},{"1":"-9.08057894","2":"8.245691e+01"},{"1":"2.12543875","2":"4.517490e+00"},{"1":"-2.83666818","2":"8.046686e+00"},{"1":"7.30999419","2":"5.343602e+01"},{"1":"2.97532983","2":"8.852588e+00"},{"1":"-9.31740020","2":"8.681395e+01"},{"1":"-5.68536098","2":"3.232333e+01"},{"1":"-4.13012078","2":"1.705790e+01"},{"1":"-8.51285636","2":"7.246872e+01"},{"1":"0.67672526","2":"4.579571e-01"},{"1":"3.44160501","2":"1.184465e+01"},{"1":"8.92149043","2":"7.959299e+01"},{"1":"-3.04041184","2":"9.244104e+00"},{"1":"-0.92031954","2":"8.469881e-01"},{"1":"-2.88294444","2":"8.311369e+00"},{"1":"-3.20705223","2":"1.028518e+01"},{"1":"6.81656258","2":"4.646553e+01"},{"1":"9.44586439","2":"8.922435e+01"},{"1":"-1.82776575","2":"3.340728e+00"},{"1":"-3.73544808","2":"1.395357e+01"},{"1":"1.62000297","2":"2.624410e+00"},{"1":"2.85754167","2":"8.165544e+00"},{"1":"-5.57406261","2":"3.107017e+01"},{"1":"-1.00283699","2":"1.005682e+00"},{"1":"-5.45886792","2":"2.979924e+01"},{"1":"7.93679534","2":"6.299272e+01"},{"1":"-8.57723851","2":"7.356902e+01"},{"1":"-4.66373187","2":"2.175039e+01"},{"1":"-2.96269451","2":"8.777559e+00"},{"1":"3.95534571","2":"1.564476e+01"},{"1":"4.93136599","2":"2.431837e+01"},{"1":"6.33617211","2":"4.014708e+01"},{"1":"6.89000247","2":"4.747213e+01"},{"1":"-2.71031731","2":"7.345820e+00"},{"1":"4.03495491","2":"1.628086e+01"},{"1":"-6.64097830","2":"4.410259e+01"},{"1":"1.55686949","2":"2.423843e+00"},{"1":"-1.43397636","2":"2.056288e+00"},{"1":"-6.33409690","2":"4.012078e+01"},{"1":"-1.11570816","2":"1.244805e+00"},{"1":"-1.91617209","2":"3.671715e+00"},{"1":"4.81958214","2":"2.322837e+01"},{"1":"-1.49307403","2":"2.229270e+00"},{"1":"5.88883790","2":"3.467841e+01"},{"1":"8.50865991","2":"7.239729e+01"},{"1":"0.74211046","2":"5.507279e-01"},{"1":"-1.84914971","2":"3.419355e+00"},{"1":"-2.24980339","2":"5.061615e+00"},{"1":"-4.56975779","2":"2.088269e+01"},{"1":"8.32698707","2":"6.933871e+01"},{"1":"-0.16464997","2":"2.710961e-02"},{"1":"1.37237817","2":"1.883422e+00"},{"1":"-7.60053118","2":"5.776807e+01"},{"1":"2.95337797","2":"8.722441e+00"},{"1":"4.84563223","2":"2.348015e+01"},{"1":"-1.87563905","2":"3.518022e+00"},{"1":"9.79387711","2":"9.592003e+01"},{"1":"-4.72394094","2":"2.231562e+01"},{"1":"1.56984678","2":"2.464419e+00"},{"1":"-1.35898878","2":"1.846851e+00"},{"1":"7.31400475","2":"5.349467e+01"},{"1":"-1.39287943","2":"1.940113e+00"},{"1":"5.61789799","2":"3.156078e+01"},{"1":"7.82764970","2":"6.127210e+01"},{"1":"6.31824519","2":"3.992022e+01"},{"1":"-1.09457326","2":"1.198091e+00"},{"1":"8.74901884","2":"7.654533e+01"},{"1":"-9.76875560","2":"9.542859e+01"},{"1":"-5.99080281","2":"3.588972e+01"},{"1":"-8.26761049","2":"6.835338e+01"},{"1":"4.99750497","2":"2.497506e+01"},{"1":"-9.83614888","2":"9.674982e+01"},{"1":"-7.29413217","2":"5.320436e+01"},{"1":"-1.99624831","2":"3.985007e+00"},{"1":"-1.24800269","2":"1.557511e+00"},{"1":"-3.09130760","2":"9.556183e+00"},{"1":"-7.62965183","2":"5.821159e+01"},{"1":"3.84684634","2":"1.479823e+01"},{"1":"3.83674001","2":"1.472057e+01"},{"1":"-4.13673285","2":"1.711256e+01"},{"1":"8.74736631","2":"7.651642e+01"},{"1":"-3.52880095","2":"1.245244e+01"},{"1":"0.95565910","2":"9.132843e-01"},{"1":"5.91688936","2":"3.500958e+01"},{"1":"5.98820831","2":"3.585864e+01"},{"1":"-7.60133579","2":"5.778031e+01"},{"1":"4.34130613","2":"1.884694e+01"},{"1":"-8.32275653","2":"6.926828e+01"},{"1":"-9.25818007","2":"8.571390e+01"},{"1":"-2.78101185","2":"7.734027e+00"},{"1":"2.60905939","2":"6.807191e+00"},{"1":"-2.45457529","2":"6.024940e+00"},{"1":"-4.23611608","2":"1.794468e+01"},{"1":"-3.29938608","2":"1.088595e+01"},{"1":"-7.76423004","2":"6.028327e+01"},{"1":"-0.67198181","2":"4.515595e-01"},{"1":"2.47850587","2":"6.142991e+00"},{"1":"5.35520703","2":"2.867824e+01"},{"1":"-5.94342052","2":"3.532425e+01"},{"1":"8.77025807","2":"7.691743e+01"},{"1":"2.50687226","2":"6.284409e+00"},{"1":"7.55706528","2":"5.710924e+01"},{"1":"0.73989710","2":"5.474477e-01"},{"1":"-7.87769780","2":"6.205812e+01"},{"1":"1.85497517","2":"3.440933e+00"},{"1":"9.10940671","2":"8.298129e+01"},{"1":"9.32534378","2":"8.696204e+01"},{"1":"-2.09660254","2":"4.395742e+00"},{"1":"1.95460007","2":"3.820461e+00"},{"1":"-8.85863378","2":"7.847539e+01"},{"1":"-8.08806650","2":"6.541682e+01"},{"1":"-8.50505552","2":"7.233597e+01"},{"1":"0.29363496","2":"8.622149e-02"},{"1":"8.59442865","2":"7.386420e+01"},{"1":"4.46842505","2":"1.996682e+01"},{"1":"3.36449254","2":"1.131981e+01"},{"1":"5.72478699","2":"3.277319e+01"},{"1":"-4.51737992","2":"2.040672e+01"},{"1":"6.62554321","2":"4.389782e+01"},{"1":"-5.17623932","2":"2.679345e+01"},{"1":"-2.12477746","2":"4.514679e+00"},{"1":"0.25720885","2":"6.615639e-02"},{"1":"-4.29570804","2":"1.845311e+01"},{"1":"-1.76070455","2":"3.100080e+00"},{"1":"-8.86185049","2":"7.853239e+01"},{"1":"4.68219510","2":"2.192295e+01"},{"1":"5.15123812","2":"2.653525e+01"},{"1":"-0.44620088","2":"1.990952e-01"},{"1":"6.76150362","2":"4.571793e+01"},{"1":"-9.77975411","2":"9.564359e+01"},{"1":"6.49157431","2":"4.214054e+01"},{"1":"6.61820751","2":"4.380067e+01"},{"1":"-3.87172047","2":"1.499022e+01"},{"1":"-0.56235402","2":"3.162420e-01"},{"1":"8.83737038","2":"7.809912e+01"},{"1":"-6.32115298","2":"3.995698e+01"},{"1":"-6.50331066","2":"4.229305e+01"},{"1":"0.26624035","2":"7.088392e-02"},{"1":"-6.95531144","2":"4.837636e+01"},{"1":"-6.06265455","2":"3.675578e+01"},{"1":"1.31507554","2":"1.729424e+00"},{"1":"-9.92518629","2":"9.850932e+01"},{"1":"-4.05747318","2":"1.646309e+01"},{"1":"6.69590572","2":"4.483515e+01"},{"1":"4.53883433","2":"2.060102e+01"},{"1":"9.32875496","2":"8.702567e+01"},{"1":"5.14278502","2":"2.644824e+01"},{"1":"-7.49994534","2":"5.624918e+01"},{"1":"-4.54326537","2":"2.064126e+01"},{"1":"2.18447819","2":"4.771945e+00"},{"1":"-6.21334550","2":"3.860566e+01"},{"1":"-9.14251165","2":"8.358552e+01"},{"1":"-7.98098132","2":"6.369606e+01"},{"1":"9.13173249","2":"8.338854e+01"},{"1":"9.23586139","2":"8.530114e+01"},{"1":"-7.76004849","2":"6.021835e+01"},{"1":"-6.42907648","2":"4.133302e+01"},{"1":"-9.24864944","2":"8.553752e+01"},{"1":"9.33129933","2":"8.707315e+01"},{"1":"-0.17485080","2":"3.057280e-02"},{"1":"6.25988364","2":"3.918614e+01"},{"1":"-4.04371745","2":"1.635165e+01"},{"1":"5.36791594","2":"2.881452e+01"},{"1":"0.30606269","2":"9.367437e-02"},{"1":"-8.15625810","2":"6.652455e+01"},{"1":"0.27224151","2":"7.411544e-02"},{"1":"-0.65298654","2":"4.263914e-01"},{"1":"-1.08754305","2":"1.182750e+00"},{"1":"-7.10047446","2":"5.041674e+01"},{"1":"-9.92273898","2":"9.846075e+01"},{"1":"-1.90231855","2":"3.618816e+00"},{"1":"-5.38361301","2":"2.898329e+01"},{"1":"6.59685550","2":"4.351850e+01"},{"1":"2.33460479","2":"5.450380e+00"},{"1":"-1.38238548","2":"1.910990e+00"},{"1":"-9.58119265","2":"9.179925e+01"},{"1":"-8.29108804","2":"6.874214e+01"},{"1":"-5.26416055","2":"2.771139e+01"},{"1":"-8.61520736","2":"7.422180e+01"},{"1":"4.84669344","2":"2.349044e+01"},{"1":"6.67027838","2":"4.449261e+01"},{"1":"-6.81580785","2":"4.645524e+01"},{"1":"9.79698117","2":"9.598084e+01"},{"1":"6.75225757","2":"4.559298e+01"},{"1":"-7.94704469","2":"6.315552e+01"},{"1":"6.78491952","2":"4.603513e+01"},{"1":"6.99750978","2":"4.896514e+01"},{"1":"-0.67204401","2":"4.516431e-01"},{"1":"8.61091675","2":"7.414789e+01"},{"1":"-3.89087260","2":"1.513889e+01"},{"1":"7.77459001","2":"6.044425e+01"},{"1":"2.15550506","2":"4.646202e+00"},{"1":"3.29730463","2":"1.087222e+01"},{"1":"-8.84530610","2":"7.823944e+01"},{"1":"9.73791484","2":"9.482699e+01"},{"1":"-4.75804199","2":"2.263896e+01"},{"1":"-3.52594791","2":"1.243231e+01"},{"1":"-3.95239817","2":"1.562145e+01"},{"1":"1.10214588","2":"1.214726e+00"},{"1":"5.47120700","2":"2.993411e+01"},{"1":"8.95312332","2":"8.015842e+01"},{"1":"-5.36322956","2":"2.876423e+01"},{"1":"5.42934460","2":"2.947778e+01"},{"1":"2.03494933","2":"4.141019e+00"},{"1":"3.98420177","2":"1.587386e+01"},{"1":"-0.06706852","2":"4.498186e-03"},{"1":"3.66831316","2":"1.345652e+01"},{"1":"4.94593901","2":"2.446231e+01"},{"1":"-9.56903213","2":"9.156638e+01"},{"1":"-0.62862250","2":"3.951662e-01"},{"1":"-6.27635636","2":"3.939265e+01"},{"1":"-5.97701174","2":"3.572467e+01"},{"1":"3.40811619","2":"1.161526e+01"},{"1":"-9.46213189","2":"8.953194e+01"},{"1":"-0.87498459","2":"7.655980e-01"},{"1":"1.45912257","2":"2.129039e+00"},{"1":"9.18691149","2":"8.439934e+01"},{"1":"8.16260985","2":"6.662820e+01"},{"1":"1.25883808","2":"1.584673e+00"},{"1":"4.41243142","2":"1.946955e+01"},{"1":"-0.58120231","2":"3.377961e-01"},{"1":"-0.60200486","2":"3.624099e-01"},{"1":"5.37384791","2":"2.887824e+01"},{"1":"9.69220069","2":"9.393875e+01"},{"1":"-4.92836535","2":"2.428878e+01"},{"1":"-7.28994248","2":"5.314326e+01"},{"1":"7.02754575","2":"4.938640e+01"},{"1":"7.91976433","2":"6.272267e+01"},{"1":"9.40144595","2":"8.838719e+01"},{"1":"-5.18170762","2":"2.685009e+01"},{"1":"-0.56176413","2":"3.155789e-01"},{"1":"-2.81287582","2":"7.912270e+00"},{"1":"-1.52935966","2":"2.338941e+00"},{"1":"-7.78240519","2":"6.056583e+01"},{"1":"3.53890697","2":"1.252386e+01"},{"1":"2.83208358","2":"8.020697e+00"},{"1":"8.33390402","2":"6.945396e+01"},{"1":"-8.55117393","2":"7.312258e+01"},{"1":"-5.93137541","2":"3.518121e+01"},{"1":"5.05246809","2":"2.552743e+01"},{"1":"-2.17942797","2":"4.749906e+00"},{"1":"4.07922972","2":"1.664012e+01"},{"1":"-4.51725246","2":"2.040557e+01"},{"1":"4.76812132","2":"2.273498e+01"},{"1":"7.74279071","2":"5.995081e+01"},{"1":"-7.56436791","2":"5.721966e+01"},{"1":"0.81824640","2":"6.695272e-01"},{"1":"-8.31238968","2":"6.909582e+01"},{"1":"-0.84774130","2":"7.186653e-01"},{"1":"-8.32968751","2":"6.938369e+01"},{"1":"2.56453388","2":"6.576834e+00"},{"1":"4.65858285","2":"2.170239e+01"},{"1":"6.85721801","2":"4.702144e+01"},{"1":"-4.67775123","2":"2.188136e+01"},{"1":"3.49537184","2":"1.221762e+01"},{"1":"-7.05240608","2":"4.973643e+01"},{"1":"-6.03637340","2":"3.643780e+01"},{"1":"8.95504919","2":"8.019291e+01"},{"1":"0.01771463","2":"3.138080e-04"},{"1":"-7.31506822","2":"5.351022e+01"},{"1":"-3.76818235","2":"1.419920e+01"},{"1":"-7.40107945","2":"5.477598e+01"},{"1":"1.50125916","2":"2.253779e+00"},{"1":"-5.55488488","2":"3.085675e+01"},{"1":"0.63052406","2":"3.975606e-01"},{"1":"-4.33206068","2":"1.876675e+01"},{"1":"2.91953309","2":"8.523673e+00"},{"1":"-7.77248282","2":"6.041149e+01"},{"1":"-5.23611827","2":"2.741693e+01"},{"1":"1.17063279","2":"1.370381e+00"},{"1":"-6.00079617","2":"3.600955e+01"},{"1":"1.59828694","2":"2.554521e+00"},{"1":"6.61821698","2":"4.380080e+01"},{"1":"-2.67375742","2":"7.148979e+00"},{"1":"-2.01258286","2":"4.050490e+00"},{"1":"5.09707178","2":"2.598014e+01"},{"1":"-9.85106993","2":"9.704358e+01"},{"1":"0.10286079","2":"1.058034e-02"},{"1":"6.59316750","2":"4.346986e+01"},{"1":"-9.23128210","2":"8.521657e+01"},{"1":"7.75938538","2":"6.020806e+01"},{"1":"-7.48598226","2":"5.603993e+01"},{"1":"-0.05454500","2":"2.975157e-03"},{"1":"-1.18450574","2":"1.403054e+00"},{"1":"4.62739567","2":"2.141279e+01"},{"1":"2.69571676","2":"7.266889e+00"},{"1":"-4.24670427","2":"1.803450e+01"},{"1":"4.57903694","2":"2.096758e+01"},{"1":"3.07392690","2":"9.449027e+00"},{"1":"2.58745631","2":"6.694930e+00"},{"1":"-8.73091716","2":"7.622891e+01"},{"1":"-8.91263352","2":"7.943504e+01"},{"1":"-3.32418279","2":"1.105019e+01"},{"1":"-8.61032363","2":"7.413767e+01"},{"1":"2.04061054","2":"4.164091e+00"},{"1":"-3.19123034","2":"1.018395e+01"},{"1":"5.22322230","2":"2.728205e+01"},{"1":"-5.32935552","2":"2.840203e+01"},{"1":"-8.24511372","2":"6.798190e+01"},{"1":"6.41351138","2":"4.113313e+01"},{"1":"-7.84462766","2":"6.153818e+01"},{"1":"-0.35147572","2":"1.235352e-01"},{"1":"0.54706955","2":"2.992851e-01"},{"1":"0.75319494","2":"5.673026e-01"},{"1":"-1.85299325","2":"3.433584e+00"},{"1":"-4.16995183","2":"1.738850e+01"},{"1":"6.28670995","2":"3.952272e+01"},{"1":"-3.03402679","2":"9.205319e+00"},{"1":"4.90669706","2":"2.407568e+01"},{"1":"-4.17808853","2":"1.745642e+01"},{"1":"1.05301863","2":"1.108848e+00"},{"1":"3.10328761","2":"9.630394e+00"},{"1":"-3.17739469","2":"1.009584e+01"},{"1":"-6.63025034","2":"4.396022e+01"},{"1":"8.64561867","2":"7.474672e+01"},{"1":"6.61693649","2":"4.378385e+01"},{"1":"-2.56089695","2":"6.558193e+00"},{"1":"7.07808772","2":"5.009933e+01"},{"1":"4.93988138","2":"2.440243e+01"},{"1":"-6.13507670","2":"3.763917e+01"},{"1":"-9.19527755","2":"8.455313e+01"},{"1":"7.15339400","2":"5.117105e+01"},{"1":"4.04724848","2":"1.638022e+01"},{"1":"2.17015424","2":"4.709569e+00"},{"1":"1.64672418","2":"2.711701e+00"},{"1":"-5.14630841","2":"2.648449e+01"},{"1":"-5.59664660","2":"3.132245e+01"},{"1":"5.30074339","2":"2.809788e+01"},{"1":"6.80114467","2":"4.625557e+01"},{"1":"-0.15534528","2":"2.413216e-02"},{"1":"7.81563927","2":"6.108422e+01"},{"1":"0.79769677","2":"6.363201e-01"},{"1":"-4.29101418","2":"1.841280e+01"},{"1":"5.78646847","2":"3.348322e+01"},{"1":"6.73063247","2":"4.530141e+01"},{"1":"5.08082216","2":"2.581475e+01"},{"1":"3.43127050","2":"1.177362e+01"},{"1":"-2.24677636","2":"5.048004e+00"},{"1":"-8.56259918","2":"7.331810e+01"},{"1":"-1.92434539","2":"3.703105e+00"},{"1":"1.51487264","2":"2.294839e+00"},{"1":"8.57130108","2":"7.346720e+01"},{"1":"0.04815825","2":"2.319217e-03"},{"1":"3.96624699","2":"1.573112e+01"},{"1":"-4.62058258","2":"2.134978e+01"},{"1":"-9.81753739","2":"9.638404e+01"},{"1":"2.42952125","2":"5.902574e+00"},{"1":"0.44973795","2":"2.022642e-01"},{"1":"-4.23047326","2":"1.789690e+01"},{"1":"2.31414709","2":"5.355277e+00"},{"1":"-1.02304511","2":"1.046621e+00"},{"1":"-8.49007654","2":"7.208140e+01"},{"1":"-7.31989104","2":"5.358080e+01"},{"1":"-1.97293004","2":"3.892453e+00"},{"1":"-1.03418463","2":"1.069538e+00"},{"1":"6.09576802","2":"3.715839e+01"},{"1":"1.56264609","2":"2.441863e+00"},{"1":"-9.62281870","2":"9.259864e+01"},{"1":"4.43636589","2":"1.968134e+01"},{"1":"-9.78225254","2":"9.569246e+01"},{"1":"-7.34786343","2":"5.399110e+01"},{"1":"2.34076982","2":"5.479203e+00"},{"1":"-6.90667878","2":"4.770221e+01"},{"1":"7.05804733","2":"4.981603e+01"},{"1":"-5.18188948","2":"2.685198e+01"},{"1":"-5.66515365","2":"3.209397e+01"},{"1":"-6.13443245","2":"3.763126e+01"},{"1":"5.33195655","2":"2.842976e+01"},{"1":"5.42335570","2":"2.941279e+01"},{"1":"-3.04261791","2":"9.257524e+00"},{"1":"6.94431549","2":"4.822352e+01"},{"1":"-0.36188182","2":"1.309585e-01"},{"1":"4.83705997","2":"2.339715e+01"},{"1":"-0.86091998","2":"7.411832e-01"},{"1":"-9.70539129","2":"9.419462e+01"},{"1":"-2.78609300","2":"7.762314e+00"},{"1":"-9.56271909","2":"9.144560e+01"},{"1":"2.17966381","2":"4.750934e+00"},{"1":"8.24466600","2":"6.797452e+01"},{"1":"2.91357686","2":"8.488930e+00"},{"1":"9.04007339","2":"8.172293e+01"},{"1":"-7.31965328","2":"5.357732e+01"},{"1":"2.84756707","2":"8.108638e+00"},{"1":"-7.72544661","2":"5.968253e+01"},{"1":"-4.63035431","2":"2.144018e+01"},{"1":"-8.51532283","2":"7.251072e+01"},{"1":"3.83408094","2":"1.470018e+01"},{"1":"-2.25873518","2":"5.101885e+00"},{"1":"-6.94301243","2":"4.820542e+01"},{"1":"-3.52363272","2":"1.241599e+01"},{"1":"-3.99683674","2":"1.597470e+01"},{"1":"6.59306384","2":"4.346849e+01"},{"1":"1.90280857","2":"3.620680e+00"},{"1":"-2.98055776","2":"8.883725e+00"},{"1":"-8.14938263","2":"6.641244e+01"},{"1":"1.91985355","2":"3.685838e+00"},{"1":"8.73184445","2":"7.624511e+01"},{"1":"6.44175996","2":"4.149627e+01"},{"1":"0.89088763","2":"7.936808e-01"},{"1":"-1.27281134","2":"1.620049e+00"},{"1":"0.60160649","2":"3.619304e-01"},{"1":"-9.48150947","2":"8.989902e+01"},{"1":"2.99807709","2":"8.988466e+00"},{"1":"-0.05156819","2":"2.659278e-03"},{"1":"-8.00718113","2":"6.411495e+01"},{"1":"1.17966178","2":"1.391602e+00"},{"1":"2.18033622","2":"4.753866e+00"},{"1":"-3.87483594","2":"1.501435e+01"},{"1":"6.49981793","2":"4.224763e+01"},{"1":"0.79924094","2":"6.387861e-01"},{"1":"-0.55993333","2":"3.135253e-01"},{"1":"0.08927353","2":"7.969763e-03"},{"1":"-5.06787586","2":"2.568337e+01"},{"1":"-8.77922677","2":"7.707482e+01"},{"1":"3.68388522","2":"1.357101e+01"},{"1":"-5.69378286","2":"3.241916e+01"},{"1":"5.35422747","2":"2.866775e+01"},{"1":"6.38302804","2":"4.074305e+01"},{"1":"4.91563919","2":"2.416351e+01"},{"1":"2.02582587","2":"4.103970e+00"},{"1":"-9.35771011","2":"8.756674e+01"},{"1":"-0.11868017","2":"1.408498e-02"},{"1":"4.18875938","2":"1.754571e+01"},{"1":"-4.40774153","2":"1.942819e+01"},{"1":"-6.73204172","2":"4.532039e+01"},{"1":"-4.97385005","2":"2.473918e+01"},{"1":"4.22236466","2":"1.782836e+01"},{"1":"8.66746507","2":"7.512495e+01"},{"1":"-3.35832747","2":"1.127836e+01"},{"1":"-6.57767984","2":"4.326587e+01"},{"1":"-1.96817431","2":"3.873710e+00"},{"1":"6.69759469","2":"4.485777e+01"},{"1":"-6.12000105","2":"3.745441e+01"},{"1":"9.84767081","2":"9.697662e+01"},{"1":"1.37826215","2":"1.899607e+00"},{"1":"8.86204042","2":"7.853576e+01"},{"1":"4.06632587","2":"1.653501e+01"},{"1":"0.12275926","2":"1.506984e-02"},{"1":"-8.58393789","2":"7.368399e+01"},{"1":"2.42995404","2":"5.904677e+00"},{"1":"-9.54195481","2":"9.104890e+01"},{"1":"1.67118111","2":"2.792846e+00"},{"1":"4.40823031","2":"1.943249e+01"},{"1":"-5.06698532","2":"2.567434e+01"},{"1":"8.38878586","2":"7.037173e+01"},{"1":"-9.19100484","2":"8.447457e+01"},{"1":"9.08404819","2":"8.251993e+01"},{"1":"9.47358766","2":"8.974886e+01"},{"1":"-1.25431543","2":"1.573307e+00"},{"1":"-8.49851260","2":"7.222472e+01"},{"1":"-2.63770349","2":"6.957480e+00"},{"1":"-3.74035739","2":"1.399027e+01"},{"1":"-0.14145034","2":"2.000820e-02"},{"1":"7.11134175","2":"5.057118e+01"},{"1":"4.80773189","2":"2.311429e+01"},{"1":"9.45773364","2":"8.944873e+01"},{"1":"9.10532923","2":"8.290702e+01"},{"1":"-8.18711795","2":"6.702890e+01"},{"1":"-3.46070895","2":"1.197651e+01"},{"1":"5.80368240","2":"3.368273e+01"},{"1":"-8.51015979","2":"7.242282e+01"},{"1":"9.16713660","2":"8.403639e+01"},{"1":"-4.81203781","2":"2.315571e+01"},{"1":"1.13023525","2":"1.277432e+00"},{"1":"-5.32553735","2":"2.836135e+01"},{"1":"8.97599083","2":"8.056841e+01"},{"1":"-8.50442146","2":"7.232518e+01"},{"1":"-4.11989694","2":"1.697355e+01"},{"1":"6.86826230","2":"4.717303e+01"},{"1":"-2.66028847","2":"7.077135e+00"},{"1":"-0.37306730","2":"1.391792e-01"},{"1":"-1.64684929","2":"2.712113e+00"},{"1":"-0.47225931","2":"2.230289e-01"},{"1":"0.28227391","2":"7.967856e-02"},{"1":"7.38750964","2":"5.457530e+01"},{"1":"-2.99208757","2":"8.952588e+00"},{"1":"-0.79657208","2":"6.345271e-01"},{"1":"2.36074050","2":"5.573096e+00"},{"1":"-9.83282942","2":"9.668453e+01"},{"1":"-6.12707471","2":"3.754104e+01"},{"1":"7.58245720","2":"5.749366e+01"},{"1":"5.74792441","2":"3.303864e+01"},{"1":"-5.58082097","2":"3.114556e+01"},{"1":"3.14456728","2":"9.888303e+00"},{"1":"8.52279277","2":"7.263800e+01"},{"1":"-6.28008207","2":"3.943943e+01"},{"1":"8.79419772","2":"7.733791e+01"},{"1":"9.01301209","2":"8.123439e+01"},{"1":"0.26994734","2":"7.287157e-02"},{"1":"6.04507634","2":"3.654295e+01"},{"1":"6.46281675","2":"4.176800e+01"},{"1":"-6.03438406","2":"3.641379e+01"},{"1":"-6.90646492","2":"4.769926e+01"},{"1":"4.90376831","2":"2.404694e+01"},{"1":"-4.90015768","2":"2.401155e+01"},{"1":"6.15589003","2":"3.789498e+01"},{"1":"1.80074221","2":"3.242673e+00"},{"1":"4.56270631","2":"2.081829e+01"},{"1":"2.76530993","2":"7.646939e+00"},{"1":"-1.17202903","2":"1.373652e+00"},{"1":"7.11439581","2":"5.061463e+01"},{"1":"0.09856669","2":"9.715393e-03"},{"1":"6.69352567","2":"4.480329e+01"},{"1":"6.04141104","2":"3.649865e+01"},{"1":"2.77695984","2":"7.711506e+00"},{"1":"5.52656442","2":"3.054291e+01"},{"1":"9.18324134","2":"8.433192e+01"},{"1":"-9.69066044","2":"9.390890e+01"},{"1":"-9.37701525","2":"8.792841e+01"},{"1":"3.15733800","2":"9.968783e+00"},{"1":"-0.13394945","2":"1.794246e-02"},{"1":"-8.28021689","2":"6.856199e+01"},{"1":"-7.67762309","2":"5.894590e+01"},{"1":"0.78953218","2":"6.233611e-01"},{"1":"7.82759367","2":"6.127122e+01"},{"1":"-7.68153626","2":"5.900600e+01"},{"1":"-5.99502002","2":"3.594027e+01"},{"1":"0.71601515","2":"5.126777e-01"},{"1":"0.23618161","2":"5.578175e-02"},{"1":"3.83716668","2":"1.472385e+01"},{"1":"-0.42142183","2":"1.775964e-01"},{"1":"1.59575179","2":"2.546424e+00"},{"1":"-0.81167287","2":"6.588128e-01"},{"1":"1.32927943","2":"1.766984e+00"},{"1":"-7.38608330","2":"5.455423e+01"},{"1":"9.20228980","2":"8.468214e+01"},{"1":"6.04752638","2":"3.657258e+01"},{"1":"0.87804438","2":"7.709619e-01"},{"1":"3.73006905","2":"1.391342e+01"},{"1":"7.86725018","2":"6.189363e+01"},{"1":"-4.68460553","2":"2.194553e+01"},{"1":"-4.60087763","2":"2.116807e+01"},{"1":"-6.03640256","2":"3.643816e+01"},{"1":"-3.56489407","2":"1.270847e+01"},{"1":"8.62630699","2":"7.441317e+01"},{"1":"6.11688911","2":"3.741633e+01"},{"1":"-0.05921275","2":"3.506150e-03"},{"1":"-3.36747169","2":"1.133987e+01"},{"1":"4.56430829","2":"2.083291e+01"},{"1":"-1.02323170","2":"1.047003e+00"},{"1":"-0.84293439","2":"7.105384e-01"},{"1":"-5.81333536","2":"3.379487e+01"},{"1":"4.72482146","2":"2.232394e+01"},{"1":"5.84485265","2":"3.416230e+01"},{"1":"4.07226074","2":"1.658331e+01"},{"1":"7.08277979","2":"5.016577e+01"},{"1":"3.85693280","2":"1.487593e+01"},{"1":"1.01166339","2":"1.023463e+00"},{"1":"-4.61685952","2":"2.131539e+01"},{"1":"3.20544666","2":"1.027489e+01"},{"1":"-5.14978773","2":"2.652031e+01"},{"1":"5.94841239","2":"3.538361e+01"},{"1":"-0.32199012","2":"1.036776e-01"},{"1":"-6.72676010","2":"4.524930e+01"},{"1":"3.38139283","2":"1.143382e+01"},{"1":"9.98802116","2":"9.976057e+01"},{"1":"6.70722865","2":"4.498692e+01"},{"1":"-1.25491209","2":"1.574804e+00"},{"1":"-4.81231489","2":"2.315837e+01"},{"1":"-5.58063476","2":"3.114348e+01"},{"1":"-6.89356788","2":"4.752128e+01"},{"1":"1.71453121","2":"2.939617e+00"},{"1":"8.29396349","2":"6.878983e+01"},{"1":"-8.44996025","2":"7.140183e+01"},{"1":"-7.14401029","2":"5.103688e+01"},{"1":"3.92048229","2":"1.537018e+01"},{"1":"-5.93856317","2":"3.526653e+01"},{"1":"-3.47311108","2":"1.206250e+01"},{"1":"9.22028480","2":"8.501365e+01"},{"1":"-9.22617074","2":"8.512223e+01"},{"1":"7.20642311","2":"5.193253e+01"},{"1":"6.18326297","2":"3.823274e+01"},{"1":"0.10521790","2":"1.107081e-02"},{"1":"-2.46805795","2":"6.091310e+00"},{"1":"9.37503987","2":"8.789137e+01"},{"1":"1.63750316","2":"2.681417e+00"},{"1":"5.73682695","2":"3.291118e+01"},{"1":"1.13225104","2":"1.281992e+00"},{"1":"-2.27403407","2":"5.171231e+00"},{"1":"4.85958999","2":"2.361561e+01"},{"1":"8.35066473","2":"6.973360e+01"},{"1":"1.50116800","2":"2.253505e+00"},{"1":"-3.03044150","2":"9.183576e+00"},{"1":"-0.54094247","2":"2.926188e-01"},{"1":"-9.98149166","2":"9.963018e+01"},{"1":"-5.68233492","2":"3.228893e+01"},{"1":"5.70949557","2":"3.259834e+01"},{"1":"-3.36605742","2":"1.133034e+01"},{"1":"-6.30419108","2":"3.974283e+01"},{"1":"-5.06085953","2":"2.561230e+01"},{"1":"3.00942710","2":"9.056651e+00"},{"1":"1.14722342","2":"1.316122e+00"},{"1":"9.40663761","2":"8.848483e+01"},{"1":"3.57654369","2":"1.279166e+01"},{"1":"7.05791702","2":"4.981419e+01"},{"1":"-6.56054569","2":"4.304076e+01"},{"1":"5.63524642","2":"3.175600e+01"},{"1":"-6.17828378","2":"3.817119e+01"},{"1":"2.60162790","2":"6.768468e+00"},{"1":"-3.77219131","2":"1.422943e+01"},{"1":"-6.00722126","2":"3.608671e+01"},{"1":"-4.73279665","2":"2.239936e+01"},{"1":"1.54811890","2":"2.396672e+00"},{"1":"-0.65048100","2":"4.231255e-01"},{"1":"-6.58307084","2":"4.333682e+01"},{"1":"3.69838374","2":"1.367804e+01"},{"1":"-7.91155289","2":"6.259267e+01"},{"1":"-0.63079951","2":"3.979080e-01"},{"1":"-8.28788234","2":"6.868899e+01"},{"1":"-7.06954361","2":"4.997845e+01"},{"1":"8.07373403","2":"6.518518e+01"},{"1":"7.76138608","2":"6.023911e+01"},{"1":"-8.78512398","2":"7.717840e+01"},{"1":"-2.91188012","2":"8.479046e+00"},{"1":"5.58307512","2":"3.117073e+01"},{"1":"3.28076355","2":"1.076341e+01"},{"1":"8.18484565","2":"6.699170e+01"},{"1":"0.02432338","2":"5.916268e-04"},{"1":"-3.84619464","2":"1.479321e+01"},{"1":"0.07062869","2":"4.988412e-03"},{"1":"8.69951350","2":"7.568154e+01"},{"1":"-8.39793156","2":"7.052525e+01"},{"1":"-6.52388824","2":"4.256112e+01"},{"1":"-0.45565232","2":"2.076190e-01"},{"1":"6.36007027","2":"4.045049e+01"},{"1":"-8.08964887","2":"6.544242e+01"},{"1":"-8.82539764","2":"7.788764e+01"},{"1":"6.94140943","2":"4.818316e+01"},{"1":"-5.99197463","2":"3.590376e+01"},{"1":"5.54011472","2":"3.069287e+01"},{"1":"-6.40614361","2":"4.103868e+01"},{"1":"-2.78851099","2":"7.775794e+00"},{"1":"8.65264778","2":"7.486831e+01"},{"1":"-6.09013899","2":"3.708979e+01"},{"1":"2.52472968","2":"6.374260e+00"},{"1":"-3.94062379","2":"1.552852e+01"},{"1":"9.66566448","2":"9.342507e+01"},{"1":"2.62092639","2":"6.869255e+00"},{"1":"8.96855321","2":"8.043495e+01"},{"1":"6.76415628","2":"4.575381e+01"},{"1":"8.77492612","2":"7.699933e+01"},{"1":"-1.68830295","2":"2.850367e+00"},{"1":"4.35150285","2":"1.893558e+01"},{"1":"3.02275113","2":"9.137024e+00"},{"1":"2.88176785","2":"8.304586e+00"},{"1":"-6.81171103","2":"4.639941e+01"},{"1":"5.87576518","2":"3.452462e+01"},{"1":"-6.47004451","2":"4.186148e+01"},{"1":"-9.16654774","2":"8.402560e+01"},{"1":"1.24007523","2":"1.537787e+00"},{"1":"-9.22906799","2":"8.517570e+01"},{"1":"-1.23724879","2":"1.530785e+00"},{"1":"-6.42423909","2":"4.127085e+01"},{"1":"1.36952872","2":"1.875609e+00"},{"1":"-7.50040324","2":"5.625605e+01"},{"1":"2.66780858","2":"7.117203e+00"},{"1":"4.29802529","2":"1.847302e+01"},{"1":"-1.74200792","2":"3.034592e+00"},{"1":"3.06475883","2":"9.392747e+00"},{"1":"7.67367300","2":"5.888526e+01"},{"1":"4.94370351","2":"2.444020e+01"},{"1":"-8.96915636","2":"8.044577e+01"},{"1":"-4.84799405","2":"2.350305e+01"},{"1":"-2.12296089","2":"4.506963e+00"},{"1":"5.30168268","2":"2.810784e+01"},{"1":"8.00483243","2":"6.407734e+01"},{"1":"1.77166322","2":"3.138791e+00"},{"1":"3.65125841","2":"1.333169e+01"},{"1":"7.08840095","2":"5.024543e+01"},{"1":"-5.81833926","2":"3.385307e+01"},{"1":"5.09163626","2":"2.592476e+01"},{"1":"-7.99879285","2":"6.398069e+01"},{"1":"-1.28456385","2":"1.650104e+00"},{"1":"8.05278928","2":"6.484742e+01"},{"1":"4.65165132","2":"2.163786e+01"},{"1":"-7.93736974","2":"6.300184e+01"},{"1":"2.92696272","2":"8.567111e+00"},{"1":"6.36513724","2":"4.051497e+01"},{"1":"-1.74822194","2":"3.056280e+00"},{"1":"0.51636554","2":"2.666334e-01"},{"1":"-5.15451582","2":"2.656903e+01"},{"1":"9.87621198","2":"9.753956e+01"},{"1":"-3.04981541","2":"9.301374e+00"},{"1":"5.27649346","2":"2.784138e+01"},{"1":"-5.20354220","2":"2.707685e+01"},{"1":"-6.59726037","2":"4.352384e+01"},{"1":"-3.48172534","2":"1.212241e+01"},{"1":"-1.34578976","2":"1.811150e+00"},{"1":"-8.34842882","2":"6.969626e+01"},{"1":"2.77076611","2":"7.677145e+00"},{"1":"9.93624319","2":"9.872893e+01"},{"1":"3.77434802","2":"1.424570e+01"},{"1":"5.73125621","2":"3.284730e+01"},{"1":"-2.35878262","2":"5.563855e+00"},{"1":"-4.05862837","2":"1.647246e+01"},{"1":"2.35825075","2":"5.561347e+00"},{"1":"-3.77582029","2":"1.425682e+01"},{"1":"-8.25670228","2":"6.817313e+01"},{"1":"-6.47526502","2":"4.192906e+01"},{"1":"-7.87589729","2":"6.202976e+01"},{"1":"-6.95540488","2":"4.837766e+01"},{"1":"-6.82383684","2":"4.656475e+01"},{"1":"8.14508308","2":"6.634238e+01"},{"1":"2.71430708","2":"7.367463e+00"},{"1":"-0.26782717","2":"7.173139e-02"},{"1":"-4.27806536","2":"1.830184e+01"},{"1":"1.04182387","2":"1.085397e+00"},{"1":"0.19592546","2":"3.838679e-02"},{"1":"-0.32531765","2":"1.058316e-01"},{"1":"2.33794711","2":"5.465997e+00"},{"1":"-5.43769512","2":"2.956853e+01"},{"1":"1.81621069","2":"3.298621e+00"},{"1":"5.12892041","2":"2.630582e+01"},{"1":"-6.50365011","2":"4.229746e+01"},{"1":"-1.21616443","2":"1.479056e+00"},{"1":"4.00881371","2":"1.607059e+01"},{"1":"8.39762483","2":"7.052010e+01"},{"1":"4.33917054","2":"1.882840e+01"},{"1":"4.74022993","2":"2.246978e+01"},{"1":"3.77353039","2":"1.423953e+01"},{"1":"9.91904105","2":"9.838738e+01"},{"1":"7.03210467","2":"4.945050e+01"},{"1":"0.55203759","2":"3.047455e-01"},{"1":"1.62896882","2":"2.653539e+00"},{"1":"-2.85831451","2":"8.169962e+00"},{"1":"5.32486019","2":"2.835414e+01"},{"1":"-0.66393509","2":"4.408098e-01"},{"1":"-9.99164158","2":"9.983290e+01"},{"1":"-2.42444209","2":"5.877919e+00"},{"1":"5.69738605","2":"3.246021e+01"},{"1":"0.83886393","2":"7.036927e-01"},{"1":"6.42140299","2":"4.123442e+01"},{"1":"7.81909496","2":"6.113825e+01"},{"1":"1.28232074","2":"1.644346e+00"},{"1":"1.68970918","2":"2.855117e+00"},{"1":"-3.70254672","2":"1.370885e+01"},{"1":"5.51055555","2":"3.036622e+01"},{"1":"-5.51568904","2":"3.042283e+01"},{"1":"-2.74377848","2":"7.528320e+00"},{"1":"-2.99627491","2":"8.977663e+00"},{"1":"-2.38718414","2":"5.698648e+00"},{"1":"-0.23973026","2":"5.747060e-02"},{"1":"0.06292243","2":"3.959232e-03"},{"1":"6.87725216","2":"4.729660e+01"},{"1":"-8.64919687","2":"7.480861e+01"},{"1":"-7.47431368","2":"5.586537e+01"},{"1":"-2.07593474","2":"4.309505e+00"},{"1":"4.11642182","2":"1.694493e+01"},{"1":"-1.08186606","2":"1.170434e+00"},{"1":"9.29315362","2":"8.636270e+01"},{"1":"0.39961330","2":"1.596908e-01"},{"1":"9.39577754","2":"8.828064e+01"},{"1":"-9.01410618","2":"8.125411e+01"},{"1":"-8.71636966","2":"7.597510e+01"},{"1":"-8.12708762","2":"6.604955e+01"},{"1":"-4.31910154","2":"1.865464e+01"},{"1":"9.10265439","2":"8.285832e+01"},{"1":"-7.87536095","2":"6.202131e+01"},{"1":"-1.55001169","2":"2.402536e+00"},{"1":"4.72907617","2":"2.236416e+01"},{"1":"7.24139216","2":"5.243776e+01"},{"1":"-5.69278276","2":"3.240778e+01"},{"1":"-3.41580770","2":"1.166774e+01"},{"1":"5.88500987","2":"3.463334e+01"},{"1":"-4.86241854","2":"2.364311e+01"},{"1":"9.69178164","2":"9.393063e+01"},{"1":"-1.39837186","2":"1.955444e+00"},{"1":"2.51361518","2":"6.318261e+00"},{"1":"3.22040372","2":"1.037100e+01"},{"1":"0.80765226","2":"6.523022e-01"},{"1":"-6.42941690","2":"4.133740e+01"},{"1":"4.91449065","2":"2.415222e+01"},{"1":"4.29582108","2":"1.845408e+01"},{"1":"9.86277897","2":"9.727441e+01"},{"1":"-0.65927992","2":"4.346500e-01"},{"1":"4.57638465","2":"2.094330e+01"},{"1":"-6.12465649","2":"3.751142e+01"},{"1":"-5.19794535","2":"2.701864e+01"},{"1":"0.05770568","2":"3.329946e-03"},{"1":"8.76997010","2":"7.691238e+01"},{"1":"8.89035833","2":"7.903847e+01"},{"1":"5.38864072","2":"2.903745e+01"},{"1":"8.71469440","2":"7.594590e+01"},{"1":"-9.15454451","2":"8.380569e+01"},{"1":"1.61320730","2":"2.602438e+00"},{"1":"-9.50543096","2":"9.035322e+01"},{"1":"-7.51543601","2":"5.648178e+01"},{"1":"-9.12609035","2":"8.328553e+01"},{"1":"5.55545248","2":"3.086305e+01"},{"1":"7.01648123","2":"4.923101e+01"},{"1":"4.28439106","2":"1.835601e+01"},{"1":"2.13057776","2":"4.539362e+00"},{"1":"5.63306021","2":"3.173137e+01"},{"1":"-8.45713970","2":"7.152321e+01"},{"1":"0.92410086","2":"8.539624e-01"},{"1":"6.11706211","2":"3.741845e+01"},{"1":"-0.32565534","2":"1.060514e-01"},{"1":"8.10520076","2":"6.569428e+01"},{"1":"-9.85828525","2":"9.718579e+01"},{"1":"-4.36699491","2":"1.907064e+01"},{"1":"-9.63839290","2":"9.289862e+01"},{"1":"-5.02296205","2":"2.523015e+01"},{"1":"7.39325935","2":"5.466028e+01"},{"1":"4.88827755","2":"2.389526e+01"},{"1":"-6.55863019","2":"4.301563e+01"},{"1":"-4.16806913","2":"1.737280e+01"},{"1":"-1.68963609","2":"2.854870e+00"},{"1":"1.40706944","2":"1.979844e+00"},{"1":"2.97586968","2":"8.855800e+00"},{"1":"4.80875479","2":"2.312412e+01"},{"1":"-6.36536177","2":"4.051783e+01"},{"1":"-9.12964354","2":"8.335039e+01"},{"1":"-3.23207470","2":"1.044631e+01"},{"1":"-2.16823983","2":"4.701264e+00"},{"1":"-3.12540973","2":"9.768186e+00"},{"1":"-8.47854646","2":"7.188575e+01"},{"1":"-0.35051989","2":"1.228642e-01"},{"1":"-2.59587029","2":"6.738543e+00"},{"1":"0.57744486","2":"3.334426e-01"},{"1":"5.76620995","2":"3.324918e+01"},{"1":"-2.34357641","2":"5.492350e+00"},{"1":"-0.07819475","2":"6.114418e-03"},{"1":"1.60078370","2":"2.562508e+00"},{"1":"-6.47201824","2":"4.188702e+01"},{"1":"3.16046339","2":"9.988529e+00"},{"1":"7.99655399","2":"6.394488e+01"},{"1":"9.67013100","2":"9.351143e+01"},{"1":"3.17541089","2":"1.008323e+01"},{"1":"-8.12810687","2":"6.606612e+01"},{"1":"9.73405361","2":"9.475180e+01"},{"1":"6.60513275","2":"4.362778e+01"},{"1":"6.05222573","2":"3.662944e+01"},{"1":"-3.53029504","2":"1.246298e+01"},{"1":"-1.69041908","2":"2.857517e+00"},{"1":"-9.85657309","2":"9.715203e+01"},{"1":"-5.25787618","2":"2.764526e+01"},{"1":"6.66315846","2":"4.439768e+01"},{"1":"-9.10446740","2":"8.289133e+01"},{"1":"4.00943757","2":"1.607559e+01"},{"1":"-2.20238710","2":"4.850509e+00"},{"1":"-3.40953212","2":"1.162491e+01"},{"1":"7.90058909","2":"6.241931e+01"},{"1":"7.26697444","2":"5.280892e+01"},{"1":"-3.34416381","2":"1.118343e+01"},{"1":"0.74538563","2":"5.555997e-01"},{"1":"7.16554253","2":"5.134500e+01"},{"1":"-6.60926212","2":"4.368235e+01"},{"1":"-7.03804562","2":"4.953409e+01"},{"1":"2.63542348","2":"6.945457e+00"},{"1":"6.74357743","2":"4.547584e+01"},{"1":"7.12074534","2":"5.070501e+01"},{"1":"-5.78280576","2":"3.344084e+01"},{"1":"-5.39430683","2":"2.909855e+01"},{"1":"-1.56847502","2":"2.460114e+00"},{"1":"4.72865605","2":"2.236019e+01"},{"1":"-0.99143683","2":"9.829470e-01"},{"1":"1.52208369","2":"2.316739e+00"},{"1":"6.55737814","2":"4.299921e+01"},{"1":"0.16466155","2":"2.711343e-02"},{"1":"3.42770387","2":"1.174915e+01"},{"1":"-9.56808700","2":"9.154829e+01"},{"1":"-6.29606564","2":"3.964044e+01"},{"1":"1.58018605","2":"2.496988e+00"},{"1":"-2.87128650","2":"8.244286e+00"},{"1":"4.87213303","2":"2.373768e+01"},{"1":"-8.77021417","2":"7.691666e+01"},{"1":"7.52580652","2":"5.663776e+01"},{"1":"2.90347304","2":"8.430156e+00"},{"1":"6.60801222","2":"4.366583e+01"},{"1":"-6.34590647","2":"4.027053e+01"},{"1":"6.87874541","2":"4.731714e+01"},{"1":"6.56035416","2":"4.303825e+01"},{"1":"9.87145840","2":"9.744569e+01"},{"1":"-9.61693673","2":"9.248547e+01"},{"1":"4.74556161","2":"2.252036e+01"},{"1":"-6.95075207","2":"4.831295e+01"},{"1":"-1.48051453","2":"2.191923e+00"},{"1":"8.88541623","2":"7.895062e+01"},{"1":"-7.62183502","2":"5.809237e+01"},{"1":"-5.56481004","2":"3.096711e+01"},{"1":"-7.85674870","2":"6.172850e+01"},{"1":"6.75679754","2":"4.565431e+01"},{"1":"3.14673943","2":"9.901969e+00"},{"1":"-3.14457359","2":"9.888343e+00"},{"1":"4.49096119","2":"2.016873e+01"},{"1":"-9.97153663","2":"9.943154e+01"},{"1":"7.60525892","2":"5.783996e+01"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>Quarto also let’s me show you plots, like the one below. What do you think <code>mystery_function</code> does now?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">qplot</span>(<span class="at">x =</span> table_1<span class="sc">$</span>x, <span class="at">y =</span> table_1<span class="sc">$</span>y) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="st">"mystery_function(x)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In reality, <code>mystery_function</code> just squares <code>x</code>, so:</p>
+<p><span id="eq-first"><span class="math display">\[
+\mathtt{mystery\_function}(x) = x^2
+\tag{1}\]</span></span></p>
+<p>All of the chunks of code have line numbers. For any chunk, a little clipboard appears when you hover over the code listing, and you can copy it by clicking on the clipboard. (This includes the code in the “View Source” pane, meaning you can copy the entire page, text and all.)</p>
+<p>Quarto also processes citations, so I can, for example, easily direct you towards my two fathers: <span class="citation" data-cites="turingComputableNumbersApplication1936">Turing (<a href="0R_references.html#ref-turingComputableNumbersApplication1936" role="doc-biblioref">1936</a>)</span> and <span class="citation" data-cites="foucaultHistorySexuality1978">Foucault (<a href="0R_references.html#ref-foucaultHistorySexuality1978" role="doc-biblioref">1978</a>)</span>. It will also process internal links so that I can, for example, send you back to the top of the page: <a href="#lst-first" class="quarto-xref">Listing&nbsp;<span>1</span></a>.</p>
+<p>Finally, Quarto allows me to annotate code, which is helpful to explain how it works when a high-level of technical detail is needed. For an example of those annotations and when they might be helpful, look to <a href="02_r_and_friends.html#fig-r_and_s" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>.</p>
+</section>
+<section id="sec-tools" class="level3">
+<h3 class="anchored" data-anchor-id="sec-tools">Tools</h3>
+<p>R is an free and open-source statistical programming language.You use R by typing commands into an R console, which looks like this:</p>
+<p><img src="assets/R.jpg" class="img-fluid" width="550"></p>
+<div class="callout callout-style-simple callout-note callout-titled" title="RStudio">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+RStudio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>RStudio is a graphical user interface (GUI) and interactive development environment (IDE) with which to use R. This means that RStudio contains an R console (lower left) and a variety of other tools (right), like a text editor (upper left). RStudio looks like this:</p>
+<p><img src="assets/RStudio.jpg" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled" title="Tidyverse">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tidyverse
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Tidyverse is a collection of R packages that are designed to work well together and to acomplish data analysis tasks. The Tidyverse packages were developed by Hadley Wickham primarily, but also by teams of his collaborators.</p>
+<p>Because Tidyverse is set of R pacakges, there is not picture to provide. Tidyverse exists as R functions that you can (and will) use in your code.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled" title="grammar of graphics">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+grammar of graphics
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The grammar of graphics refers to another set of R packages, exemplified by <code>ggplot2</code>, which is included in the tidyverse. The grammar of graphics is the tool that most R programmers use to produce the “production-quality graphics” for which R is known. Once you begin to produce plots with <code>ggplot2</code>, you are likely recognize that you have been seeing these plots for years.</p>
+</div>
+</div>
+</div>
+<p>I believe that these tools will allow you to accomplish the vast majority of data analysis tasks, and that knowing how to use them will result in you understanding data analysis on a deeper level and being able to do it faster. That being said, these are not the only tools for data analysis. I encourage you to explore others, as well; particularly, if you intend to do a lot of work with text data, I would suggest python.</p>
+<p>Because my audience does not intend to become “programmers,” per se, I would also like to introduce you to the following tools, which allow R code to be integrated into readable documents instead of writing R code in separate text files with R code only (called scripts). R scripts have a place, to be clear, especially while you are learning. However, if you would like to share the analysis that you do with an R script, sharing that R script is not a good way to do that. When you send someone an R script, you are sending them a bunch of code, not an analysis</p>
+<p>The current gold standard for the sort of work you are most likely to want to produce (reproducible research) is this - the document you are reading now. This is a document which includes code, the output of that code, and text explaining that code and providing context. This approach is called <strong>literate</strong> <strong>programming.</strong> The tools used to produce literate programming documents with R are:</p>
+<ul>
+<li><p>RMarkdown: a document preparation software based on R and a markup language called markdown that is mainly used to make static documents (like appendices to a journal article). RMarkdown uses a software called pandoc to turn the <code>.rmd</code> file into: a pdf (latex or a beamer presentation), a <code>.html</code> website, a word document, a power-point, and <a href="https://pandoc.org/MANUAL.html#options">a lot of other formats you’re likely to never use</a>.</p></li>
+<li><p>Quarto: a very similar, but more advanced and comprehensive software than RMarkdown. Most of the things you can do in Quarto are also possible in RMarkdown, like adding cross references (like this <a href="#eq-first" class="quarto-xref">Equation&nbsp;<span>1</span></a>), creating books (also like this), creating interactive data dashboards (which seems particularly trendy as of late), and creating blogs and websites. Quarto is made by the same company that makes RStudio.</p></li>
+<li><p>Shiny: a software (written in R) that allows you to create interactive plots, which may be helpful if you are, say, trying to decide the optimal number of bins in a histogram. You could use shiny to create a histogram and a <code>bins</code> slider, so that you could easily see a variety of different bin sizes merely by moving a slider (instead of by writing, modifying, and rewriting code to achieve the same end).</p></li>
+</ul>
+<p>My goal for you is to write code that is readable and to put that code inside documents that are actively fun and/or interesting to read. (That’s also, incidentally, my goal for me.)</p>
+<p>We are also going to do statistics! There are two approaches to statistics that we’re going to adopt through these lessons, so I’d like to begin by elucidating the way in which these approaches are different. I am more familiar with the first approach (exploratory data analysis). Confirmatory data analysis uses many of the same tools (like hypothesis testing, which I will show you), but it uses them in a different and moer complicated way. <strong>The ultimate goal of both approaches is to predict the result of measurements.</strong></p>
+<ul>
+<li><p>exploratory data analysis: If the purpose of a statistical model is to predict data, then a model that makes the most accurate prediction is the best model. The model creation process is iterative. Once you see the results of a model, you can use the results to modify the model itself. Generally, practitioners recognize that there are a variety of different types of models that could be used for any task. Thus, they usually construct a variety of different models and then compare them to select a final model. Practitioners will use numbers (in diagnostic and statistic tables) or visuals (like a residuals plot) when comparing models.</p></li>
+<li><p>confirmatory data analysis: In the best case, at least according to the “Open science” framework, the final statistical model will have been selected and preregistered before data is even collected. Statistics have to be rigorous to mean anything, a fact which the machine learning people (who do only exploratory work) ignore. They don’t check model assumptions using statistical tests like the Shapiro-Wilk normality test, and they are constantly “p-hacking” and “HARKing” to forcibly extract findings from their data. Confirmatory data analysis rejects these practices, aiming instead for statistical models that are pre-specified (pre-registered), theoretically-based, and rigorous (whatever they take that to mean).</p></li>
+</ul>
+<p>I’m often somewhat flippant about the second approach, which suggest and attempts to discover Truth where I am skeptical it exists. In any case, the second approach is the only one that is taught in statistics courses. This is a mistake. Firstly, exploratory data analysis is much more commond. Secondly, it is easier to get started doing exploratory (rather than confirmatory) data analysis. Because both of these approaches adopt many of the same tools, it seems to me that starting with exploratory data analysis and trying to make that make sense is the most effective way to learn confirmatory data analysis (which will require additional effort and research that I can’t provide).</p>
+<p>Thus, I intend to provide you with a strong understanding of data that you can directly apply to exploratory data analysis tasks. My hope is that this understanding will enable you to complete a diversity of tasks, including confirmatory data analysis, if that is of interest.</p>
+</section>
+<section id="learning-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
+<p>There has to be some boring stuff because pedagogy. I have quite a few learning objectives for you, forming one big list, but I’ll attempt to section them off so they are easier to read.</p>
+<section id="r-learning-objectives" class="level4">
+<h4 class="anchored" data-anchor-id="r-learning-objectives"><strong>R Learning Objectives</strong></h4>
+<ul>
+<li><p>discuss R as a language with a history: use knowledge about the history of R (and of scientific computing more generally) to describe what R is, what people “say” in this language, and why this language has the properties and characteristics that it does.</p></li>
+<li><p>R competence: read R expressions written by others (allowing the language to serve a communicative purpose), and write R expressions that are readable and align with best practices within the open source R community.</p></li>
+<li><p>R’s friends: Describe R’s relationship to RStudio, RMarkdown, Shiny, Quarto, and Tidyverse; and, describe what each of these tools is and why someone would use them.</p>
+<ul>
+<li>run R code in several different ways: via the console, a script, and Quarto or RMarkdown documents.</li>
+</ul></li>
+<li><p>describe R’s data types and the use of each: strings, numerics (floating point “doubles”, integers, and complex numbers), logicals, datetimes, and factors</p></li>
+<li><p>describe R’s data structures and the use of each: including, vectors (1-dimensional arrays), matrices (2-dimensional arrays), arrays (more than 2-dimensional arrays), lists (key-value pairs), data frames, and tibbles</p></li>
+<li><p>access R documentation, and read it effectively enough to solve a problem</p></li>
+</ul>
+</section>
+<section id="computation-learning-objectives" class="level4">
+<h4 class="anchored" data-anchor-id="computation-learning-objectives">Computation Learning Objectives</h4>
+<ul>
+<li><p>generate synthetic data: use simulation of simple events (like the rolling of dice or flipping of a coin) to gain visual intuition for the central limit theorem and the law of large numbers</p></li>
+<li><p>use the Monte Carlo simulation framework to evaluate statistical tests (e.g., by determining what happens when assumptions are violated)</p></li>
+<li><p>process string data: convert strings to all upper or lower case, add prefixes or suffixes, splitting strings apart</p></li>
+<li><p>process numeric data: scale and center numeric data and write functions to accomplish non-standard transformations</p></li>
+<li><p>process language data: apply the principles of natural language processing to pre-process text data (by tokenizing and stemming text and describing both of those processes and why they are used)</p></li>
+</ul>
+</section>
+<section id="statistics-learning-objectives" class="level4">
+<h4 class="anchored" data-anchor-id="statistics-learning-objectives">Statistics Learning Objectives</h4>
+<ul>
+<li><p>null hypothesis significance testing: use R to perform null-hypothesis significance tests, such as the one-sample, two-sample, and repeated measures t-test</p></li>
+<li><p>regression: use R to perform linear and logistic regressions, including regressions with polynomial terms</p></li>
+<li><p>machine learning: use R to perform a more complicated machine learning task, likely by constructing a decision tree and a random forest classification model</p></li>
+<li><p>dimensionality reduction: perform principal component analysis and construct a latent semantic space, and explain why these two seemingly distinct methods are connected by singular value decomposition</p></li>
+</ul>
+</section>
+<section id="data-science-learning-objectives" class="level4">
+<h4 class="anchored" data-anchor-id="data-science-learning-objectives">Data Science Learning Objectives</h4>
+<ul>
+<li><p>rectangular data: use the tidy data framework to read, write, and pre-process rectangular data in a consistent, efficient, and minimally complex manner.</p>
+<ul>
+<li><p>import data from a variety of sources including: comma-separated values (<code>.csv</code>) files, excel spreadshees (<code>.xlsx</code> files), google sheets spreadsheets</p></li>
+<li><p>‘tidy’ data into the following format: one observation per row, one variable per column, one value per cell</p></li>
+<li><p>use available tools that enable you to store data in a very consistent format with very little effort</p></li>
+</ul></li>
+<li><p>language data: use R to pre-process, analyze and visualize text data</p></li>
+<li><p>visualization: use R and the grammar of graphics (represented by <code>ggplot2</code> and related packages) to visualize data and to share data visualizations with others</p></li>
+<li><p>publication: use RMarkdown or Quarto to conduct a linear or logistic regression, and to report and interpret the results of those tests</p></li>
+</ul>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-foucaultHistorySexuality1978" class="csl-entry" role="listitem">
+Foucault, Michel. 1978. <em>The <span>History</span> of <span>Sexuality</span></em>. Vol. 1. 3 vols. Random House.
+</div>
+<div id="ref-turingComputableNumbersApplication1936" class="csl-entry" role="listitem">
+Turing, Alan. 1936. <span>“On Computable Numbers, with an Application to the <span>Entscheidungsproblem</span>.”</span> <em>Journal of Math</em> 58 (5): 345–63. <a href="https://www.wolframscience.com/prizes/tm23/images/Turing.pdf">https://www.wolframscience.com/prizes/tm23/images/Turing.pdf</a>.
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./01_lore.html" class="pagination-link" aria-label="The Lore">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The Lore</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu"># Preface {.unnumbered}</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="in">mystery_function &lt;- \(x) x**2</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="in">```</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="in">```{r}</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#| lst-label: lst-first</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co">#| lst-cap: greeting</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="fu">print</span>(<span class="st">"Good Morning! 🤗"</span>)</span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="in">```</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="fu">## This book</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a></span>
+<span id="cb4-18"><a href="#cb4-18"></a>This document you are reading now is called a Quarto book. We will talk more about Quarto later, but for now, all you need to know about Quarto books is that they:</span>
+<span id="cb4-19"><a href="#cb4-19"></a></span>
+<span id="cb4-20"><a href="#cb4-20"></a><span class="ss">-   </span>are relatively simple to construct,</span>
+<span id="cb4-21"><a href="#cb4-21"></a></span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="ss">-   </span>can contain R code snippets and their outputs,</span>
+<span id="cb4-23"><a href="#cb4-23"></a></span>
+<span id="cb4-24"><a href="#cb4-24"></a><span class="ss">-   </span>are pretty enough for me to be temporarily satisfied.</span>
+<span id="cb4-25"><a href="#cb4-25"></a></span>
+<span id="cb4-26"><a href="#cb4-26"></a><span class="fu">### Features of This Book</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a></span>
+<span id="cb4-28"><a href="#cb4-28"></a>::: {.callout-important collapse="false" title="callouts"}</span>
+<span id="cb4-29"><a href="#cb4-29"></a>This book let's me put many of my least relevant tangents in these collapsible little notes.</span>
+<span id="cb4-30"><a href="#cb4-30"></a>:::</span>
+<span id="cb4-31"><a href="#cb4-31"></a></span>
+<span id="cb4-32"><a href="#cb4-32"></a>The features of this book, which are achieved easily through Quarto, explain its format. Code snippets appear in this book, but only if you want them to. Each code snippet is collapsible by clicking the triangle next to "show code for this result". If you really hate code, you can click the "<span class="sc">\&lt;</span>/<span class="sc">\&gt;</span> Code" button on the top of each page and hide (or show) all the code at once. Speaking of the "<span class="sc">\&lt;</span>/<span class="sc">\&gt;</span> Code" button, if you click "View Source" you can see all of the code that was used to create the page.</span>
+<span id="cb4-33"><a href="#cb4-33"></a></span>
+<span id="cb4-34"><a href="#cb4-34"></a>Quarto also lets me show you "paged tables." In the following code, I generate 1000 random numbers between -10 and 10, which I label <span class="in">`x`</span>. Then, I apply the <span class="in">`mystery_function`</span> to each number, producing <span class="in">`y`</span>. What does <span class="in">`mystery_function`</span> do?</span>
+<span id="cb4-35"><a href="#cb4-35"></a></span>
+<span id="cb4-38"><a href="#cb4-38"></a><span class="in">```{r}</span></span>
+<span id="cb4-39"><a href="#cb4-39"></a>table_1 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb4-40"><a href="#cb4-40"></a>  <span class="at">x =</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">1000</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="at">max =</span> <span class="dv">10</span>),</span>
+<span id="cb4-41"><a href="#cb4-41"></a>  <span class="at">y =</span> <span class="fu">mystery_function</span>(x)</span>
+<span id="cb4-42"><a href="#cb4-42"></a>)</span>
+<span id="cb4-43"><a href="#cb4-43"></a>table_1</span>
+<span id="cb4-44"><a href="#cb4-44"></a><span class="in">```</span></span>
+<span id="cb4-45"><a href="#cb4-45"></a></span>
+<span id="cb4-46"><a href="#cb4-46"></a>Quarto also let's me show you plots, like the one below. What do you think <span class="in">`mystery_function`</span> does now?</span>
+<span id="cb4-47"><a href="#cb4-47"></a></span>
+<span id="cb4-48"><a href="#cb4-48"></a><span class="in">```{r, warning=FALSE}</span></span>
+<span id="cb4-49"><a href="#cb4-49"></a><span class="in">qplot(x = table_1$x, y = table_1$y) +</span></span>
+<span id="cb4-50"><a href="#cb4-50"></a><span class="in">  labs(x = "x", y = "mystery_function(x)")</span></span>
+<span id="cb4-51"><a href="#cb4-51"></a><span class="in">```</span></span>
+<span id="cb4-52"><a href="#cb4-52"></a></span>
+<span id="cb4-53"><a href="#cb4-53"></a>In reality, <span class="in">`mystery_function`</span> just squares <span class="in">`x`</span>, so:</span>
+<span id="cb4-54"><a href="#cb4-54"></a></span>
+<span id="cb4-55"><a href="#cb4-55"></a>$$</span>
+<span id="cb4-56"><a href="#cb4-56"></a>\mathtt{mystery<span class="sc">\_</span>function}(x) = x^2</span>
+<span id="cb4-57"><a href="#cb4-57"></a>$$ {#eq-first}</span>
+<span id="cb4-58"><a href="#cb4-58"></a></span>
+<span id="cb4-59"><a href="#cb4-59"></a>All of the chunks of code have line numbers. For any chunk, a little clipboard appears when you hover over the code listing, and you can copy it by clicking on the clipboard. (This includes the code in the "View Source" pane, meaning you can copy the entire page, text and all.)</span>
+<span id="cb4-60"><a href="#cb4-60"></a></span>
+<span id="cb4-61"><a href="#cb4-61"></a>Quarto also processes citations, so I can, for example, easily direct you towards my two fathers: @turingComputableNumbersApplication1936 and @foucaultHistorySexuality1978. It will also process internal links so that I can, for example, send you back to the top of the page: @lst-first.</span>
+<span id="cb4-62"><a href="#cb4-62"></a></span>
+<span id="cb4-63"><a href="#cb4-63"></a>Finally, Quarto allows me to annotate code, which is helpful to explain how it works when a high-level of technical detail is needed. For an example of those annotations and when they might be helpful, look to @fig-r_and_s.</span>
+<span id="cb4-64"><a href="#cb4-64"></a></span>
+<span id="cb4-65"><a href="#cb4-65"></a><span class="fu">### Tools {#sec-tools}</span></span>
+<span id="cb4-66"><a href="#cb4-66"></a></span>
+<span id="cb4-67"><a href="#cb4-67"></a>R is an free and open-source statistical programming language.You use R by typing commands into an R console, which looks like this:</span>
+<span id="cb4-68"><a href="#cb4-68"></a></span>
+<span id="cb4-69"><a href="#cb4-69"></a><span class="al">![](assets/R.jpg)</span>{width="550"}</span>
+<span id="cb4-70"><a href="#cb4-70"></a></span>
+<span id="cb4-71"><a href="#cb4-71"></a>::: {.callout-note title="RStudio" collapse="false"}</span>
+<span id="cb4-72"><a href="#cb4-72"></a>RStudio is a graphical user interface (GUI) and interactive development environment (IDE) with which to use R. This means that RStudio contains an R console (lower left) and a variety of other tools (right), like a text editor (upper left). RStudio looks like this:</span>
+<span id="cb4-73"><a href="#cb4-73"></a></span>
+<span id="cb4-74"><a href="#cb4-74"></a><span class="al">![](assets/RStudio.jpg)</span></span>
+<span id="cb4-75"><a href="#cb4-75"></a>:::</span>
+<span id="cb4-76"><a href="#cb4-76"></a></span>
+<span id="cb4-77"><a href="#cb4-77"></a>::: {.callout-note title="Tidyverse" collapse="false"}</span>
+<span id="cb4-78"><a href="#cb4-78"></a>Tidyverse is a collection of R packages that are designed to work well together and to acomplish data analysis tasks. The Tidyverse packages were developed by Hadley Wickham primarily, but also by teams of his collaborators.</span>
+<span id="cb4-79"><a href="#cb4-79"></a></span>
+<span id="cb4-80"><a href="#cb4-80"></a>Because Tidyverse is set of R pacakges, there is not picture to provide. Tidyverse exists as R functions that you can (and will) use in your code.</span>
+<span id="cb4-81"><a href="#cb4-81"></a>:::</span>
+<span id="cb4-82"><a href="#cb4-82"></a></span>
+<span id="cb4-83"><a href="#cb4-83"></a>::: {.callout-note title="grammar of graphics" collapse="true"}</span>
+<span id="cb4-84"><a href="#cb4-84"></a>The grammar of graphics refers to another set of R packages, exemplified by <span class="in">`ggplot2`</span>, which is included in the tidyverse. The grammar of graphics is the tool that most R programmers use to produce the "production-quality graphics" for which R is known. Once you begin to produce plots with <span class="in">`ggplot2`</span>, you are likely recognize that you have been seeing these plots for years.</span>
+<span id="cb4-85"><a href="#cb4-85"></a>:::</span>
+<span id="cb4-86"><a href="#cb4-86"></a></span>
+<span id="cb4-87"><a href="#cb4-87"></a>I believe that these tools will allow you to accomplish the vast majority of data analysis tasks, and that knowing how to use them will result in you understanding data analysis on a deeper level and being able to do it faster. That being said, these are not the only tools for data analysis. I encourage you to explore others, as well; particularly, if you intend to do a lot of work with text data, I would suggest python.</span>
+<span id="cb4-88"><a href="#cb4-88"></a></span>
+<span id="cb4-89"><a href="#cb4-89"></a>Because my audience does not intend to become "programmers," per se, I would also like to introduce you to the following tools, which allow R code to be integrated into readable documents instead of writing R code in separate text files with R code only (called scripts). R scripts have a place, to be clear, especially while you are learning. However, if you would like to share the analysis that you do with an R script, sharing that R script is not a good way to do that. When you send someone an R script, you are sending them a bunch of code, not an analysis</span>
+<span id="cb4-90"><a href="#cb4-90"></a></span>
+<span id="cb4-91"><a href="#cb4-91"></a>The current gold standard for the sort of work you are most likely to want to produce (reproducible research) is this - the document you are reading now. This is a document which includes code, the output of that code, and text explaining that code and providing context. This approach is called **literate** **programming.** The tools used to produce literate programming documents with R are:</span>
+<span id="cb4-92"><a href="#cb4-92"></a></span>
+<span id="cb4-93"><a href="#cb4-93"></a><span class="ss">-   </span>RMarkdown: a document preparation software based on R and a markup language called markdown that is mainly used to make static documents (like appendices to a journal article). RMarkdown uses a software called pandoc to turn the <span class="in">`.rmd`</span> file into: a pdf (latex or a beamer presentation), a <span class="in">`.html`</span> website, a word document, a power-point, and <span class="co">[</span><span class="ot">a lot of other formats you're likely to never use</span><span class="co">](https://pandoc.org/MANUAL.html#options)</span>.</span>
+<span id="cb4-94"><a href="#cb4-94"></a></span>
+<span id="cb4-95"><a href="#cb4-95"></a><span class="ss">-   </span>Quarto: a very similar, but more advanced and comprehensive software than RMarkdown. Most of the things you can do in Quarto are also possible in RMarkdown, like adding cross references (like this @eq-first), creating books (also like this), creating interactive data dashboards (which seems particularly trendy as of late), and creating blogs and websites. Quarto is made by the same company that makes RStudio.</span>
+<span id="cb4-96"><a href="#cb4-96"></a></span>
+<span id="cb4-97"><a href="#cb4-97"></a><span class="ss">-   </span>Shiny: a software (written in R) that allows you to create interactive plots, which may be helpful if you are, say, trying to decide the optimal number of bins in a histogram. You could use shiny to create a histogram and a <span class="in">`bins`</span> slider, so that you could easily see a variety of different bin sizes merely by moving a slider (instead of by writing, modifying, and rewriting code to achieve the same end).</span>
+<span id="cb4-98"><a href="#cb4-98"></a></span>
+<span id="cb4-99"><a href="#cb4-99"></a>My goal for you is to write code that is readable and to put that code inside documents that are actively fun and/or interesting to read. (That's also, incidentally, my goal for me.)</span>
+<span id="cb4-100"><a href="#cb4-100"></a></span>
+<span id="cb4-101"><a href="#cb4-101"></a>We are also going to do statistics! There are two approaches to statistics that we're going to adopt through these lessons, so I'd like to begin by elucidating the way in which these approaches are different. I am more familiar with the first approach (exploratory data analysis). Confirmatory data analysis uses many of the same tools (like hypothesis testing, which I will show you), but it uses them in a different and moer complicated way. **The ultimate goal of both approaches is to predict the result of measurements.**</span>
+<span id="cb4-102"><a href="#cb4-102"></a></span>
+<span id="cb4-103"><a href="#cb4-103"></a><span class="ss">-   </span>exploratory data analysis: If the purpose of a statistical model is to predict data, then a model that makes the most accurate prediction is the best model. The model creation process is iterative. Once you see the results of a model, you can use the results to modify the model itself. Generally, practitioners recognize that there are a variety of different types of models that could be used for any task. Thus, they usually construct a variety of different models and then compare them to select a final model. Practitioners will use numbers (in diagnostic and statistic tables) or visuals (like a residuals plot) when comparing models.</span>
+<span id="cb4-104"><a href="#cb4-104"></a></span>
+<span id="cb4-105"><a href="#cb4-105"></a><span class="ss">-   </span>confirmatory data analysis: In the best case, at least according to the "Open science" framework, the final statistical model will have been selected and preregistered before data is even collected. Statistics have to be rigorous to mean anything, a fact which the machine learning people (who do only exploratory work) ignore. They don't check model assumptions using statistical tests like the Shapiro-Wilk normality test, and they are constantly "p-hacking" and "HARKing" to forcibly extract findings from their data. Confirmatory data analysis rejects these practices, aiming instead for statistical models that are pre-specified (pre-registered), theoretically-based, and rigorous (whatever they take that to mean).</span>
+<span id="cb4-106"><a href="#cb4-106"></a></span>
+<span id="cb4-107"><a href="#cb4-107"></a>I'm often somewhat flippant about the second approach, which suggest and attempts to discover Truth where I am skeptical it exists. In any case, the second approach is the only one that is taught in statistics courses. This is a mistake. Firstly, exploratory data analysis is much more commond. Secondly, it is easier to get started doing exploratory (rather than confirmatory) data analysis. Because both of these approaches adopt many of the same tools, it seems to me that starting with exploratory data analysis and trying to make that make sense is the most effective way to learn confirmatory data analysis (which will require additional effort and research that I can't provide).</span>
+<span id="cb4-108"><a href="#cb4-108"></a></span>
+<span id="cb4-109"><a href="#cb4-109"></a>Thus, I intend to provide you with a strong understanding of data that you can directly apply to exploratory data analysis tasks. My hope is that this understanding will enable you to complete a diversity of tasks, including confirmatory data analysis, if that is of interest.</span>
+<span id="cb4-110"><a href="#cb4-110"></a></span>
+<span id="cb4-111"><a href="#cb4-111"></a><span class="fu">### Learning Objectives</span></span>
+<span id="cb4-112"><a href="#cb4-112"></a></span>
+<span id="cb4-113"><a href="#cb4-113"></a>There has to be some boring stuff because pedagogy. I have quite a few learning objectives for you, forming one big list, but I'll attempt to section them off so they are easier to read.</span>
+<span id="cb4-114"><a href="#cb4-114"></a></span>
+<span id="cb4-115"><a href="#cb4-115"></a><span class="fu">#### **R Learning Objectives**</span></span>
+<span id="cb4-116"><a href="#cb4-116"></a></span>
+<span id="cb4-117"><a href="#cb4-117"></a><span class="ss">-   </span>discuss R as a language with a history: use knowledge about the history of R (and of scientific computing more generally) to describe what R is, what people "say" in this language, and why this language has the properties and characteristics that it does.</span>
+<span id="cb4-118"><a href="#cb4-118"></a></span>
+<span id="cb4-119"><a href="#cb4-119"></a><span class="ss">-   </span>R competence: read R expressions written by others (allowing the language to serve a communicative purpose), and write R expressions that are readable and align with best practices within the open source R community.</span>
+<span id="cb4-120"><a href="#cb4-120"></a></span>
+<span id="cb4-121"><a href="#cb4-121"></a><span class="ss">-   </span>R's friends: Describe R's relationship to RStudio, RMarkdown, Shiny, Quarto, and Tidyverse; and, describe what each of these tools is and why someone would use them.</span>
+<span id="cb4-122"><a href="#cb4-122"></a></span>
+<span id="cb4-123"><a href="#cb4-123"></a><span class="ss">    -   </span>run R code in several different ways: via the console, a script, and Quarto or RMarkdown documents.</span>
+<span id="cb4-124"><a href="#cb4-124"></a></span>
+<span id="cb4-125"><a href="#cb4-125"></a><span class="ss">-   </span>describe R's data types and the use of each: strings, numerics (floating point "doubles", integers, and complex numbers), logicals, datetimes, and factors</span>
+<span id="cb4-126"><a href="#cb4-126"></a></span>
+<span id="cb4-127"><a href="#cb4-127"></a><span class="ss">-   </span>describe R's data structures and the use of each: including, vectors (1-dimensional arrays), matrices (2-dimensional arrays), arrays (more than 2-dimensional arrays), lists (key-value pairs), data frames, and tibbles</span>
+<span id="cb4-128"><a href="#cb4-128"></a></span>
+<span id="cb4-129"><a href="#cb4-129"></a><span class="ss">-   </span>access R documentation, and read it effectively enough to solve a problem</span>
+<span id="cb4-130"><a href="#cb4-130"></a></span>
+<span id="cb4-131"><a href="#cb4-131"></a><span class="fu">#### Computation Learning Objectives</span></span>
+<span id="cb4-132"><a href="#cb4-132"></a></span>
+<span id="cb4-133"><a href="#cb4-133"></a><span class="ss">-   </span>generate synthetic data: use simulation of simple events (like the rolling of dice or flipping of a coin) to gain visual intuition for the central limit theorem and the law of large numbers</span>
+<span id="cb4-134"><a href="#cb4-134"></a></span>
+<span id="cb4-135"><a href="#cb4-135"></a><span class="ss">-   </span>use the Monte Carlo simulation framework to evaluate statistical tests (e.g., by determining what happens when assumptions are violated)</span>
+<span id="cb4-136"><a href="#cb4-136"></a></span>
+<span id="cb4-137"><a href="#cb4-137"></a><span class="ss">-   </span>process string data: convert strings to all upper or lower case, add prefixes or suffixes, splitting strings apart</span>
+<span id="cb4-138"><a href="#cb4-138"></a></span>
+<span id="cb4-139"><a href="#cb4-139"></a><span class="ss">-   </span>process numeric data: scale and center numeric data and write functions to accomplish non-standard transformations</span>
+<span id="cb4-140"><a href="#cb4-140"></a></span>
+<span id="cb4-141"><a href="#cb4-141"></a><span class="ss">-   </span>process language data: apply the principles of natural language processing to pre-process text data (by tokenizing and stemming text and describing both of those processes and why they are used)</span>
+<span id="cb4-142"><a href="#cb4-142"></a></span>
+<span id="cb4-143"><a href="#cb4-143"></a><span class="fu">#### Statistics Learning Objectives</span></span>
+<span id="cb4-144"><a href="#cb4-144"></a></span>
+<span id="cb4-145"><a href="#cb4-145"></a><span class="ss">-   </span>null hypothesis significance testing: use R to perform null-hypothesis significance tests, such as the one-sample, two-sample, and repeated measures t-test</span>
+<span id="cb4-146"><a href="#cb4-146"></a></span>
+<span id="cb4-147"><a href="#cb4-147"></a><span class="ss">-   </span>regression: use R to perform linear and logistic regressions, including regressions with polynomial terms</span>
+<span id="cb4-148"><a href="#cb4-148"></a></span>
+<span id="cb4-149"><a href="#cb4-149"></a><span class="ss">-   </span>machine learning: use R to perform a more complicated machine learning task, likely by constructing a decision tree and a random forest classification model</span>
+<span id="cb4-150"><a href="#cb4-150"></a></span>
+<span id="cb4-151"><a href="#cb4-151"></a><span class="ss">-   </span>dimensionality reduction: perform principal component analysis and construct a latent semantic space, and explain why these two seemingly distinct methods are connected by singular value decomposition</span>
+<span id="cb4-152"><a href="#cb4-152"></a></span>
+<span id="cb4-153"><a href="#cb4-153"></a><span class="fu">#### Data Science Learning Objectives</span></span>
+<span id="cb4-154"><a href="#cb4-154"></a></span>
+<span id="cb4-155"><a href="#cb4-155"></a><span class="ss">-   </span>rectangular data: use the tidy data framework to read, write, and pre-process rectangular data in a consistent, efficient, and minimally complex manner.</span>
+<span id="cb4-156"><a href="#cb4-156"></a></span>
+<span id="cb4-157"><a href="#cb4-157"></a><span class="ss">    -   </span>import data from a variety of sources including: comma-separated values (<span class="in">`.csv`</span>) files, excel spreadshees (<span class="in">`.xlsx`</span> files), google sheets spreadsheets</span>
+<span id="cb4-158"><a href="#cb4-158"></a></span>
+<span id="cb4-159"><a href="#cb4-159"></a><span class="ss">    -   </span>'tidy' data into the following format: one observation per row, one variable per column, one value per cell</span>
+<span id="cb4-160"><a href="#cb4-160"></a></span>
+<span id="cb4-161"><a href="#cb4-161"></a><span class="ss">    -   </span>use available tools that enable you to store data in a very consistent format with very little effort</span>
+<span id="cb4-162"><a href="#cb4-162"></a></span>
+<span id="cb4-163"><a href="#cb4-163"></a><span class="ss">-   </span>language data: use R to pre-process, analyze and visualize text data</span>
+<span id="cb4-164"><a href="#cb4-164"></a></span>
+<span id="cb4-165"><a href="#cb4-165"></a><span class="ss">-   </span>visualization: use R and the grammar of graphics (represented by <span class="in">`ggplot2`</span> and related packages) to visualize data and to share data visualizations with others</span>
+<span id="cb4-166"><a href="#cb4-166"></a></span>
+<span id="cb4-167"><a href="#cb4-167"></a><span class="ss">-   </span>publication: use RMarkdown or Quarto to conduct a linear or logistic regression, and to report and interpret the results of those tests</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/huntervooys/hunterr_2024/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/huntervooys/hunterr_2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

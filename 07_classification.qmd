@@ -1,0 +1,180 @@
+# Classification
+
+```{r setup, echo=FALSE, include=FALSE}
+library(tidyverse)
+library(tidymodels)
+
+clean_compas_data <- function(data) {
+  
+  data |> 
+    
+    # filter out irrelevant columns
+    select(
+      sex, 
+      age, 
+      race, 
+      c_charge_degree,
+      priors_count...15,
+      two_year_recid,
+      decile_score...12
+    ) |> 
+    
+    # reframe most variables as factors
+    reframe(
+      compas_score = decile_score...12,
+      sex = factor(sex, levels = c("Male", "Female")),
+      age = age,
+      race = factor(
+        race,
+        levels = c("Caucasian", "Other", "African-American", "Asian", "Hispanic")
+      ),
+      priors = priors_count...15,
+      charge = factor(c_charge_degree, levels = c("F", "M")),
+      recid = factor(two_year_recid, levels = c(0, 1))
+    ) |> 
+    
+    # expand charge labels
+    mutate(charge = fct_recode(charge, "Felony" = "F", "Misdemeanor" = "M")) |> 
+    
+    # bin age and score
+    mutate(
+      age_cat = case_when(
+        age < 25 ~ "Under 25",
+        age < 45 ~ "25-45",
+        TRUE ~ "Over 45"
+      ),
+      age_cat = factor(age_cat),
+      high_risk = factor(as.character(compas_score > 4)),
+      high_risk = fct_recode(high_risk, "High Risk" = "TRUE", 
+                             "Low Risk" = "FALSE")
+    ) |> 
+    
+    drop_na()
+  
+}
+
+compas <- read_csv("data/compas-scores-two-years.csv") |> 
+  clean_compas_data()
+
+compas_violent <- read_csv("data/compas-scores-two-years-violent.csv") |> 
+  rename(two_year_recid = two_year_recid...54) |> 
+  clean_compas_data()
+```
+
+In a society like ours that is so insistent that crime is the result of individual bad apples (a euphemism for people who live lives that are not valuable to the state for one reason or another), there is a market for a technology that can identify those baddies.
+
+
+```{r}
+# nonviolent analysis
+
+# split the data into train and test
+set.seed(123)
+split <- initial_split(compas,
+                       prop = 0.8)
+train <- training(split)
+test <- testing(split)
+
+# make a model - basic logistic regression
+logistic_model <- logistic_reg() |>
+  set_engine("glm") |> 
+  set_args(family = "binomial")
+
+logistic_model
+
+# make a recipe - best way to consistently preprocess data
+formula <- high_risk ~ sex + age_cat + race + priors + charge + recid
+rec <- recipe(formula, data = train)
+# you could add additional preprocessing steps here, if you wanted
+
+rec
+
+# make a workflow to tie the model and recipe together
+logistic_workflow <- workflow() |>
+  add_model(logistic_model) |>
+  add_recipe(rec)
+
+logistic_workflow
+
+# fit the model
+logistic_fit <- fit(logistic_workflow, data = train)
+
+# get model parameters (coefficients and intercepts)
+logistic_fit |> 
+  extract_fit_parsnip() |> 
+  tidy(conf.int = TRUE,
+       conf.level = 0.95,
+       exponentiate = F)
+```
+
+```{r}
+
+split <- initial_split(compas,
+                       prop = 0.8)
+train <- training(split)
+test <- testing(split)
+
+# make a decision tree model
+tree_model <- decision_tree() |>
+  set_engine("rpart") |>
+  set_mode("classification")
+
+tree_fit <- tree_model |> 
+  fit(high_risk ~ sex + age + race + priors + charge + recid,
+      data = train)
+
+tree_fit |> 
+  extract_fit_engine() |> 
+  rpart.plot::rpart.plot(branch = 0.4)
+
+# evaluate the model using the test data
+tree_fit |> 
+  predict(test) |> 
+  bind_cols(test) |> 
+  yardstick::accuracy(truth = high_risk, estimate = .pred_class)
+
+
+```
+
+```{r}
+
+tree_reg_model <- decision_tree() |>
+  set_engine("rpart") |>
+  set_mode("regression")
+
+tree_reg_fit <- tree_reg_model |>
+  fit(compas_score ~ sex + age + race + priors + charge + recid,
+      data = train)
+
+tree_reg_fit |>
+  extract_fit_engine() |>
+  rpart.plot::rpart.plot(branch = 0.4)
+
+# evaluate the model using the test data
+tree_reg_fit |>
+  predict(test) |>
+  bind_cols(test) |>
+  yardstick::rmse(truth = compas_score, estimate = .pred)
+
+
+```
+
+```{r}
+
+random_forest_model <- rand_forest() |>
+  set_engine("ranger") |>
+  set_mode("regression")
+
+random_forest_fit <- random_forest_model |>
+  fit(compas_score ~ sex + age + race + priors + charge + recid,
+      data = train)
+
+# evaluate the model using the test data
+random_forest_fit |>
+  predict(test) |>
+  bind_cols(test) |>
+  yardstick::rmse(truth = compas_score, estimate = .pred)
+
+
+
+```
+

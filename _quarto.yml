@@ -28,12 +28,9 @@ book:
       - 03_r_101.qmd
       - 04_visualization.qmd
     - part: "Statistics"
-<<<<<<< Updated upstream
-=======
       chapters:
         - 05_probability.qmd
         - 06_eugenics.qmd
->>>>>>> Stashed changes
     - 0R_references.qmd
   appendices:
     - 0A_resources.qmd

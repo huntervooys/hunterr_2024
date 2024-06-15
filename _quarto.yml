@@ -31,6 +31,7 @@ book:
     - part: "Statistics"
       chapters:
         - 05_probability.qmd
+        - 06_eugenics.qmd
     - 0R_references.qmd
   appendices:
     - 0A_resources.qmd
